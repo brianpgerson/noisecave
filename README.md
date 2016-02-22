@@ -9,8 +9,10 @@ NoiseCave is a web application inspired by SoundCloud built with Ruby on Rails a
 - [ ] Create an account
 - [ ] Log in / Log out
 - [ ] Create, read, update, and delete tracks
-- [ ] Organize tracks within playlists
 - [ ] Play tracks continuously while navigating
+- [ ] Add tracks to the audio playback queue
+- [ ] Organize tracks within playlists
+- [ ] Search tracks by title
 
 ## Design Docs
 * [View Wireframes][views]
