@@ -1,8 +1,8 @@
 # NoiseCave
 
-[Heroku link]: [http://www.noisecave.com] 
+* [Heroku link][http://www.noisecave.com]
 
-[heroku]: noisecave.herokuapp.com
+* [Heroku][noisecave.herokuapp.com]
 
 ## Minimum Viable Product
 
