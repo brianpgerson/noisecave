@@ -1,4 +1,4 @@
-# FresherNote
+# NoiseCave
 
 [Heroku link][http://www.noisecave.com] **NB:** This should be a link to your production site
 
@@ -108,6 +108,7 @@ user interface.
 
 ### Bonus Features (TBD)
 - [ ] Search through notes for blocks of text
+- [ ] Slugging for track/playlist urls
 - [ ] Pagination / infinite scroll for Tracks Index (discover page)
 - [ ] Ability to tag tracks, organize by tags
 - [ ] Multiple sessions
