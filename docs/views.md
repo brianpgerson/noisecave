@@ -19,7 +19,7 @@
 ![track-detail]
 
 ## Track Form
-[track-form]
+![track-form]
 
 [splash]: ./wireframes/splash.png
 [discover]: ./wireframes/discover.png

@@ -29,7 +29,7 @@ password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
 
-<!-- BONUS -->
+BONUS:
 
 ## tags
 column name | data type | details

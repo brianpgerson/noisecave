@@ -36,8 +36,8 @@
 - `DELETE /api/playlist/:id`
 - `GET /api/playlist/:id/tracks`
   - index of all tracks for a playlist
-  
-<!-- TODO Look into slugging for above! -->
+
+Look into slugging for above! <!-- REMOVE -->
 
 ### Tags (bonus)
 
