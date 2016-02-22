@@ -16,34 +16,33 @@
 
 ## JSON API
 
-### Notes
+### Tracks
 
-- `GET /api/notes`
-  - Notes index/search
-  - accepts `tag_name` query param to list notes by tag
+- `GET /api/tracks`
+  - Tracks index/search
   - accepts pagination params (if I get there)
-- `POST /api/notes`
-- `GET /api/notes/:id`
-- `PATCH /api/notes/:id`
-- `DELETE /api/notes/:id`
+- `POST /api/tracks`
+- `GET /api/tracks/:id`
+- `PATCH /api/tracks/:id`
+- `DELETE /api/tracks/:id`
 
-### Notebooks
+### Playlists
 
-- `GET /api/notebooks`
-- `POST /api/notebooks`
-- `GET /api/notebooks/:id`
-- `PATCH /api/notebooks/:id`
-- `DELETE /api/notebooks/:id`
-- `GET /api/notebooks/:id/notes`
-  - index of all notes for a notebook
-  - accepts pagination params (if I get there)
+- `GET /api/playlist`
+  - index of all playlists for a user
+- `POST /api/playlist`
+- `GET /api/playlist/:id`
+- `PATCH /api/playlist/:id`
+- `DELETE /api/playlist/:id`
+- `GET /api/playlist/:id/tracks`
+  - index of all tracks for a playlist
+  
+<!-- TODO Look into slugging for above! -->
 
-### Tags
+### Tags (bonus)
 
-- A note's tags will be included in the note show template
+- A track's tags will be included in the track detail and track list item
 - `GET /api/tags`
-  - includes query param for typeahead suggestions
-- `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
-- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
+- `POST /api/tracks/:track_id/tags`: add tag to track by name
+- `DELETE /api/tracks/:track_id/tags/:tag_name`: remove tag from track by
   name

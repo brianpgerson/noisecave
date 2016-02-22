@@ -1,22 +1,30 @@
 # View Wireframes
 
-## New User
-![new-user]
+## Splash
+![splash]
 
-## New Session
-![new-session]
+## Discover
+![discover]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Discover (playing)
+![discover-playing]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Playlist
+![playlist]
 
-## NotebookForm
-![notebook-form]
+## Track List
+![tracklist]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+## Track Detail
+![track-detail]
+
+## Track Form
+[track-form]
+
+[splash]: ./wireframes/splash.png
+[discover]: ./wireframes/discover.png
+[discover-playing]: ./wireframes/discover-playing.png
+[playlist]: ./wireframes/playlist.png
+[track-detail]: ./wireframes/track-detail.png
+[tracklist]: ./wireframes/tracklist.png
+[track-form]: ./wireframes/track-form.png

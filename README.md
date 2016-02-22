@@ -1,23 +1,21 @@
 # FresherNote
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][http://www.noisecave.com] **NB:** This should be a link to your production site
 
-[heroku]: http://www.herokuapp.com
+[heroku]: noisecave.herokuapp.com
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+NoiseCave is a web application inspired by SoundCloud built with Ruby on Rails and React.js. NoiseCave allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags
-- [ ] Apply complex styling to notes while editing
+- [ ] Create, read, update, and delete tracks
+- [ ] Organize tracks within playlists
+- [ ] Play tracks continuously while navigating
 
 ## Design Docs
 * [View Wireframes][views]
@@ -41,82 +39,68 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] create new project
 - [ ] create `User` model
 - [ ] authentication
-- [ ] user signup/signin pages
+- [ ] style landing page with sign-in/sign-up dual purpose form
 - [ ] blank landing page after signin
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Track Model, API, and basic APIUtil (1.5 days)
 
 **Objective:** Notes can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Note` model
+- [ ] create `Track` model
+- [ ] figure out how to actually save media files/what data I get from them
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for track (`TracksController`)
+- [ ] jBuilder views for track
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+### Phase 3: Flux Architecture and Router (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
+**Objective:** Tracks can be created, read, edited and destroyed with the
 user interface.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- implement each track component, building out the flux loop as needed.
+  - [ ] `TracksIndex`
+  - [ ] `TrackIndexItem`
+  - [ ] `TrackUploadForm`
+- [ ] Tracks are saved to the DB on save in the track form
+- [ ] Tracks play continuously throughout navigation
 
-### Phase 4: Start Styling (0.5 days)
+### Phase 4: Standardize Styling (0.5 days)
 
-**Objective:** Existing pages (including singup/signin) will look good.
+**Objective:** Build on some of the boilerplate styling and standardize styles across the site.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [ ] flesh out the style guide
+- [ ] add more advanced colors & styles that can be reused
 
-### Phase 5: Notebooks (1 day)
+### Phase 5: Playlists (1.5 days)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Tracks belong to Playlists, and can be viewed by playlist.
 
-- [ ] create `Notebook` model
+- [ ] create `Playlist` model
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [ ] Playlist CRUD
+  - [ ] moving tracks to different/multiple playlists
+  - [ ] viewing tracks by playlist
 - Use CSS to style new views
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
 
-### Phase 6: Tags (1.5 days)
+### Phase 6: Search (.5 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Tracks are searchable with fuzzy search capabilities
 
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
+- [ ] create `Search` component which:
+  - [ ] searches the database for tracks
+  - [ ] implements fuzzy search functionality
+  - [ ] dynamically loads and shows the results
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+### Phase 7: Styling Cleanup and Seeding (2 days)
 
-**objective:** Enable complex styling of notes.
-
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
-
-### Phase 8: Styling Cleanup and Seeding (1 day)
-
-**objective:** Make the site feel more cohesive and awesome.
+**Objective:** Make the site extremely excellent.
 
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
@@ -124,13 +108,6 @@ which has its own `Index` view.
 
 ### Bonus Features (TBD)
 - [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
+- [ ] Pagination / infinite scroll for Tracks Index (discover page)
+- [ ] Ability to tag tracks, organize by tags
 - [ ] Multiple sessions
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md

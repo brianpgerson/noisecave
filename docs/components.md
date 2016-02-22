@@ -2,12 +2,14 @@
 
 * `App`
   * `SearchIndex`
-  * `NotebooksIndex`
-    * `NotebookIndexItem`
-  * `NotebookForm`
-  * `NotesIndex`
-    * `NoteForm`
-    * `NoteIndexItem`
-  * `NoteDetail`
-    * `NoteTags`
-    * `NoteEditArea`
+  * `TracksIndex`
+    * `TrackIndexItem`
+  * `PlaylistIndex`
+    * `PlaylistIndexItem`
+    * `PlaylistForm`
+  * `TrackDetail`
+    * `TrackEdit`
+    * `TrackUploadForm`
+  * `TrackPlayer`
+    * `TrackControls`
+    * `TrackInfo`

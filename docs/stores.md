@@ -1,49 +1,29 @@
 # Flux Stores
 
-### NoteStore
+### TrackStore
 
-Holds all persisted note data.
-
-##### Actions:
-- `receiveAllNotes`
-- `receiveSingleNote`
-- `removeNote`
-
-##### Listeners:
-- `NotesIndex` (passes to `NoteIndexItem` via props)
-- `NoteDetail`
-
-### NoteFormStore
-
-Holds un-persisted note data to send to the API.
+Holds all persisted track data.
 
 ##### Actions:
-- `receiveNoteFormParams`
+- `receiveAllTracks`
+- `receiveSingleTrack`
+- `removeTrack`
 
 ##### Listeners:
-- `NoteForm`
+- `TracksIndex` (passes to `TrackIndexItem` via props)
+- `TrackDetail`
 
-### NotebookStore
+### PlaylistStore
 
-Holds all persisted notebook data.
+Holds all persisted playlist data.
 
 ##### Actions:
-- `receiveAllNotebooks`
-- `receiveSingleNotebook`
-- `removeNotebook`
+- `receiveAllPlaylist`
+- `receiveSinglePlaylist`
+- `removePlaylist`
 
 ##### Listeners:
-- `NotebookIndex`
-
-### NotebookFormStore
-
-Holds un-persisted notebook data to send to the API.
-
-##### Actions:
-- `receiveNotebookFormParams`
-
-##### Listeners:
-- `NotebookForm`
+- `PlaylistIndex`
 
 ### SearchStore
 
@@ -54,13 +34,3 @@ Holds search parameters to send to the API.
 
 ##### Listeners:
 - `SearchIndex`
-
-### SearchSuggestionStore
-
-Holds typeahead suggestions for search.
-
-##### Actions:
-- `receiveSearchSuggestions`
-
-##### Listeners:
-- `SearchSuggestions`
