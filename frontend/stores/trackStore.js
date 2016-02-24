@@ -8,8 +8,9 @@ var _tracks = {};
 var TrackStore = new Store(AppDispatcher);
 
 function resetTracks(trackParams){
-  Object.keys(trackParams).forEach(function(track){
-    resetTrack(track);
+  debugger;
+  Object.keys(trackParams).forEach(function(trackId){
+    resetTrack(trackParams[trackId]);
   });
 }
 
