@@ -1,10 +1,17 @@
 class User < ActiveRecord::Base
   attr_reader :password
   validates_presence_of :username, :email, :session_token
+  validates :username, uniqueness: true;
+  validates :email, uniqueness: true
   validates :password_digest, presence: { message: "Password can't be blank" }
   validates :password, length: {minimum: 6, allow_nil: true}
 
   after_initialize :ensure_session_token, :ensure_slug
+
+  has_many :tracks,
+    foreign_key: :creator_id,
+    primary_key: :id,
+    class_name: "Track"
 
   def reset_session_token
     self.session_token == User.generate_session_token
@@ -12,7 +19,7 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
-  def self.find_by_credentials(username, pword)
+  def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil if user.nil?
     user.is_password?(password) ? user : nil

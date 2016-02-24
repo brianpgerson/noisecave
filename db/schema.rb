@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223023457) do
+ActiveRecord::Schema.define(version: 20160224181246) do
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "title",                       null: false
+    t.string   "slug",                        null: false
+    t.text     "description",                 null: false
+    t.string   "image_url"
+    t.string   "audio_url",                   null: false
+    t.integer  "creator_id",                  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "archived",    default: false
+  end
+
+  add_index "tracks", ["audio_url"], name: "index_tracks_on_audio_url"
+  add_index "tracks", ["creator_id"], name: "index_tracks_on_creator_id"
+  add_index "tracks", ["slug"], name: "index_tracks_on_slug"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
