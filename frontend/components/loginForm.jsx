@@ -45,7 +45,6 @@ var LoginForm = React.createClass({
       ErrorActions.sendError(["Please use a real email address!"]);
     } else if (this.props.loggedIn !== check) {
       ServerAuthApi[request](sessionParams);
-      this.props.closeModalCallback();
     }
   },
 
