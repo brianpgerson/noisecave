@@ -14,6 +14,12 @@ var AuthActions = {
       trackParams: trackParams
     });
   },
+  removeTrack: function(trackParams){
+    AppDispatcher.dispatch({
+      actionType: TrackConstants.REMOVE_TRACK,
+      trackParams: trackParams
+    });
+  }
 };
 
 module.exports = AuthActions;

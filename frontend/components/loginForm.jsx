@@ -57,75 +57,70 @@ var LoginForm = React.createClass({
     e.preventDefault();
     this.setState({[e.target.name]: e.target.value});
   },
-
-  render: function(){
+  determineValidity: function(){
     if (this.state.email.length > 0 && this.state.username.length > 0 &&
       (this.state.password.length > 6 && this.state.password.length > 0)) {
+        var lengthCheck = "";
         var anyInvalid = false;
       } else if (this.state.password.length > 0 && 6 > this.state.password.length){
-        var lengthCheck = "Please select a password > 6 characters.";
+        lengthCheck = <span className="helper-text"> Please select a password > 6 characters.</span>;
         anyInvalid = true;
       } else {
+        lengthCheck = "";
         anyInvalid = true;
       }
-      var test;
+    return [anyInvalid, lengthCheck];
+  },
+  render: function(){
+    var options = this.props.formOptions;
 
-      switch(this.props.loggedIn){
-        case null:
-          test = "";
-          break;
-        case true:
-          test = "Logged In";
-          break;
-        case false:
-          test = "Who Are You?";
-          break;
-      }
+    var checks = this.determineValidity();
+    var anyInvalid = checks[0];
+    var lengthCheck = (options.checkLength && checks[1]) ? checks[1] : "";
+
     return (
       <div className="sign-up-in">
         <ErrorHandler />
         <form>
+          <h4>{options.title}</h4>
           <p>
-            <label>Pick a Username: <br />
+            <label>{options.usernameLabel}
             <input type="text"
+                    className="login-text-input"
                     name="username"
                     value={this.state.username}
                     onChange={this.handleInputChanges}/>
             </label>
           </p>
-          <p>
-            <label>Enter your Email: <br />
+          <p className={options.emailShow ? "show" : "hidden"}>
+            <label>Enter your Email:
             <input type="email"
+                    className="login-text-input"
                     name="email"
                     value={this.state.email}
                     onChange={this.handleInputChanges}/>
             </label>
           </p>
           <p>
-            <label>Pick a Password: {lengthCheck}<br />
+            <label>{options.passwordLabel}{lengthCheck}
             <input type="password"
+                    className="login-text-input"
                     name="password"
                     value={this.state.password}
                     onChange={this.handleInputChanges}/>
             </label>
           </p>
-          <p>
+          <div className="login-submits">
             <input type="submit"
-                    value="Sign Up"
-                    name="up"
+                    value={options.buttonText}
+                    name={options.buttonType}
                     disabled={anyInvalid}
                     onClick={this.handleSubmits} />
             <input type="submit"
-                    value="Sign In"
-                    name="in"
-                    disabled={anyInvalid}
-                    onClick={this.handleSubmits} />
-            <input type="submit"
-                    value="Sign Out"
+                    value="Cancel"
                     name="out"
                     onClick={this.handleSubmits} />
-          </p>
-          <p>{test}</p>
+          </div>
 
         </form>
 

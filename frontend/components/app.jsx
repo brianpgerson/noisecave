@@ -44,11 +44,11 @@ var App = React.createClass({
         <NavBar
           loginCallback={this.modalOpenCallback}
           loggedIn={this.state.loggedIn} />
-          <Modal
-            modalCloseCallback={this.modalCloseCallback}
-            display={this.state.showModals}
-            modalType={this.state.modalType}
-            loggedIn={this.state.loggedIn}/>
+        <Modal
+          modalCloseCallback={this.modalCloseCallback}
+          display={this.state.showModals}
+          modalType={this.state.modalType}
+          loggedIn={this.state.loggedIn}/>
         {this.props.children}
       </div>
     );

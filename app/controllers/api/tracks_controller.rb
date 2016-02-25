@@ -1,5 +1,7 @@
+require 'byebug'
+
 class Api::TracksController < ApplicationController
-  before_action :is_logged_in?, only: [:create, :update, :destroy]
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
     @tracks = Track.all
@@ -12,6 +14,7 @@ class Api::TracksController < ApplicationController
   end
 
   def create
+    debugger
     @track = Track.new(track_params)
     if @track.save
       render json: @track

@@ -14,20 +14,56 @@
  *= require_self
  */
 
- .group {
-   content: "";
-   display: table;
-   clear: both;
+.group {
+  content: "";
+  display: table;
+  clear: both;
  }
 
- input:disabled {
-   color: lightgrey;
-   border-color: lightgrey;
- }
+.login-submits {
+  width: 293px;
+  margin: 0 auto;
+}
 
-input:hover:disabled {
-  color: salmon;
-  border-color: lightgrey;
+.sign-up-in .error {
+  list-style: none;
+  position: absolute;
+  top: 10px;
+}
+
+input[type=submit]{
+  background-color: navy;
+  margin: 20px 15px;
+  border-radius: 10px;
+  color: lightgrey;
+  border-color: #888;
+  outline: 0;
+}
+
+input[type=submit]:disabled {
+  color: #eee;
+  background-color: darkgrey;
+  border-color: #888;
+}
+
+input[type=submit]:hover {
+  border-color: #888;
+  color: #fff;
+  background-color: darkblue;
+}
+
+.helper-text {
+  font-weight: lighter;
+  font-size: smaller;
+  position: absolute;
+  top: 250px;
+  right: 20px;
+}
+
+input[type=submit]:hover:disabled {
+  border-color: #888;
+  color: #eee;
+  background-color: darkgrey;
 }
 
 .shown {
@@ -38,18 +74,34 @@ input:hover:disabled {
   display: none;
 }
 
+.login-text-input {
+  margin-left: 10px;
+}
+
+.sign-up-in label {
+  display: inline-block;
+  float: right;
+}
+
+.sign-up-in h4 {
+  text-align: center;
+}
 
 .modal-box {
   transform: translateX(-220px);
+  z-index: 2;
   position: fixed;
   border-radius: 10px;
   left: 50%;
   top: 150px;
-  width: 400px;
-  height: 400px;
-  padding: 20px;
+  width: 360px;
+  height: 360px;
+  padding: 0 20px;
   margin: 0 auto;
   background-color: gray;
+  -webkit-box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
 }
 
 .modal-background {

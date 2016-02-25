@@ -8,7 +8,9 @@ var NavBar = React.createClass({
   uploadAndProfileText: function(){
     if (this.props.loggedIn === true) {
       return [
-        <li onClick={this.handleUpload} className="right">
+        <li onClick={function(){
+          this.props.loginCallback('upload');
+        }.bind(this)} className="right">
           <span>Upload</span>
         </li>,
         <li onClick={function(){
@@ -19,7 +21,9 @@ var NavBar = React.createClass({
       ];
     } else {
       return [
-        <li onClick={this.handleLogin} className="right">
+        <li onClick={function(){
+          this.props.loginCallback('login');
+        }.bind(this)} className="right">
           <span>Login</span>
         </li>,
         <li onClick={function(){

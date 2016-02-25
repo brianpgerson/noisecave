@@ -1,3 +1,27 @@
 // Place all the styles related to the Tracks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.album-cover {
+  min-height: 150px;
+  min-width: 150px;
+  background-color: lightgrey;
+  background-size: 100% 100%;
+  padding: 10px;
+}
+
+.caption {
+  text-align: center;
+}
+
+.all-tracks {
+  margin-top: 50px;
+}
+
+.album-container {
+  min-width: 194px;
+  max-width: 204px;
+  padding: 3px;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
