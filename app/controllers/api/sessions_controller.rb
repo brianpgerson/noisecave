@@ -15,11 +15,9 @@ class Api::SessionsController < ApplicationController
       render json: current_user
     else
       render json: {
-        authRequestInProgress: false,
-        authErrors: [],
-        sessionToken: nil,
+        session_token: nil,
         username: nil,
-        userId: nil
+        id: nil
       }
     end
   end
@@ -28,11 +26,9 @@ class Api::SessionsController < ApplicationController
   def destroy
     logout
     render json: {
-      authRequestInProgress: false,
-      authErrors: [],
-      sessionToken: nil,
+      session_token: nil,
       username: nil,
-      userId: nil
+      id: nil
     }
   end
 

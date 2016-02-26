@@ -1,14 +1,13 @@
 var ServerTrackApi = require('../util/serverTrackApi');
 var AppDispatcher = require('../dispatcher/dispatcher');
-// var UploadConstants = require('../constants/uploadConstants');
 
 var UploadActions = {
   initiateUpload: function(prefix, file){
-    ServerTrackApi.fetchPresignedUrls(prefix, file, this.handleReceivedUrls.bind(this));
+    ServerTrackApi.fetchPresignedUrls(prefix, file, UploadActions.handleReceivedUrls);
   },
 
   handleReceivedUrls: function(urls, file) {
-    ServerTrackApi.uploadTheFile(urls, file, this.handlePublicUrl.bind(this));
+    ServerTrackApi.uploadTheFile(urls, file, UploadActions.handlePublicUrl);
   },
   handlePublicUrl: function(url){
     AppDispatcher.dispatch({

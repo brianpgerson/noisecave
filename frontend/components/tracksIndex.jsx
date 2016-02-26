@@ -1,7 +1,7 @@
 var React = require('react');
 var TrackStore = require('../stores/trackStore');
-var ServerTrackApi = require('../util/serverTrackApi');
 var TrackIndexItem = require('./trackIndexItem');
+var TrackActions = require('../actions/trackActions');
 
 
 var TracksIndex = React.createClass({
@@ -14,7 +14,7 @@ var TracksIndex = React.createClass({
     this.changeListener = TrackStore.addListener(this._onChange);
   },
   componentDidMount: function(){
-    ServerTrackApi.fetchTracks();
+    TrackActions.getTracks();
   },
   componentWillUnmount: function() {
     this.changeListener.remove();
@@ -27,11 +27,14 @@ var TracksIndex = React.createClass({
   buildTracksOut: function(){
     var tracks;
     if (this.state.tracks.length > 0) {
-      tracks = this.state.tracks.map(function(track){
+      tracks = this.state.tracks.map(function(track, idx){
         return (
-          <TrackIndexItem track={track} />
+          <TrackIndexItem
+            key={idx}
+            track={track}
+            playCallback={this.props.funCallback}/>
         );
-      });
+      }.bind(this));
     } else {
       tracks = "HI!";
     }
@@ -40,8 +43,8 @@ var TracksIndex = React.createClass({
   render: function(){
     var trackIndex = this.buildTracksOut();
     return (
-      <div className="container all-tracks">
-        <div className="row">
+      <div className="content-container">
+        <div className="all-tracks group">
           {trackIndex}
         </div>
       </div>

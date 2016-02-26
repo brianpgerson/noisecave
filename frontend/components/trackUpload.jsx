@@ -1,9 +1,6 @@
 var React = require('react');
-var ServerAuthApi = require('../util/serverAuthApi');
 var UploadActions = require('../actions/uploadActions');
 var TrackActions = require('../actions/trackActions');
-var ErrorHandler = require('./errorHandler');
-var ErrorActions = require('../actions/ErrorActions');
 var AudioUrlStore = require('../stores/audioUrlStore');
 var SessionStore = require('../stores/sessionStore');
 
@@ -19,7 +16,10 @@ var TrackUpload = React.createClass({
     });
   },
   componentWillMount: function() {
-    AudioUrlStore.addListener(this.PubURLReceived);
+    this.audioStoreListener = AudioUrlStore.addListener(this.PubURLReceived);
+  },
+  componentWillUnmount: function() {
+    this.audioStoreListener.remove();
   },
   PubURLReceived: function(){
     this.setState({audio_url: AudioUrlStore.returnUrl()});
@@ -35,7 +35,7 @@ var TrackUpload = React.createClass({
   },
   handleSubmits: function(e){
     e.preventDefault();
-    TrackActions.receiveTrack({
+    TrackActions.addTrack({
       track: {
         title: this.state.title,
         description: this.state.description,
@@ -45,43 +45,51 @@ var TrackUpload = React.createClass({
         archived: false
       }
     });
-    alert("thanks bitch!")
+    alert("thanks bitch!");
 
   },
   render: function(){
     return (
-      <div>
+      <div className="track-upload">
+        <h5>Upload a Track</h5>
         <form>
-          <label>Track Title <br></br>
-          <input type="text"
-                  name="title"
-                  value={this.state.username}
-                  onChange={this.handleInputChanges}/>
-          </label>
-          <label>Description <br></br>
-          <textarea
-                  name="description"
-                  value={this.state.username}
-                  onChange={this.handleInputChanges}>
-          </textarea>
-          </label>
-          <label>Track Image <br></br>
-          <input type="file"
-                  accept="image/*"
-                  title=" "
-                  name="imageFile"
-                  className="custom-file-input"/>
-          </label>
-          <label>Audio File <br></br>
-          <input type="file"
-                  accept="audio/*"
-                  title=" "
-                  id="audioFile"
-                  onChange={this.handleUpload}
-                  className="custom-file-input"/>
-          </label>
+          <div className="title-and-descrip group">
+            <label>Track Title: <br></br>
+            <input type="text"
+                    name="title"
+                    className="upload-text"
+                    value={this.state.username}
+                    onChange={this.handleInputChanges}/>
+            </label>
+            <label>Track Description: <br></br>
+            <textarea
+                    name="description"
+                    className="upload-text"
+                    value={this.state.username}
+                    onChange={this.handleInputChanges}>
+            </textarea>
+            </label>
+          </div>
+          <div className="file-section">
+            <label>Upload Files: </label>
+            <input type="file"
+                    accept="image/*"
+                    name="imageFile"
+                    id="imageFile"
+                    className="input-file"/>
+                  <label htmlFor="imageFile">Add an Image</label>
+            <br />
+            <input type="file"
+                    accept="audio/*"
+                    name="audioFile"
+                    id="audioFile"
+                    onChange={this.handleUpload}
+                    className="input-file"/>
+            <label htmlFor="audioFile">Add an MP3</label>
+          </div>
+
           <input type="submit"
-                  value="Upload"
+                  value="Save"
                   id="upload"
                   onClick={this.handleSubmits} />
         </form>

@@ -14,8 +14,6 @@ var routes = (
   <Route component={App} path="/">
     <Route component={TracksIndex} path="discover">
     </Route>
-    <Route component={TrackUpload} path="upload">
-    </Route>
   </Route>
 );
 

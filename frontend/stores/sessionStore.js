@@ -5,7 +5,6 @@ var authConstants = require('../constants/authConstants');
 
 var _sessionState = {
   authRequestInProgress: false,
-  authErrors: [],
   sessionToken: null,
   username: null,
   userId: null
@@ -14,7 +13,9 @@ var _sessionState = {
 var SessionStore = new Store(AppDispatcher);
 
 function setSessionState(sessionParams){
-  _sessionState = sessionParams;
+  _sessionState['sessionToken'] = sessionParams['session_token'];
+  _sessionState['username'] = sessionParams['username'];
+  _sessionState['userId'] = sessionParams['id'];
 }
 
 SessionStore.__onDispatch = function(payload) {
@@ -44,14 +45,6 @@ SessionStore.getUserId = function() {
 
 SessionStore.isLoggedIn = function() {
   return (_sessionState.sessionToken !== null);
-};
-
-SessionStore.getAuthErrors = function() {
-  return (_sessionState.authErrors !== null);
-};
-
-SessionStore.isAuthRequestInProgress = function() {
-  return (_sessionState.authRequestInProgress === true);
 };
 
 

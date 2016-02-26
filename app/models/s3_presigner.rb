@@ -9,7 +9,7 @@ class UploadPresigner
     filename = "#{SecureRandom.uuid}#{extname}"
     upload_key = Pathname.new(prefix).join(filename).to_s
 
-    creds = Aws::Credentials.new('')
+    creds = Aws::Credentials.new('AKIAIMFJ44HRBQIXKSRA', 'tgM7g0Rsj2DcnlFcjtTLxEK0cGcgiRVk6rlK7EAX')
     s3 = Aws::S3::Resource.new(region: 'us-west-1', credentials: creds)
     obj = s3.bucket('briansdopetracks').object(upload_key)
     params = { acl: 'public-read' }

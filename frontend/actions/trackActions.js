@@ -1,8 +1,11 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var TrackConstants = require('../constants/trackConstants');
+var ServerTrackApi = require('../util/serverTrackApi');
+
 
 var TrackActions = {
 
+  // INBOUND
   receiveTracks: function(trackParams){
     AppDispatcher.dispatch({
       actionType: TrackConstants.RECEIVE_TRACKS,
@@ -20,6 +23,19 @@ var TrackActions = {
       actionType: TrackConstants.REMOVE_TRACK,
       trackParams: trackParams
     });
+  },
+
+  // OUTBOUND
+  addTrack: function(trackParams) {
+    ServerTrackApi.createTrack(trackParams, TrackActions.receiveTrack);
+  },
+
+  getTracks: function(){
+    ServerTrackApi.fetchTracks(TrackActions.receiveTracks);
+  },
+
+  getTrack: function(id){
+    ServerTrackApi.fetchTrack(id, TrackActions.receiveTrack)
   }
 };
 

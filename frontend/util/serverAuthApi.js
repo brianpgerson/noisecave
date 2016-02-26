@@ -1,14 +1,13 @@
-var AuthActions = require('../actions/authActions');
 var ErrorActions = require('../actions/ErrorActions');
 
 var ServerAuthApi = {
-  loginCheck: function(){
+  loginCheckRequest: function(callback){
     $.ajax({
       url: "api/session/auth",
       type: "GET",
       data: {},
       success: function(data){
-        AuthActions.loginCheck(data);
+        callback(data);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -17,13 +16,13 @@ var ServerAuthApi = {
       }
     });
   },
-  loginRequest: function(formData){
+  loginRequest: function(formData, callback){
     $.ajax({
       url: "api/session",
       type: "POST",
       data: formData,
       success: function(data){
-        AuthActions.loginRequest(data);
+        callback(data);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -32,13 +31,13 @@ var ServerAuthApi = {
       }
     });
   },
-  logoutRequest: function(data){
+  logoutRequest: function(data, callback){
     $.ajax({
       url: "api/session",
       type: "DELETE",
       data: data,
       success: function(response){
-        AuthActions.logoutRequest(response);
+        callback(response);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -48,13 +47,14 @@ var ServerAuthApi = {
     }
     );
   },
-  signUpRequest: function(data){
+  signUpRequest: function(data, callback){
     $.ajax({
       url: "/api/users",
       type: "POST",
       data: data,
       success: function(response){
-        AuthActions.loginRequest(response);
+        debugger;
+        callback(response);
         ErrorActions.resetErrors();
       },
       error: function(response){

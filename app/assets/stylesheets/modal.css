@@ -1,0 +1,142 @@
+/* SIGN IN STUFF */
+.sign-up-in input[type=text] {
+  margin-left: 10px;
+}
+
+.sign-up-in label {
+  display: inline-block;
+  float: right;
+}
+
+
+.login-text-input {
+  margin-left: 10px;
+}
+
+.sign-up-in .error {
+  list-style: none;
+  position: absolute;
+  top: 10px;
+}
+
+.helper-text {
+  font-weight: lighter;
+  font-size: smaller;
+  position: absolute;
+  top: 250px;
+  right: 20px;
+}
+
+/* GENERAL MODAL STUFF */
+.modal-box {
+  transform: translateX(-200px);
+  z-index: 2;
+  position: fixed;
+  border-radius: 10px;
+  left: 50%;
+  top: 150px;
+  width: 360px;
+  height: 360px;
+  padding: 0 20px;
+  margin: 0 auto;
+  background-color: gray;
+  -webkit-box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
+}
+
+.modal-background {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.login-pair {
+  width: 284px;
+  margin: 0 auto;
+}
+
+.modal-box h5 {
+  text-align: center;
+  padding-top: 10px
+}
+
+.modal-box input[type=submit]{
+  background-color: navy;
+  margin: 20px 15px;
+  border-radius: 10px;
+  color: lightgrey;
+  border-color: #888;
+  outline: 0;
+}
+
+input[type=submit]:disabled {
+  color: #eee;
+  background-color: darkgrey;
+  border-color: #888;
+}
+
+input[type=submit]:hover {
+  border-color: #888;
+  color: #fff;
+  background-color: darkblue;
+}
+
+input[type=submit]:hover:disabled {
+  border-color: #888;
+  color: #eee;
+  background-color: darkgrey;
+}
+
+
+
+/* UPLOAD STUFF */
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.track-upload .upload-text {
+  width: 280px;
+}
+
+.track-upload span {
+  margin-right: 10px;
+}
+
+.title-and-descrip {
+  float: left;
+  width: 300px;
+  border-right: 1px solid whitesmoke;
+}
+
+.file-section {
+  padding-left: 15px;
+  width: 330px;
+  float: right;
+}
+
+#upload {
+  position: relative;
+  float: right;
+}
+
+.modal-box .input-file + label {
+  background-color: whitesmoke;
+  margin: 10px 15px;
+}
+
+.shown {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,5 +1,4 @@
 var React = require('react');
-var ServerAuthApi = require('../util/serverAuthApi');
 var ErrorHandler = require('./errorHandler');
 var ErrorActions = require('../actions/ErrorActions');
 
@@ -17,19 +16,19 @@ var LoginForm = React.createClass({
     e.preventDefault();
     var type = e.target.name;
     var request;
-    var check;
+    var alreadyDoneThisAction;
     switch(type) {
       case "up":
         request = "signUpRequest";
-        check = true;
+        alreadyDoneThisAction = true;
         break;
       case "in":
         request = "loginRequest";
-        check = true;
+        alreadyDoneThisAction = true;
         break;
       case "out":
         request = "logoutRequest";
-        check = false;
+        alreadyDoneThisAction = false;
         break;
     }
 
@@ -40,11 +39,13 @@ var LoginForm = React.createClass({
               password: this.state.password
             }
       };
+
+      debugger;
     //check email validity before sending server request.
-    if (check === true && !this.isGoodEmail(sessionParams.user.email)) {
+    if (request === "signUpRequest" && !this.isGoodEmail(sessionParams.user.email)) {
       ErrorActions.sendError(["Please use a real email address!"]);
-    } else if (this.props.loggedIn !== check) {
-      ServerAuthApi[request](sessionParams);
+    } else if (this.props.loggedIn !== alreadyDoneThisAction) {
+      authActions[request](sessionParams);
     }
   },
 
@@ -57,8 +58,9 @@ var LoginForm = React.createClass({
     this.setState({[e.target.name]: e.target.value});
   },
   determineValidity: function(){
-    if (this.state.email.length > 0 && this.state.username.length > 0 &&
-      (this.state.password.length > 6 && this.state.password.length > 0)) {
+    if (this.state.username.length > 0 &&
+        (this.state.email.length > 0 || !this.props.formOptions.emailShow) &&
+        (this.state.password.length > 6 && this.state.password.length > 0)) {
         var lengthCheck = "";
         var anyInvalid = false;
       } else if (this.state.password.length > 0 && 6 > this.state.password.length){
@@ -81,7 +83,7 @@ var LoginForm = React.createClass({
       <div className="sign-up-in">
         <ErrorHandler />
         <form>
-          <h4>{options.title}</h4>
+          <h5>{options.title}</h5>
           <p>
             <label>{options.usernameLabel}
             <input type="text"
@@ -109,7 +111,7 @@ var LoginForm = React.createClass({
                     onChange={this.handleInputChanges}/>
             </label>
           </p>
-          <div className="login-submits">
+          <div className="login-pair">
             <input type="submit"
                     value={options.buttonText}
                     name={options.buttonType}

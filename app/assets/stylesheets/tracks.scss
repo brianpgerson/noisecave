@@ -12,10 +12,20 @@
 
 .caption {
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.content-container {
+  width: 100%;
+  // padding: 50px;
 }
 
 .all-tracks {
-  margin-top: 50px;
+  max-width: 930px;
+  width: 90%;
+  margin: 50px auto;
 }
 
 .album-container {
@@ -24,4 +34,9 @@
   padding: 3px;
   border: 1px solid darkgrey;
   border-radius: 5px;
+}
+
+.track-index-item {
+  margin: 15px;
+  float: left;
 }

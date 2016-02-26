@@ -1,6 +1,10 @@
 var React = require('react');
+var PlayActions = require('../actions/playActions');
 
 var TrackIndexItem = React.createClass({
+  playCallback: function(trackUrl){
+    PlayActions.addToPlayStore(trackUrl);
+  },
   render: function(){
     if (this.props.track.image_url) {
       var source = this.props.track.image_url;
@@ -12,12 +16,17 @@ var TrackIndexItem = React.createClass({
       backgroundImage: 'url(' + source + ')'
     };
     return (
-      <div className="three columns">
+      <div className="track-index-item">
         <div className="album-container">
           <div className="album-cover" style={divStyle}>
           </div>
           <div>
-            <h5 className="caption">{this.props.track.title}</h5>
+            <p className="caption"
+              onClick={function(){
+                        this.playCallback(this.props.track.audio_url);
+                      }.bind(this)}>
+              {this.props.track.title}
+            </p>
           </div>
         </div>
       </div>

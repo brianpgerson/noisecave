@@ -10,6 +10,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       login(@user)
       # TODO figure out how to get the ID back from this!
+      debugger
       render json: @user
     else
       render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity

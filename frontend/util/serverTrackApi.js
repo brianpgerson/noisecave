@@ -1,14 +1,13 @@
-var TrackActions = require('../actions/trackActions');
 var ErrorActions = require('../actions/ErrorActions');
 
 var ServerTrackApi = {
-  fetchTracks: function(){
+  fetchTracks: function(callback){
     $.ajax({
       url: "api/tracks/",
       type: "GET",
       data: {},
       success: function(data){
-        TrackActions.receiveTracks(data);
+        callback(data);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -17,13 +16,13 @@ var ServerTrackApi = {
       }
     });
   },
-  fetchTrack: function(id){
+  fetchTrack: function(id, callback){
     $.ajax({
       url: "api/tracks/" + id,
       type: "GET",
       data: {},
       success: function(data){
-        TrackActions.receiveTracks(data);
+        callback(data);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -32,13 +31,13 @@ var ServerTrackApi = {
       }
     });
   },
-  createTrack: function(newTrack){
+  createTrack: function(newTrack, callback){
     $.ajax({
       url: "api/tracks/",
       type: "POST",
       data: newTrack,
       success: function(data){
-        TrackActions.receiveTrack(data);
+        callback(data);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -47,13 +46,13 @@ var ServerTrackApi = {
       }
     });
   },
-  deleteTrack: function(track){
+  deleteTrack: function(track, callback){
     $.ajax({
       url: "api/tracks/" + track.id,
       type: "DELETE",
       data: {},
       success: function(data){
-        TrackActions.removeTrack(data);
+        callback(data);
         ErrorActions.resetErrors();
       },
       error: function(response){
@@ -78,7 +77,6 @@ var ServerTrackApi = {
     var filetype = file.type;
     var filename = file.name;
     var xhr = new XMLHttpRequest();
-    console.log(publicUrl);
 
     xhr.open("PUT", presignedUrl, true);
     xhr.setRequestHeader("Content-Type", filetype);
@@ -88,7 +86,6 @@ var ServerTrackApi = {
        callback(publicUrl);
       }
     };
-
 
     xhr.send(file);
   }
