@@ -62,42 +62,38 @@ var ServerTrackApi = {
       }
     });
   },
-  createFormData: function(response){
-    var fd = new FormData();
-    var keys = Object.keys(response.params);
-    keys.forEach(function(key){ fd.append(key, response.params[key]); });
-    return fd;
-  },
-  sendToAmazon: function(formdata){
-    var xhr = new XMLHttpRequest();
-    xhr.open("PUT", "http://briansdopetracks.s3.amazonaws.com/");
-    xhr.setRequestHeader("Content-Type", "audio/mpeg");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        console.log("you've done it, you bastard.");
-      }
-    };
-    xhr.send(formdata);
-  },
-  getCredentials: function(file){
-    var filename = file.name;
+  fetchPresignedUrls: function(prefix, file, callback) {
     $.ajax({
-      url: "api/credentials",
       type: "GET",
-      data: {
-        filename: filename
-      },
-      success: function(response){
-        var fd = this.createFormData(response);
-        fd.append('file', file);
-        this.sendToAmazon(fd);
-      }.bind(this),
-      error: function(response){
-        console.log(response);
+      url: "api/presign",
+      data: {prefix: prefix, filename: file.name},
+      success: function(response) {
+        callback(response, file);
       }
     });
+  },
+  uploadTheFile: function(urls, file, callback){
+    var presignedUrl = urls['presigned_url'];
+    var publicUrl = urls['public_url'];
+    var filetype = file.type;
+    var filename = file.name;
+    var xhr = new XMLHttpRequest();
+    console.log(publicUrl);
+
+    xhr.open("PUT", presignedUrl, true);
+    xhr.setRequestHeader("Content-Type", filetype);
+
+    xhr.onreadystatechange = function () {
+     if (xhr.readyState === XMLHttpRequest.DONE) {
+       callback(publicUrl);
+      }
+    };
+
+
+    xhr.send(file);
   }
 };
+
 
 
 module.exports = ServerTrackApi;

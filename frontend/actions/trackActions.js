@@ -1,7 +1,8 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var TrackConstants = require('../constants/trackConstants');
 
-var AuthActions = {
+var TrackActions = {
+
   receiveTracks: function(trackParams){
     AppDispatcher.dispatch({
       actionType: TrackConstants.RECEIVE_TRACKS,
@@ -22,4 +23,4 @@ var AuthActions = {
   }
 };
 
-module.exports = AuthActions;
+module.exports = TrackActions;

@@ -15,7 +15,6 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    debugger
     @track = Track.new(track_params)
     if @track.save
       render json: @track
@@ -33,12 +32,6 @@ class Api::TracksController < ApplicationController
     end
   end
 
-  def credentials
-    filename = params[:filename]
-    config = { 'bucket' => 'briansdopetracks', 'region' => 'us-west-2', 'access_key' => "AKIAI7E32V4PNUZERBYA", 'secret_key' => "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" }
-    requestParams = s3_credentials(config, filename)
-    render json: requestParams
-  end
 
   def destroy
     @track = Track.find(params[:id])

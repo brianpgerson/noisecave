@@ -1,23 +1,52 @@
 var React = require('react');
 var ServerAuthApi = require('../util/serverAuthApi');
+var UploadActions = require('../actions/uploadActions');
+var TrackActions = require('../actions/trackActions');
 var ErrorHandler = require('./errorHandler');
 var ErrorActions = require('../actions/ErrorActions');
+var AudioUrlStore = require('../stores/audioUrlStore');
+var SessionStore = require('../stores/sessionStore');
+
+window.SessionStore = SessionStore;
 
 var TrackUpload = React.createClass({
   getInitialState: function(){
     return({
       title: "",
       description: "",
-      image_url: ""
+      image_url: "",
+      audio_url: ""
     });
+  },
+  componentWillMount: function() {
+    AudioUrlStore.addListener(this.PubURLReceived);
+  },
+  PubURLReceived: function(){
+    this.setState({audio_url: AudioUrlStore.returnUrl()});
   },
   handleInputChanges: function(e){
     e.preventDefault();
     this.setState({[e.target.name]: e.target.value});
   },
+  handleUpload: function(e){
+    e.preventDefault();
+    var file = $('#audioFile')[0].files[0];
+    UploadActions.initiateUpload("tracks/audio/", file);
+  },
   handleSubmits: function(e){
     e.preventDefault();
-    debugger;
+    TrackActions.receiveTrack({
+      track: {
+        title: this.state.title,
+        description: this.state.description,
+        image_url: this.state.image_url,
+        audio_url: this.state.audio_url,
+        creator_id: SessionStore.getUserId(),
+        archived: false
+      }
+    });
+    alert("thanks bitch!")
+
   },
   render: function(){
     return (
@@ -48,6 +77,7 @@ var TrackUpload = React.createClass({
                   accept="audio/*"
                   title=" "
                   id="audioFile"
+                  onChange={this.handleUpload}
                   className="custom-file-input"/>
           </label>
           <input type="submit"
