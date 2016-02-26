@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :tracks, only: [:create, :update, :index, :destroy, :show]
   end
   get 'api/session/auth', :to => 'api/sessions#authenticate'
-
+  # get 'api/credentials', :to => 'api/tracks#credentials'
+  get 'api/presigned_urls' :to => 'api/presigners#presign_upload'
 end

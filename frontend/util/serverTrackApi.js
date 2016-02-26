@@ -62,23 +62,42 @@ var ServerTrackApi = {
       }
     });
   },
-  testAmazon: function(cool){
-      $.ajax({
-      type: "PUT",
-      url: "https://s3-us-west-1.amazonaws.com/briansdopetracks/",
-      headers: {
-        'Content-Length': '2759522',
-        'Date': "Wed Feb 24 2016 18:39:02 GMT-0800 (PST)"
+  createFormData: function(response){
+    var fd = new FormData();
+    var keys = Object.keys(response.params);
+    keys.forEach(function(key){ fd.append(key, response.params[key]); });
+    return fd;
+  },
+  sendToAmazon: function(formdata){
+    var xhr = new XMLHttpRequest();
+    xhr.open("PUT", "http://briansdopetracks.s3.amazonaws.com/");
+    xhr.setRequestHeader("Content-Type", "audio/mpeg");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        console.log("you've done it, you bastard.");
+      }
+    };
+    xhr.send(formdata);
+  },
+  getCredentials: function(file){
+    var filename = file.name;
+    $.ajax({
+      url: "api/credentials",
+      type: "GET",
+      data: {
+        filename: filename
       },
-      data: cool,
       success: function(response){
-        debugger;
-      },
+        var fd = this.createFormData(response);
+        fd.append('file', file);
+        this.sendToAmazon(fd);
+      }.bind(this),
       error: function(response){
-        debugger;
+        console.log(response);
       }
     });
   }
 };
+
 
 module.exports = ServerTrackApi;

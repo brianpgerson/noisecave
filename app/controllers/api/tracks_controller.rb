@@ -1,4 +1,5 @@
 require 'byebug'
+require_relative '../../../lib/crypto'
 
 class Api::TracksController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
@@ -30,6 +31,13 @@ class Api::TracksController < ApplicationController
     else
       render json: {errors: @track.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  def credentials
+    filename = params[:filename]
+    config = { 'bucket' => 'briansdopetracks', 'region' => 'us-west-2', 'access_key' => "AKIAI7E32V4PNUZERBYA", 'secret_key' => "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" }
+    requestParams = s3_credentials(config, filename)
+    render json: requestParams
   end
 
   def destroy
