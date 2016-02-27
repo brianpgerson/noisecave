@@ -124,7 +124,7 @@ var LoginForm = React.createClass({
                     value="Cancel"
                     name="cancel"
                     onClick={this.handleCancel} />
-
+                  
         </form>
 
       </div>

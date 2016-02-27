@@ -1,9 +1,14 @@
 var React = require('react');
 var PlayActions = require('../actions/playActions');
+var PlayStore = require('../stores/playStore');
+window.PlayStore = PlayStore;
 
 var TrackIndexItem = React.createClass({
   playCallback: function(trackUrl){
     PlayActions.addToPlayStore(trackUrl);
+  },
+  addToQueue: function(trackUrl){
+    PlayActions.addToPlayStoreQueue(trackUrl);
   },
   render: function(){
     if (this.props.track.image_url) {
@@ -27,6 +32,11 @@ var TrackIndexItem = React.createClass({
                       }.bind(this)}>
               {this.props.track.title}
             </p>
+
+            <span onClick={function(){
+                      this.addToQueue(this.props.track.audio_url);
+                    }.bind(this)}>Add to Q</span>
+
           </div>
         </div>
       </div>
