@@ -15,9 +15,7 @@ function setQueueUrl(url){
 }
 
 function moveFromQueue(url){
-  _playQueue.filter(function(trackurl){
-    return trackurl !== url;
-  });
+  _playQueue.shift();
   _playingNow = url;
 }
 

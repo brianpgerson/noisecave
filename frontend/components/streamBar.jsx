@@ -37,7 +37,6 @@ var StreamBar = React.createClass({
     if (this.state.currentTrack !== null) {
       audio = <audio
                 onEnded={this.checkForNext}
-                controls
                 src={this.state.currentTrack}
                 autoPlay></audio>;
       this.audioPlayer = audio;
