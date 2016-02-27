@@ -40,17 +40,21 @@ var LoginForm = React.createClass({
             }
       };
 
-      debugger;
     //check email validity before sending server request.
     if (request === "signUpRequest" && !this.isGoodEmail(sessionParams.user.email)) {
       ErrorActions.sendError(["Please use a real email address!"]);
     } else if (this.props.loggedIn !== alreadyDoneThisAction) {
-      authActions[request](sessionParams);
+      AuthActions[request](sessionParams);
     }
   },
 
   isGoodEmail: function(email){
     return /(\@)(.+)(\.)/.test(email);
+  },
+
+  handleCancel: function(e){
+    e.preventDefault();
+    this.props.closeModalCallback();
   },
 
   handleInputChanges: function(e){
@@ -111,7 +115,6 @@ var LoginForm = React.createClass({
                     onChange={this.handleInputChanges}/>
             </label>
           </p>
-          <div className="login-pair">
             <input type="submit"
                     value={options.buttonText}
                     name={options.buttonType}
@@ -119,9 +122,8 @@ var LoginForm = React.createClass({
                     onClick={this.handleSubmits} />
             <input type="submit"
                     value="Cancel"
-                    name="out"
-                    onClick={this.handleSubmits} />
-          </div>
+                    name="cancel"
+                    onClick={this.handleCancel} />
 
         </form>
 

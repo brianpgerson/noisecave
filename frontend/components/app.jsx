@@ -19,6 +19,9 @@ var App = React.createClass({
       modalType: null
     });
   },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   componentWillMount: function(){
     this.sessionListenerToken = SessionStore.addListener(this._onSessionChange);
     this.playListenerToken = PlayStore.addListener(this._onPlayChange);
@@ -41,23 +44,19 @@ var App = React.createClass({
   modalCloseCallback: function(){
     this.setState({showModals: false, modalType: null});
   },
-  funCallback: function(track){
-    alert(track);
+  discoverClickCallback: function(){
+    this.context.router.push('/discover');
   },
   render: function () {
     window.ServerTrackApi = ServerTrackApi;
     window.TrackStore = TrackStore;
 
-    var childrenWithProps =
-      React.Children.map(this.props.children, function(child){
-    	  return React.cloneElement(child, { funCallback: this.funCallback });
-      }.bind(this));
-
     return (
       <div>
         <NavBar
           loginCallback={this.modalOpenCallback}
-          loggedIn={this.state.loggedIn} />
+          loggedIn={this.state.loggedIn}
+          discoverCallback={this.discoverClickCallback}/>
         <StreamBar
           display={this.state.showStreamBar} />
         <Modal
@@ -65,7 +64,7 @@ var App = React.createClass({
           display={this.state.showModals}
           modalType={this.state.modalType}
           loggedIn={this.state.loggedIn}/>
-        {childrenWithProps}
+        {this.props.children}
 
       </div>
     );

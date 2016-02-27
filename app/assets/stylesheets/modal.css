@@ -54,11 +54,6 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.login-pair {
-  width: 284px;
-  margin: 0 auto;
-}
-
 .modal-box h5 {
   text-align: center;
   padding-top: 10px
@@ -71,6 +66,7 @@
   color: lightgrey;
   border-color: #888;
   outline: 0;
+  float: right;
 }
 
 input[type=submit]:disabled {

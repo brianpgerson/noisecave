@@ -31,10 +31,9 @@ var TracksIndex = React.createClass({
         return (
           <TrackIndexItem
             key={idx}
-            track={track}
-            playCallback={this.props.funCallback}/>
+            track={track}/>
         );
-      }.bind(this));
+      });
     } else {
       tracks = "HI!";
     }

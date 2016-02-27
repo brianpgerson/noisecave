@@ -34,13 +34,17 @@ var NavBar = React.createClass({
       ];
     }
   },
+  handleDiscoverClick: function(){
+    this.props.discoverCallback();
+  },
   render: function(){
     var Upload = this.uploadAndProfileText()[0];
     var Profile = this.uploadAndProfileText()[1];
     return (
       <nav className="navbar">
           <ul className="group">
-            <li className="left"><span>Discover</span></li>
+            <li onClick={this.handleDiscoverClick}
+              className="left"><span>Discover</span></li>
             <li className="left"><span>Playlists</span></li>
             <li id="search-li">
                 <input type="text" id="search-box" placeholder="Search songs, playlists, users..."/>
