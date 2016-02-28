@@ -26,10 +26,6 @@ var LoginForm = React.createClass({
         request = "loginRequest";
         alreadyDoneThisAction = true;
         break;
-      case "out":
-        request = "logoutRequest";
-        alreadyDoneThisAction = false;
-        break;
     }
 
     var sessionParams =
@@ -124,7 +120,7 @@ var LoginForm = React.createClass({
                     value="Cancel"
                     name="cancel"
                     onClick={this.handleCancel} />
-                  
+
         </form>
 
       </div>

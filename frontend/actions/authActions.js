@@ -30,7 +30,7 @@ var AuthActions = {
     ServerAuthApi.loginRequest(sessionParams, AuthActions.login);
   },
   logoutRequest: function(sessionParams){
-    ServerAuthApi.logoutRequest(sessionParams, AuthActions.logoutRequest);
+    ServerAuthApi.logoutRequest(sessionParams, AuthActions.logout);
   },
   signUpRequest: function(sessionParams){
     ServerAuthApi.signUpRequest(sessionParams, AuthActions.loginRequest);

@@ -47,6 +47,16 @@
   width: 300px;
 }
 
+.profile-dropdown {
+  position: absolute;
+  background: lightgrey;
+  width: 100px;
+  border: 1px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  top: 50px;
+}
+
 .navbar ul {
   margin: 0 auto;
   position: relative;

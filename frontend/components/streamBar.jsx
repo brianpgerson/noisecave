@@ -6,17 +6,32 @@ var StreamBar = React.createClass({
   getInitialState: function(){
     return ({
       currentTrack: null,
-      playlist: []
+      playlist: [],
+      repeat: false
     });
   },
   componentWillMount: function() {
-    PlayStore.addListener(this._addToPlaylist);
+    PlayStore.addListener(this._dealWithNewTrack);
   },
-  _addToPlaylist: function(){
-    this.setState({playlist: PlayStore.returnPlayListQueue()});
-  },
-  componentWillReceiveProps: function(nextProps) {
-    this.setState({currentTrack: PlayStore.returnPlayingNow()});
+  _dealWithNewTrack: function(){
+    if (
+        PlayStore.returnOverride() &&
+        PlayStore.returnPlayingNow() === this.state.currentTrack
+      ) {
+        this.setState({
+          currentTrack: PlayStore.returnPlayingNow(),
+          repeat: true});
+      } else if (PlayStore.returnOverride()) {
+      this.setState({
+        currentTrack: PlayStore.returnPlayingNow(),
+        repeat: false
+      });
+    } else {
+      this.setState({
+        playlist: PlayStore.returnPlayListQueue(),
+        repeat: false
+      });
+    }
   },
   checkForNext: function(){
     if (this.state.playlist.length > 0) {
@@ -26,7 +41,6 @@ var StreamBar = React.createClass({
   },
   stopPlay: function(){
     document.getElementsByTagName('audio')[0].pause();
-    debugger;
   },
   startPlay: function(){
     document.getElementsByTagName('audio')[0].play();
@@ -38,6 +52,8 @@ var StreamBar = React.createClass({
       audio = <audio
                 onEnded={this.checkForNext}
                 src={this.state.currentTrack}
+                controls
+                repeat={this.state.repeat}
                 autoPlay></audio>;
       this.audioPlayer = audio;
     } else {

@@ -7,7 +7,9 @@ var _sessionState = {
   authRequestInProgress: false,
   sessionToken: null,
   username: null,
-  userId: null
+  userId: null,
+  userDescription: null,
+  userImage: null
 };
 
 var SessionStore = new Store(AppDispatcher);
@@ -16,6 +18,8 @@ function setSessionState(sessionParams){
   _sessionState['sessionToken'] = sessionParams['session_token'];
   _sessionState['username'] = sessionParams['username'];
   _sessionState['userId'] = sessionParams['id'];
+  _sessionState['userDescription'] = sessionParams['id'];
+  _sessionState['userImage'] = sessionParams['id'];
 }
 
 SessionStore.__onDispatch = function(payload) {
@@ -33,6 +37,15 @@ SessionStore.__onDispatch = function(payload) {
     this.__emitChange();
     break;
   }
+};
+
+SessionStore.returnUser = function() {
+  return {
+    username: _sessionState.username,
+    userId: _sessionState.userId,
+    userDescription: _sessionState.userDescription,
+    userImage: _sessionState.userImage
+  };
 };
 
 SessionStore.getUsername = function() {

@@ -1,10 +1,21 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var LoginForm = require('./loginForm');
-
+var UserInfo = require('./userInfo');
 
 
 var NavBar = React.createClass({
+  getInitialState: function(){
+    return ({
+      showUserInfo: false
+    });
+  },
+  openProfile: function(){
+    this.setState({showUserInfo: true});
+  },
+  closeProfile: function(){
+    this.setState({showUserInfo: false});
+  },
   uploadAndProfileText: function(){
     if (this.props.loggedIn === true) {
       return [
@@ -13,10 +24,12 @@ var NavBar = React.createClass({
         }.bind(this)} className="right">
           <span>Upload</span>
         </li>,
-        <li onClick={function(){
-          this.props.loginCallback('profile');
-        }.bind(this)} className="right">
+        <li onClick={this.openProfile} className="right">
           <span>Profile</span>
+          <UserInfo
+            currentUser={this.props.currentUser}
+            closeMenuCallback={this.closeProfile}
+            display={this.state.showUserInfo} />
         </li>
       ];
     } else {

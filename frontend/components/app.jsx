@@ -16,7 +16,8 @@ var App = React.createClass({
       loggedIn: null,
       showModals: false,
       showStreamBar: false,
-      modalType: null
+      modalType: null,
+      currentUser: null
     });
   },
   contextTypes: {
@@ -36,7 +37,8 @@ var App = React.createClass({
   },
   _onSessionChange: function(){
     var loggedInStatus = SessionStore.isLoggedIn();
-    this.setState({loggedIn: loggedInStatus});
+    var currentUser = SessionStore.returnUser();
+    this.setState({loggedIn: loggedInStatus, currentUser: currentUser});
   },
   modalOpenCallback: function(what){
     this.setState({showModals: true, modalType: what});
@@ -54,6 +56,7 @@ var App = React.createClass({
     return (
       <div>
         <NavBar
+          currentUser={this.state.currentUser}
           loginCallback={this.modalOpenCallback}
           loggedIn={this.state.loggedIn}
           discoverCallback={this.discoverClickCallback}/>

@@ -1,22 +1,28 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var Store = require('flux/utils').Store;
 
-var _playingNow;
-var _playQueue = [];
+var _playStore = {
+  playingNow: null,
+  playQueue: [],
+  override: null
+};
 
 var PlayStore = new Store(AppDispatcher);
 
 function setPlayNowUrl(url){
-  _playingNow = url;
+  _playStore.playingNow = url;
+  _playStore.override = true;
 }
 
 function setQueueUrl(url){
-  _playQueue.push(url);
+  _playStore.playQueue.push(url);
+  _playStore.override = false;
 }
 
 function moveFromQueue(url){
-  _playQueue.shift();
-  _playingNow = url;
+  _playStore.playQueue.shift();
+  _playStore.playingNow = url;
+  _playStore.override = true;
 }
 
 PlayStore.__onDispatch = function(payload) {
@@ -37,11 +43,15 @@ PlayStore.__onDispatch = function(payload) {
 };
 
 PlayStore.returnPlayingNow = function(){
-  return _playingNow;
+  return _playStore.playingNow;
+};
+
+PlayStore.returnOverride = function(){
+  return _playStore.override;
 };
 
 PlayStore.returnPlayListQueue = function(){
-  return _playQueue;
+  return _playStore.playQueue;
 };
 
 module.exports = PlayStore;
