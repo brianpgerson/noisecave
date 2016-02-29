@@ -7,7 +7,14 @@ var UploadActions = {
   },
 
   handleReceivedUrls: function(urls, file) {
-    ServerTrackApi.uploadTheFile(urls, file, UploadActions.handlePublicUrl);
+    ServerTrackApi.uploadTheFile(urls, file, UploadActions.handlePublicUrl, UploadActions.handleProgress);
+  },
+
+  handleProgress: function(percent){
+    AppDispatcher.dispatch({
+      actionType: "PERCENT_COMPLETED",
+      percent: percent
+    });
   },
   handlePublicUrl: function(url){
     AppDispatcher.dispatch({

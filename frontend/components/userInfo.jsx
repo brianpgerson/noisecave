@@ -12,28 +12,22 @@ var UserInfo = React.createClass({
         .addEventListener('click', function(e){
           e.stopPropagation();
       });
+      document.getElementById('logout').addEventListener('click', function(e){
+        this.handleLogout();
+      }.bind(this));
     }
   },
   handleLogout: function(){
     AuthActions.logoutRequest();
   },
   render: function(){
-    if (this.props.display) {
-      var classname = "profile-dropdown";
-      var profile = (
-        <ul>
-          // TODO finish this
-          <li>Hi there, {this.props.currentUser.username}</li>
-          <li onClick={this.handleLogout}>Log Out!</li>
-        </ul>
-      );
-    } else {
-      classname = "profile-dropdown hidden";
-      profile = <div></div>;
-    }
+    var classname = this.props.display ? "profile-dropdown" : "profile-dropdown hidden";
     return (
      <div className={classname}>
-       {profile}
+       <ul>
+         <li>Hi there, {this.props.currentUser.username}</li>
+         <li id="logout">Log Out!</li>
+       </ul>
      </div>
     );
   }

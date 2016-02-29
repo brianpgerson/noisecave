@@ -11,18 +11,20 @@ var TrackUpload = React.createClass({
     return({
       title: "",
       description: "",
-      image_url: "",
-      audio_url: ""
+      image_url: "http://res.cloudinary.com/thadowg/image/upload/v1456691500/qupu3aoeebrbx38b4ffp.jpg",
+      audio_url: "",
+      percentComplete: 0
     });
   },
   componentWillMount: function() {
-    this.audioStoreListener = AudioUrlStore.addListener(this.PubURLReceived);
+    this.audioStoreListener = AudioUrlStore.addListener(this.handleAudioUpload);
   },
   componentWillUnmount: function() {
     this.audioStoreListener.remove();
   },
-  PubURLReceived: function(){
-    this.setState({audio_url: AudioUrlStore.returnUrl()});
+  handleAudioUpload: function(){
+    this.setState({audio_url: AudioUrlStore.returnUrl(),
+                    percentComplete: AudioUrlStore.returnPercent()});
   },
   handleInputChanges: function(e){
     e.preventDefault();
@@ -46,9 +48,48 @@ var TrackUpload = React.createClass({
       }
     });
     alert("thanks bitch!");
-
   },
+  uploadImage: function(e){
+    e.preventDefault();
+    cloudinary.openUploadWidget({
+      cloud_name: 'thadowg',
+      upload_preset: 'funupload'
+    }, function(error, result){
+      if (error) {
+        alert("error!");
+      } else {
+        this.setState({
+          image_url: result[0].url,
+          thumbnail_url: result[0].thumbnail_url
+        });
+      }
+    }.bind(this));
+  },
+  handlePercentage: function(){
+    var percent = (this.state.percentComplete * 100);
+    console.log(percent);
+    var coolButtonStyle = {
+      background: "#2989d8",
+      background: '-moz-linear-gradient(left,  #2989d8 0%, #2989d8 ' + percent + '%, #F5F5F5 ' + percent + '%, #F5F5F5 ' + percent + '%)',
+      background: 'linear-gradient(to right,  #2989d8 0%,#2989d8 ' + percent + '%,#F5F5F5 ' + percent + '%,#F5F5F5 ' + percent + '%)',
+      filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#F5F5F5', endColorstr='#F5F5F5',GradientType=1)"
+    }
+    return coolButtonStyle;
+  },
+  areAnyInvalid: function(){
+    if (this.state.audio_url !== undefined && this.state.percentComplete > 0.99 &&
+        this.state.title.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+
   render: function(){
+    var thumbStyle = {backgroundImage: 'url(' + this.state.image_url + ')',
+                      backgroundSize: 'contain'};
+    var buttonStyle = this.handlePercentage();
+    var anyInvalid = this.areAnyInvalid();
     return (
       <div className="track-upload">
         <h5>Upload a Track</h5>
@@ -72,12 +113,10 @@ var TrackUpload = React.createClass({
           </div>
           <div className="file-section">
             <label>Upload Files: </label>
-            <input type="file"
-                    accept="image/*"
-                    name="imageFile"
-                    id="imageFile"
-                    className="input-file"/>
-                  <label htmlFor="imageFile">Add an Image</label>
+              <div className="image-thumbnail" style={thumbStyle}>
+              </div>
+            <button className="upload-buttons"
+                    onClick={this.uploadImage}>Add Image</button>
             <br />
             <input type="file"
                     accept="audio/*"
@@ -85,12 +124,15 @@ var TrackUpload = React.createClass({
                     id="audioFile"
                     onChange={this.handleUpload}
                     className="input-file"/>
-            <label htmlFor="audioFile">Add an MP3</label>
+                  <label style={buttonStyle}
+                          className="upload-buttons"
+                          htmlFor="audioFile">Add an MP3</label>
           </div>
 
           <input type="submit"
                   value="Save"
                   id="upload"
+                  disabled={anyInvalid}
                   onClick={this.handleSubmits} />
         </form>
       </div>

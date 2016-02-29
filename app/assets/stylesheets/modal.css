@@ -101,6 +101,8 @@ input[type=submit]:hover:disabled {
 
 .track-upload .upload-text {
   width: 280px;
+  max-width: 300px;
+  max-height: 152px;
 }
 
 .track-upload span {
@@ -124,9 +126,22 @@ input[type=submit]:hover:disabled {
   float: right;
 }
 
-.modal-box .input-file + label {
+.modal-box .upload-buttons {
   background-color: whitesmoke;
+  color: #222;
   margin: 10px 15px;
+}
+
+.modal-box .upload-buttons:hover {
+  color: black;
+}
+
+.image-thumbnail {
+  width: 150px;
+  height: 127.5px;
+  float: right;
+  border-radius: 5px;
+  border: 1px solid #888;
 }
 
 .shown {

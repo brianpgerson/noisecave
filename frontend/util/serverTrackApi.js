@@ -71,7 +71,7 @@ var ServerTrackApi = {
       }
     });
   },
-  uploadTheFile: function(urls, file, callback){
+  uploadTheFile: function(urls, file, callback, progressCallback){
     var presignedUrl = urls['presigned_url'];
     var publicUrl = urls['public_url'];
     var filetype = file.type;
@@ -80,6 +80,16 @@ var ServerTrackApi = {
 
     xhr.open("PUT", presignedUrl, true);
     xhr.setRequestHeader("Content-Type", filetype);
+
+
+    xhr.upload.onprogress = function(oEvent) {
+      if (oEvent.lengthComputable) {
+        var percentComplete = oEvent.loaded / oEvent.total;
+        progressCallback(percentComplete);
+      } else {
+        console.log('didnt work for some reason');
+      }
+    };
 
     xhr.onreadystatechange = function () {
      if (xhr.readyState === XMLHttpRequest.DONE) {
