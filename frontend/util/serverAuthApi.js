@@ -53,7 +53,8 @@ var ServerAuthApi = {
       type: "POST",
       data: data,
       success: function(response){
-        callback(response);
+        var newParams = {user: response};
+        callback(newParams);
         ErrorActions.resetErrors();
       },
       error: function(response){
