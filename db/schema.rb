@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160224181246) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "tracks", force: :cascade do |t|
     t.string   "title",                       null: false
     t.string   "slug",                        null: false
@@ -25,9 +28,9 @@ ActiveRecord::Schema.define(version: 20160224181246) do
     t.boolean  "archived",    default: false
   end
 
-  add_index "tracks", ["audio_url"], name: "index_tracks_on_audio_url"
-  add_index "tracks", ["creator_id"], name: "index_tracks_on_creator_id"
-  add_index "tracks", ["slug"], name: "index_tracks_on_slug"
+  add_index "tracks", ["audio_url"], name: "index_tracks_on_audio_url", using: :btree
+  add_index "tracks", ["creator_id"], name: "index_tracks_on_creator_id", using: :btree
+  add_index "tracks", ["slug"], name: "index_tracks_on_slug", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -41,9 +44,9 @@ ActiveRecord::Schema.define(version: 20160224181246) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["session_token"], name: "index_users_on_session_token"
-  add_index "users", ["slug"], name: "index_users_on_slug"
-  add_index "users", ["username"], name: "index_users_on_username"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
