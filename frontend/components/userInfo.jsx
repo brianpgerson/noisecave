@@ -8,7 +8,7 @@ var UserInfo = React.createClass({
         .addEventListener('click', function(e){
           this.props.closeMenuCallback();
       }.bind(this));
-      document.getElementsByClassName('profile-dropdown')[0]
+      document.getElementById('profile-dropdown')
         .addEventListener('click', function(e){
           e.stopPropagation();
       });
@@ -21,11 +21,22 @@ var UserInfo = React.createClass({
     AuthActions.logoutRequest();
   },
   render: function(){
-    var classname = this.props.display ? "profile-dropdown" : "profile-dropdown hidden";
+    var classname = this.props.display ? "shown" : "hidden";
     return (
      <div className={classname}>
-       <ul>
-         <li>Hi there, {this.props.currentUser.username}</li>
+       <ul id={"profile-dropdown"}>
+         <li><div id="tiny-pic"
+                  style={{
+                    background: 'url('+ this.props.currentUser.userImage + ')',
+                    backgroundSize: 'contain'
+                  }}>
+
+         </div>{this.props.currentUser.username}</li>
+         <hr />
+         <li>Edit Profile</li>
+         <hr />
+         <li>Your Tracks</li>
+         <hr />
          <li id="logout">Log Out!</li>
        </ul>
      </div>

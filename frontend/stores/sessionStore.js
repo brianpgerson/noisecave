@@ -19,7 +19,7 @@ function setSessionState(sessionParams){
   _sessionState['username'] = sessionParams['username'];
   _sessionState['userId'] = sessionParams['id'];
   _sessionState['userDescription'] = sessionParams['id'];
-  _sessionState['userImage'] = sessionParams['id'];
+  _sessionState['userImage'] = sessionParams['image'];
 }
 
 SessionStore.__onDispatch = function(payload) {

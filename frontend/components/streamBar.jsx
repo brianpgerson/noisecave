@@ -43,6 +43,8 @@ var StreamBar = React.createClass({
     if (this.state.playlist.length > 0) {
       var nextTrack = this.state.playlist.shift();
       PlayActions.addFromQueue(nextTrack);
+    } else {
+      this.setState({isPlaying: false});
     }
   },
   stopPlay: function(){
