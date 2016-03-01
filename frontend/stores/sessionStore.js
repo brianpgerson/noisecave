@@ -1,3 +1,4 @@
+
 var AppDispatcher = require('../dispatcher/dispatcher');
 var Store = require('flux/utils').Store;
 var authConstants = require('../constants/authConstants');
@@ -18,8 +19,9 @@ function setSessionState(sessionParams){
   _sessionState['sessionToken'] = sessionParams['session_token'];
   _sessionState['username'] = sessionParams['username'];
   _sessionState['userId'] = sessionParams['id'];
-  _sessionState['userDescription'] = sessionParams['id'];
+  _sessionState['userDescription'] = sessionParams['description'];
   _sessionState['userImage'] = sessionParams['image'];
+  _sessionState['userEmail'] = sessionParams['email'];
 }
 
 SessionStore.__onDispatch = function(payload) {
@@ -36,6 +38,10 @@ SessionStore.__onDispatch = function(payload) {
     setSessionState(payload.sessionParams);
     this.__emitChange();
     break;
+  case authConstants.UPDATE_SESSION:
+    setSessionState(payload.sessionParams);
+    this.__emitChange();
+    break;
   }
 };
 
@@ -44,7 +50,8 @@ SessionStore.returnUser = function() {
     username: _sessionState.username,
     userId: _sessionState.userId,
     userDescription: _sessionState.userDescription,
-    userImage: _sessionState.userImage
+    userImage: _sessionState.userImage,
+    userEmail: _sessionState.userEmail
   };
 };
 

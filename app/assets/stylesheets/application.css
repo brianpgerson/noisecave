@@ -8,3 +8,8 @@
   display: table;
   clear: both;
  }
+
+body {
+  background-color: gray;
+  height: 100%;
+}

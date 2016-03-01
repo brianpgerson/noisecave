@@ -22,7 +22,18 @@ var AuthActions = {
       sessionParams: sessionParams
     });
   },
+  updateUser: function(sessionParams){
+    AppDispatcher.dispatch({
+      actionType: AuthConstants.UPDATE_SESSION,
+      sessionParams: sessionParams
+    });
+  },
+
   // outbound
+
+  updateUserInfoRequest: function(newUserParams, id){
+    ServerAuthApi.updateUserInfoRequest(newUserParams, AuthActions.updateUser, id);
+  },
   loginCheckRequest: function(){
     ServerAuthApi.loginCheckRequest(AuthActions.checkLogin);
   },
@@ -32,8 +43,9 @@ var AuthActions = {
   logoutRequest: function(sessionParams){
     ServerAuthApi.logoutRequest(sessionParams, AuthActions.logout);
   },
-  signUpRequest: function(sessionParams){
-    ServerAuthApi.signUpRequest(sessionParams, AuthActions.loginRequest);
+  signUpRequest: function(userParams){
+    var sessionParams = userParams;
+    ServerAuthApi.signUpRequest(userParams, AuthActions.loginRequest, sessionParams);
   }
 };
 

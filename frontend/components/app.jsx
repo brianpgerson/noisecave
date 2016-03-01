@@ -59,7 +59,7 @@ var App = React.createClass({
       <div>
         <NavBar
           currentUser={this.state.currentUser}
-          loginCallback={this.modalOpenCallback}
+          modalCallback={this.modalOpenCallback}
           loggedIn={this.state.loggedIn}
           discoverCallback={this.discoverClickCallback}/>
         <StreamBar

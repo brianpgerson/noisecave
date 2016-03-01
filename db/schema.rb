@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224181246) do
+ActiveRecord::Schema.define(version: 20160301190744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,15 +33,15 @@ ActiveRecord::Schema.define(version: 20160224181246) do
   add_index "tracks", ["slug"], name: "index_tracks_on_slug", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "slug",            null: false
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
+    t.string   "username",                                                                                                                           null: false
+    t.string   "slug",                                                                                                                               null: false
+    t.string   "email",                                                                                                                              null: false
+    t.string   "password_digest",                                                                                                                    null: false
     t.text     "description"
-    t.text     "image"
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "image",           default: "http://res.cloudinary.com/thadowg/image/upload/c_fill,h_303,w_303/v1456691068/fneickfs0vgwtxmansd4.jpg"
+    t.string   "session_token",                                                                                                                      null: false
+    t.datetime "created_at",                                                                                                                         null: false
+    t.datetime "updated_at",                                                                                                                         null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

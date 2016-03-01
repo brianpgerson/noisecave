@@ -67,12 +67,15 @@
 
 .caption {
   text-align: center;
+  font-size: 12px;
   margin-top: 5px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
   top: 15px;
+  width: 194px;
   position: relative;
+  color: black;
 }
 
 .content-container {
@@ -91,6 +94,10 @@
   padding: 3px;
   border: 1px solid darkgrey;
   border-radius: 5px;
+  background-color: #DDD;
+  -webkit-box-shadow: 0 0 8px 5px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 0 8px 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 8px 5px rgba(0,0,0,0.15);;
 }
 
 .track-index-item {

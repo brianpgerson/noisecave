@@ -1,7 +1,7 @@
 var React = require('react');
 var ErrorHandler = require('./errorHandler');
 var ErrorActions = require('../actions/ErrorActions');
-
+var AuthActions = require('../actions/authActions')
 var LoginForm = React.createClass({
 
   getInitialState: function(){

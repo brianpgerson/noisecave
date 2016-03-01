@@ -1,6 +1,7 @@
 var React = require('react');
 var LoginForm = require('../components/loginForm');
 var TrackUpload = require('../components/trackUpload');
+var EditForm = require('../components/editForm');
 
 var Modal = React.createClass({
   formProps: function(type){
@@ -28,6 +29,11 @@ var Modal = React.createClass({
         };
         break;
       case "upload":
+        formProps = {
+          title: "Upload a Track"
+        };
+        break;
+      case "profileEdit":
         formProps = {
           height: 450,
           width: 450,
@@ -60,10 +66,10 @@ var Modal = React.createClass({
             formOptions={this.formProps("upload")}
             closeModalCallback={this.props.modalCloseCallback}/>;
           break;
-      case "profile":
+      case "profileEdit":
           theModal =
-          <LoginForm
-            formOptions={this.formProps("login")}
+          <EditForm
+            formOptions={this.formProps("profileEdit")}
             closeModalCallback={this.props.modalCloseCallback}
             loggedIn={this.props.loggedIn} />;
           break;
@@ -73,12 +79,21 @@ var Modal = React.createClass({
   render: function(){
     var bool = this.props.display ? "shown" : "hidden";
     var theModal = this.whatToDisplay();
-    var uploadStyle = {width: '650px',  height: '350px', transform: 'translateX(-345px)'};
-    var loginStyle = {width: '360px', height: '360px'};
+    var modalSizing;
+    if (this.props.modalType === "upload") {
+      modalSizing =
+        {width: '650px',  height: '350px', transform: 'translateX(-345px)'};
+    } else if (this.props.modalType === "login") {
+      modalSizing = {width: '360px', height: '360px'};
+    } else {
+      modalSizing =
+        {width: '650px', height: '450px', transform: 'translateX(-345px)'};
+    }
+
      return (
       <div className={bool}>
         <div className="modal-box"
-          style={this.props.modalType === "upload" ? uploadStyle : loginStyle }>
+          style={modalSizing}>
           {theModal}
         </div>
         <div

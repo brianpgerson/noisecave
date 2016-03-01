@@ -44,17 +44,30 @@ var ServerAuthApi = {
         var error = JSON.parse(response.responseText).errors;
         ErrorActions.sendError(error);
       }
-    }
-    );
+    });
   },
-  signUpRequest: function(data, callback){
+  signUpRequest: function(userData, callback, sessionData){
     $.ajax({
       url: "/api/users",
       type: "POST",
-      data: data,
+      data: userData,
       success: function(response){
-        var newParams = {user: response};
-        callback(newParams);
+        callback(sessionData);
+        ErrorActions.resetErrors();
+      },
+      error: function(response){
+        var error = JSON.parse(response.responseText).errors;
+        ErrorActions.sendError(error);
+      }
+    });
+  },
+  updateUserInfoRequest: function(newUserData, callback, id){
+    $.ajax({
+      url: "/api/users/" + id,
+      type: "PATCH",
+      data: newUserData,
+      success: function(response){
+        callback(response);
         ErrorActions.resetErrors();
       },
       error: function(response){

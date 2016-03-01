@@ -153,3 +153,30 @@ input[type=submit]:hover:disabled {
 .hidden {
   display: none;
 }
+
+/*EDIT PROFILE STUFF*/
+
+.edit-profile .helper-text {
+  position: relative;
+  right: 0;
+  top: 0;
+  padding-bottom: 20px;
+}
+
+.edit-profile .upload-buttons {
+  margin: 31px 15px;
+}
+
+.edit-profile .image-thumbnail {
+  margin-top: 30px;
+}
+
+.edit-profile input[type=submit] {
+  margin: 45px 15px;
+}
+
+.edit-profile .login-text-input {
+  width: 280px;
+  max-width: 280px;
+  max-height: 145px;
+}

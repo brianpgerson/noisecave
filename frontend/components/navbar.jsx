@@ -20,13 +20,14 @@ var NavBar = React.createClass({
     if (this.props.loggedIn === true) {
       return [
         <li onClick={function(){
-          this.props.loginCallback('upload');
+          this.props.modalCallback('upload');
         }.bind(this)} className="right">
           <span>Upload</span>
         </li>,
         <li onClick={this.openProfile} className="right">
           <span>Profile</span>
           <UserInfo
+            handleProfileEdit={this.props.modalCallback}
             currentUser={this.props.currentUser}
             closeMenuCallback={this.closeProfile}
             display={this.state.showUserInfo} />
@@ -35,12 +36,12 @@ var NavBar = React.createClass({
     } else {
       return [
         <li onClick={function(){
-          this.props.loginCallback('login');
+          this.props.modalCallback('login');
         }.bind(this)} className="right">
           <span>Login</span>
         </li>,
         <li onClick={function(){
-          this.props.loginCallback('signup');
+          this.props.modalCallback('signup');
         }.bind(this)} className="right">
           <span>Signup</span>
         </li>

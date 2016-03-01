@@ -79,11 +79,13 @@
   position: relative;
   top: -5px;
   border-radius: 3px;
+  background-size: contain !important;
 }
 
 #profile-dropdown span {
-  line-height: 18px;
+  position: relative;
   border: none;
+  margin-left: 20px;
 }
 
 #profile-dropdown hr {
