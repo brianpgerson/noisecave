@@ -1,6 +1,5 @@
 require "aws-sdk"
 require "singleton"
-
 class UploadPresigner
 
   include Singleton
