@@ -19,7 +19,8 @@
 node_modules
 bundle.js
 randomstuff.js
-randomTracks.rb
+randomtracks.rb
+
 
 # Ignore application configuration
 /config/application.yml
