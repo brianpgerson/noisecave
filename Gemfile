@@ -28,8 +28,7 @@ gem 'jwt'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
-gem 'rails_serve_static_assets' 
-gem 'rails_stdout_logging'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
