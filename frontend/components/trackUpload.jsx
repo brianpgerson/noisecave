@@ -6,14 +6,22 @@ var SessionStore = require('../stores/sessionStore');
 
 window.SessionStore = SessionStore;
 
+DEFAULT_IMAGES = [
+  "http://res.cloudinary.com/thadowg/image/upload/c_fit,h_405,w_405/v1456774334/Screen_Shot_2016-02-29_at_11.27.57_AM_tlb8ga.png",
+  "http://res.cloudinary.com/thadowg/image/upload/v1456774334/Screen_Shot_2016-02-29_at_11.29.32_AM_hyce4y.png",
+  "http://res.cloudinary.com/thadowg/image/upload/v1456774335/Screen_Shot_2016-02-29_at_11.31.38_AM_ru6mfi.png"
+]
+
 var TrackUpload = React.createClass({
   getInitialState: function(){
     return({
       title: "",
       description: "",
-      image_url: "http://res.cloudinary.com/thadowg/image/upload/v1456691500/qupu3aoeebrbx38b4ffp.jpg",
-      audio_url: "",
-      percentComplete: 0
+      imageUrl: DEFAULT_IMAGES[Math.floor(Math.random() * 3)],
+      audioUrl: "",
+      percentComplete: 0,
+      newImage: false,
+      thumbUrl: "http://res.cloudinary.com/thadowg/image/upload/v1456774819/default_album_300_g4_ufur3z.png"
     });
   },
   componentWillMount: function() {
@@ -23,7 +31,7 @@ var TrackUpload = React.createClass({
     this.audioStoreListener.remove();
   },
   handleAudioUpload: function(){
-    this.setState({audio_url: AudioUrlStore.returnUrl(),
+    this.setState({audioUrl: AudioUrlStore.returnUrl(),
                     percentComplete: AudioUrlStore.returnPercent()});
   },
   handleInputChanges: function(e){
@@ -41,8 +49,8 @@ var TrackUpload = React.createClass({
       track: {
         title: this.state.title,
         description: this.state.description,
-        image_url: this.state.image_url,
-        audio_url: this.state.audio_url,
+        image_url: this.state.imageUrl,
+        audio_url: this.state.audioUrl,
         creator_id: SessionStore.getUserId(),
         archived: false
       }
@@ -53,14 +61,16 @@ var TrackUpload = React.createClass({
     e.preventDefault();
     cloudinary.openUploadWidget({
       cloud_name: 'thadowg',
-      upload_preset: 'funupload'
+      upload_preset: 'funupload',
+      theme: 'minimal'
     }, function(error, result){
       if (error) {
         alert("error!");
       } else {
         this.setState({
-          image_url: result[0].url,
-          thumbnail_url: result[0].thumbnail_url
+          imageUrl: result[0].url,
+          thumbUrl: result[0].url,
+          newImage: true
         });
       }
     }.bind(this));
@@ -77,18 +87,18 @@ var TrackUpload = React.createClass({
     return coolButtonStyle;
   },
   areAnyInvalid: function(){
-    if (this.state.audio_url !== undefined && this.state.percentComplete > 0.99 &&
+    if (this.state.audioUrl !== undefined && this.state.percentComplete > 0.99 &&
         this.state.title.length > 0) {
       return false;
     } else {
       return true;
     }
   },
-
   render: function(){
-    var thumbStyle = {backgroundImage: 'url(' + this.state.image_url + ')',
+    var thumbStyle = {backgroundImage: 'url(' + this.state.thumbUrl + ')',
                       backgroundSize: 'contain'};
-    var buttonStyle = this.handlePercentage();
+    var mp3ButtonStyle = this.handlePercentage();
+    var imgButtonStyle = {backgroundColor: this.state.newImage ? "#2989d8" : "#F5F5F5"}
     var anyInvalid = this.areAnyInvalid();
     return (
       <div className="track-upload">
@@ -115,7 +125,8 @@ var TrackUpload = React.createClass({
             <label>Upload Files: </label>
               <div className="image-thumbnail" style={thumbStyle}>
               </div>
-            <button className="upload-buttons"
+            <button style={imgButtonStyle}
+                    className="upload-buttons"
                     onClick={this.uploadImage}>Add Image</button>
             <br />
             <input type="file"
@@ -124,7 +135,7 @@ var TrackUpload = React.createClass({
                     id="audioFile"
                     onChange={this.handleUpload}
                     className="input-file"/>
-                  <label style={buttonStyle}
+                  <label style={mp3ButtonStyle}
                           className="upload-buttons"
                           htmlFor="audioFile">Add an MP3</label>
           </div>

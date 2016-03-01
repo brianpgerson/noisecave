@@ -11,6 +11,10 @@
   font-weight: bold;
 }
 
+.navbar li:hover {
+  cursor: pointer;
+}
+
 .navbar .left {
   float: left;
 }
@@ -34,6 +38,7 @@
 }
 
 #search-li {
+  cursor: initial;
   padding: 10px 20px;
   width: 340px;
   margin-left: 47px;

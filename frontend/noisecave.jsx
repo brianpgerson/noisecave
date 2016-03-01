@@ -9,10 +9,14 @@ var ServerTrackApi = require('./util/serverTrackApi');
 var App = require('./components/app');
 var TracksIndex = require('./components/tracksIndex');
 var TrackUpload = require('./components/trackUpload');
+var TrackDetail = require('./components/trackDetail');
+
 
 var routes = (
   <Route component={App} path="/">
     <Route component={TracksIndex} path="discover">
+    </Route>
+    <Route component={TrackDetail} path="track/:id">
     </Route>
   </Route>
 );

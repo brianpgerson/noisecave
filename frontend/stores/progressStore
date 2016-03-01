@@ -1,0 +1,34 @@
+var AppDispatcher = require('../dispatcher/dispatcher');
+var Store = require('flux/utils').Store;
+
+
+var _progress = {};
+
+var ProgressStore = new Store(AppDispatcher);
+
+function setProgress(percent, time){
+  _progress.percent = percent;
+  _progress.currentTime = time;
+}
+
+ProgressStore.__onDispatch = function(payload) {
+  switch(payload.actionType) {
+  case "UPDATE_PROGRESS":
+    setProgress(payload.percent, payload.time);
+    this.__emitChange();
+    break;
+  }
+};
+
+
+
+ProgressStore.returnPercent = function() {
+  return _progress.percent;
+};
+
+ProgressStore.returnTime = function() {
+  return _progress.currentTime;
+};
+
+
+module.exports = ProgressStore;

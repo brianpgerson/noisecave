@@ -10,6 +10,9 @@ var TracksIndex = React.createClass({
       tracks: []
     });
   },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   componentWillMount: function(){
     this.changeListener = TrackStore.addListener(this._onChange);
   },
@@ -24,6 +27,9 @@ var TracksIndex = React.createClass({
       tracks: TrackStore.all()
     });
   },
+  routeToDetail: function(id){
+    this.context.router.push('track/' + id );
+  },
   buildTracksOut: function(){
     var tracks;
     if (this.state.tracks.length > 0) {
@@ -31,9 +37,10 @@ var TracksIndex = React.createClass({
         return (
           <TrackIndexItem
             key={idx}
+            trackDetailClick={this.routeToDetail}
             track={track}/>
         );
-      });
+      }.bind(this));
     } else {
       tracks = "HI!";
     }

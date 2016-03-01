@@ -14,7 +14,17 @@ function resetTracks(trackParams){
 }
 
 function resetTrack(track){
-  _tracks[track.id] = track;
+  var newTrack = {
+    imageUrl: track.image_url,
+    audioUrl: track.audio_url,
+    creatorId: track.creator_id,
+    description: track.description,
+    id: track.id,
+    slug: track.slug,
+    title: track.title,
+    createdAt: track.created_at
+  };
+  _tracks[track.id] = newTrack;
 }
 
 function removeTrack(track){

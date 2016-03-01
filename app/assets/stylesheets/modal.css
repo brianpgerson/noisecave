@@ -76,6 +76,7 @@ input[type=submit]:disabled {
 }
 
 input[type=submit]:hover {
+  cursor: pointer;
   border-color: #888;
   color: #fff;
   background-color: darkblue;
@@ -134,11 +135,12 @@ input[type=submit]:hover:disabled {
 
 .modal-box .upload-buttons:hover {
   color: black;
+  cursor: pointer;
 }
 
 .image-thumbnail {
   width: 150px;
-  height: 127.5px;
+  height: 150px;
   float: right;
   border-radius: 5px;
   border: 1px solid #888;

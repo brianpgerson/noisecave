@@ -38,7 +38,9 @@ var App = React.createClass({
   _onSessionChange: function(){
     var loggedInStatus = SessionStore.isLoggedIn();
     var currentUser = SessionStore.returnUser();
-    this.setState({loggedIn: loggedInStatus, currentUser: currentUser});
+    this.setState({
+      loggedIn: loggedInStatus, currentUser: currentUser, showModals: false
+    });
   },
   modalOpenCallback: function(what){
     this.setState({showModals: true, modalType: what});

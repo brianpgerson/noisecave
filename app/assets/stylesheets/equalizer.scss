@@ -1,0 +1,52 @@
+#bars {
+    height: 30px;
+    top: -12px;
+    position: absolute;
+    width: 0px;
+    opacity: 1;
+    transition: opacity, 1s, ease;
+    overflow: hidden;
+}
+
+.bar {
+   background: #E20074;
+    bottom: 1px;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+    animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+    0% {
+       opacity: .35;
+        height: 2px;
+    }
+    100% {
+        opacity: 1;
+        height: 12px;
+    }
+}
+
+$list: 465ms, 402ms, 436ms, 425ms, 469ms, 407ms, 413ms, 484ms, 499ms,
+453ms, 406ms, 462ms, 409ms, 404ms, 469ms, 437ms, 401ms, 487ms, 419ms,
+400ms, 469ms, 488ms, 497ms, 441ms, 429ms, 403ms, 461ms, 472ms, 419ms,
+433ms, 462ms, 461ms, 490ms, 487ms, 473ms, 495ms, 441ms, 418ms, 462ms,
+422ms, 482ms, 417ms, 431ms, 482ms, 471ms, 450ms, 464ms, 429ms, 487ms,
+443ms, 446ms, 403ms, 499ms, 430ms, 433ms, 440ms, 427ms, 450ms, 437ms,
+444ms, 424ms, 426ms, 421ms, 402ms, 447ms, 495ms, 491ms, 496ms, 443ms,
+490ms, 471ms, 459ms, 412ms, 451ms, 429ms, 402ms, 447ms, 493ms, 433ms,
+442ms, 469ms, 427ms, 496ms, 406ms, 480ms, 424ms, 460ms, 445ms, 453ms,
+471ms, 466ms, 466ms, 468ms, 464ms, 470ms, 450ms, 496ms, 410ms, 416ms,
+496ms, 442ms, 476ms, 465ms, 402ms, 436ms, 425ms, 469ms, 407ms, 413ms,
+484ms, 499ms, 453ms, 406ms, 462ms, 409ms, 404ms, 469ms, 437ms, 401ms,
+487ms, 419ms, 488ms, 497ms, 441ms, 429ms, 403ms, 461ms, 472ms, 419ms,
+433ms, 462ms, 461ms, 490ms, 487ms, 473ms, 495ms, 441ms, 418ms, 462ms,
+422ms, 482ms, 417ms, 431ms, 482ms, 471ms, 450ms, 464ms, 429ms, 487ms, 443ms;
+
+@for $i from 1 through 75 {
+   .bar:nth-child(10n+#{$i}) {
+      left: ($i * 4 - 3) + px;
+      animation-duration: nth($list, $i);
+    }
+}

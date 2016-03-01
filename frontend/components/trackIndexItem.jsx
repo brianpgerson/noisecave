@@ -11,8 +11,8 @@ var TrackIndexItem = React.createClass({
     PlayActions.addToPlayStoreQueue(trackUrl);
   },
   render: function(){
-    if (this.props.track.image_url) {
-      var source = this.props.track.image_url;
+    if (this.props.track.imageUrl) {
+      var source = this.props.track.imageUrl;
     } else {
       source =
       "https://s3-us-west-1.amazonaws.com/briansdopealbumcovers/Screen+Shot+2016-02-24+at+2.27.54+PM.png";
@@ -23,19 +23,27 @@ var TrackIndexItem = React.createClass({
     return (
       <div className="track-index-item">
         <div className="album-container">
-          <div className="album-cover" style={divStyle}>
+          <div className="album-cover"
+                style={divStyle}>
+            <div className="index-item-controls">
+              <div className="play-button-icon"
+                onClick={function(){
+                  this.playCallback(this.props.track);}.bind(this)}>
+              </div>
+              <button onClick={function(){
+                        this.addToQueue(this.props.track);
+                      }.bind(this)} className="add-to-queue">
+                Add To Queue
+              </button>
+            </div>
           </div>
           <div>
             <p className="caption"
               onClick={function(){
-                        this.playCallback(this.props.track.audio_url);
+                this.props.trackDetailClick(this.props.track.id);
                       }.bind(this)}>
               {this.props.track.title}
             </p>
-
-            <span onClick={function(){
-                      this.addToQueue(this.props.track.audio_url);
-                    }.bind(this)}>Add to Q</span>
 
           </div>
         </div>
