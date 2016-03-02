@@ -3,7 +3,7 @@ var LoginForm = require('../components/loginForm');
 var TrackUpload = require('../components/trackUpload');
 var EditForm = require('../components/editForm');
 
-var Modal = React.createClass({
+var MyModal = React.createClass({
   formProps: function(type){
     var formProps;
     switch(type){
@@ -105,4 +105,4 @@ var Modal = React.createClass({
   }
 });
 
-module.exports = Modal;
+module.exports = MyModal;

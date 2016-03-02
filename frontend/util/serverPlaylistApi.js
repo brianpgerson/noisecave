@@ -8,9 +8,8 @@ var ServerPlaylistApi = {
       type: "POST",
       data: newPlaylist,
       success: function(data){
-        debugger;
         callback(data);
-        if (newPlaylist.tracks.length > 0){
+        if (newPlaylist.tracks){
           PlaylistingActions.addTracksToPlaylist(data.id,newPlaylist.tracks);
         }
       },

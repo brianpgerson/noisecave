@@ -10,7 +10,6 @@ function setPlaylist(playlist){
 }
 
 function resetPlaylists(playlists){
-  debugger;
   playlists.forEach(function(playlist){
     setPlaylist(playlist);
   });
@@ -22,7 +21,7 @@ PlaylistStore.__onDispatch = function(payload) {
     setPlaylist(payload.playlist);
     this.__emitChange();
     break;
-  case "RECEIVE_PLAYLISTs":
+  case "RECEIVE_PLAYLISTS":
     resetPlaylists(payload.playlists);
     this.__emitChange();
     break;
@@ -33,9 +32,7 @@ PlaylistStore.returnPlaylists = function(){
   var playlists = Object.keys(_playlistStore).map(function(id){
     return _playlistStore[id];
   });
-  debugger;
   return playlists;
-
 };
 
 

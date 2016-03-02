@@ -91,9 +91,10 @@
 .album-container {
   min-width: 194px;
   max-width: 204px;
-  padding: 3px;
+  margin: 3px;
   border: 1px solid darkgrey;
-  border-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   background-color: #DDD;
   -webkit-box-shadow: 0 0 8px 5px rgba(0,0,0,0.15);
   -moz-box-shadow: 0 0 8px 5px rgba(0,0,0,0.15);

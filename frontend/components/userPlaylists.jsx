@@ -11,8 +11,7 @@ var Playlists = React.createClass({
       playlists: []
     };
   },
-  componentWillMount: function() {
-    debugger;
+  componentDidMount: function() {
     this.PlaylistListener = PlaylistStore.addListener(this._handleStoreChanges);
     PlaylistActions.requestPlaylists(this.props.params.id);
   },
@@ -20,11 +19,9 @@ var Playlists = React.createClass({
     this.PlaylistListener.remove();
   },
   _handleStoreChanges: function(){
-    debugger;
     this.setState({playlists: PlaylistStore.returnPlaylists()});
   },
   render: function(){
-    debugger;
     var playlists = this.state.playlists.map(function(playlist){
       return <Playlist key={playlist.id} playlist={playlist} />;
     });
