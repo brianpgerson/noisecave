@@ -51,6 +51,18 @@ var App = React.createClass({
   discoverClickCallback: function(){
     this.context.router.push('/discover');
   },
+  playlistsClickCallback: function(){
+    if (this.state.loggedIn) {
+      this.context.router.push('/user/' + SessionStore.getUserId() + '/playlists');
+    } else {
+      this.modalOpenCallback("login");
+    }
+  },
+  userTracksClickCallback: function(){
+    if (this.state.loggedIn) {
+      this.context.router.push('/user/' + SessionStore.getUserId() + '/tracks');
+    }
+  },
   render: function () {
     window.ServerTrackApi = ServerTrackApi;
     window.TrackStore = TrackStore;
@@ -61,7 +73,9 @@ var App = React.createClass({
           currentUser={this.state.currentUser}
           modalCallback={this.modalOpenCallback}
           loggedIn={this.state.loggedIn}
-          discoverCallback={this.discoverClickCallback}/>
+          discoverCallback={this.discoverClickCallback}
+          playlistsCallback={this.playlistsClickCallback}
+          userTracksCallback={this.userTracksClickCallback}/>
         <StreamBar
           display={this.state.showStreamBar} />
         <Modal

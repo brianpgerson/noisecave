@@ -15,8 +15,7 @@
 
 .navbar li:hover {
   cursor: pointer;
-
-  color: white;
+  color: #FF9D1B;
 }
 
 .navbar .left {

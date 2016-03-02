@@ -83,7 +83,7 @@ var Modal = React.createClass({
     if (this.props.modalType === "upload") {
       modalSizing =
         {width: '650px',  height: '350px', transform: 'translateX(-345px)'};
-    } else if (this.props.modalType === "login") {
+    } else if (this.props.modalType === "login"  || this.props.modalType === "signup") {
       modalSizing = {width: '360px', height: '360px'};
     } else {
       modalSizing =

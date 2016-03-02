@@ -45,6 +45,7 @@
   box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
 }
 
+/*TODO had an idea about using refs to maybe solve the frosting problem*/
 .modal-background {
   position: absolute;
   top: 0px;
@@ -60,13 +61,14 @@
 }
 
 .modal-box input[type=submit]{
-  background-color: navy;
+  background-color: #064473;
   margin: 20px 15px;
   border-radius: 10px;
   color: lightgrey;
   border-color: #888;
   outline: 0;
   float: right;
+  transition: color, 1s, ease;
 }
 
 input[type=submit]:disabled {
@@ -75,14 +77,14 @@ input[type=submit]:disabled {
   border-color: #888;
 }
 
-input[type=submit]:hover {
+.modal-box input[type=submit]:hover {
   cursor: pointer;
   border-color: #888;
-  color: #fff;
-  background-color: darkblue;
+  color: #FF9D1B;
+  background-color: #064473;
 }
 
-input[type=submit]:hover:disabled {
+.modal-box input[type=submit]:hover:disabled {
   border-color: #888;
   color: #eee;
   background-color: darkgrey;
@@ -134,7 +136,7 @@ input[type=submit]:hover:disabled {
 }
 
 .modal-box .upload-buttons:hover {
-  color: black;
+  color: #FF9D1B;
   cursor: pointer;
 }
 

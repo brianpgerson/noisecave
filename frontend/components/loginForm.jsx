@@ -1,6 +1,6 @@
 var React = require('react');
 var ErrorHandler = require('./errorHandler');
-var ErrorActions = require('../actions/ErrorActions');
+var ErrorActions = require('../actions/errorActions');
 var AuthActions = require('../actions/authActions')
 var LoginForm = React.createClass({
 

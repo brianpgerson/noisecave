@@ -20,6 +20,9 @@ var UserInfo = React.createClass({
       document.getElementById('logout').addEventListener('click', function(e){
         this.handleLogout();
       }.bind(this));
+      document.getElementById('yourTracks').addEventListener('click', function(e){
+        this.props.userTracksCallback();
+      }.bind(this));
     }
   },
   handleLogout: function(){
@@ -39,7 +42,7 @@ var UserInfo = React.createClass({
          <hr />
          <li id="profileEdit">Edit Profile</li>
          <hr />
-         <li>Your Tracks</li>
+         <li id="yourTracks">Your Tracks</li>
          <hr />
          <li id="logout">Log Out!</li>
        </ul>

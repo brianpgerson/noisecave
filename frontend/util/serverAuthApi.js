@@ -1,4 +1,4 @@
-var ErrorActions = require('../actions/ErrorActions');
+var ErrorActions = require('../actions/errorActions');
 
 var ServerAuthApi = {
   loginCheckRequest: function(callback){

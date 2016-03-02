@@ -79,9 +79,9 @@ var TrackUpload = React.createClass({
     var percent = (this.state.percentComplete * 100);
     console.log(percent);
     var coolButtonStyle = {
-      background: "#2989d8",
-      background: '-moz-linear-gradient(left,  #2989d8 0%, #2989d8 ' + percent + '%, #F5F5F5 ' + percent + '%, #F5F5F5 ' + percent + '%)',
-      background: 'linear-gradient(to right,  #2989d8 0%,#2989d8 ' + percent + '%,#F5F5F5 ' + percent + '%,#F5F5F5 ' + percent + '%)',
+      background: "#5DA9E3",
+      background: '-moz-linear-gradient(left,  #5DA9E3 0%, #5DA9E3 ' + percent + '%, #F5F5F5 ' + percent + '%, #F5F5F5 ' + percent + '%)',
+      background: 'linear-gradient(to right,  #5DA9E3 0%,#5DA9E3 ' + percent + '%,#F5F5F5 ' + percent + '%,#F5F5F5 ' + percent + '%)',
       filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#F5F5F5', endColorstr='#F5F5F5',GradientType=1)"
     }
     return coolButtonStyle;
@@ -98,7 +98,7 @@ var TrackUpload = React.createClass({
     var thumbStyle = {backgroundImage: 'url(' + this.state.thumbUrl + ')',
                       backgroundSize: 'contain'};
     var mp3ButtonStyle = this.handlePercentage();
-    var imgButtonStyle = {backgroundColor: this.state.newImage ? "#2989d8" : "#F5F5F5"}
+    var imgButtonStyle = {backgroundColor: this.state.newImage ? "#5DA9E3" : "#F5F5F5"}
     var anyInvalid = this.areAnyInvalid();
     return (
       <div className="track-upload">

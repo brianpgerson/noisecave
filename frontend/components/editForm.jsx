@@ -2,7 +2,7 @@ var React = require('react');
 var SessionStore = require('../stores/sessionStore');
 var AuthActions = require('../actions/authActions');
 var ErrorHandler = require('./errorHandler');
-var ErrorActions = require('../actions/ErrorActions');
+var ErrorActions = require('../actions/errorActions');
 
 var EditForm = React.createClass({
   getInitialState: function(){

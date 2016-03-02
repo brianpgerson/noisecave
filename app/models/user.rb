@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
     primary_key: :id,
     class_name: "Track"
 
+  has_many :playlists,
+    foreign_key: :creator_id,
+    primary_key: :id,
+    class_name: "Playlist"
+
   def reset_session_token
     self.session_token == User.generate_session_token
     self.save!

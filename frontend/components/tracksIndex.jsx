@@ -2,7 +2,7 @@ var React = require('react');
 var TrackStore = require('../stores/trackStore');
 var TrackIndexItem = require('./trackIndexItem');
 var TrackActions = require('../actions/trackActions');
-
+var SessionStore = require('../stores/sessionStore');
 
 var TracksIndex = React.createClass({
   getInitialState: function(){
@@ -33,16 +33,29 @@ var TracksIndex = React.createClass({
   buildTracksOut: function(){
     var tracks;
     if (this.state.tracks.length > 0) {
-      tracks = this.state.tracks.map(function(track, idx){
-        return (
-          <TrackIndexItem
-            key={idx}
-            trackDetailClick={this.routeToDetail}
-            track={track}/>
-        );
-      }.bind(this));
+      if (this.props.userOnly) {
+        tracks = this.state.tracks.filter(function(track) {
+          return track.creatorId === SessionStore.getUserId();
+        }).map(function(track, idx){
+          return (
+            <TrackIndexItem
+              key={idx}
+              trackDetailClick={this.routeToDetail}
+              track={track}/>
+          );
+        }.bind(this));
+      } else {
+        tracks = this.state.tracks.map(function(track, idx){
+          return (
+            <TrackIndexItem
+              key={idx}
+              trackDetailClick={this.routeToDetail}
+              track={track}/>
+          );
+        }.bind(this));
+      }
     } else {
-      tracks = "HI!";
+      tracks = "";
     }
     return tracks;
   },

@@ -27,6 +27,7 @@ var NavBar = React.createClass({
         <li onClick={this.openProfile} className="right">
           <span>Profile</span>
           <UserInfo
+            userTracksCallback={this.props.userTracksCallback}
             handleProfileEdit={this.props.modalCallback}
             currentUser={this.props.currentUser}
             closeMenuCallback={this.closeProfile}
@@ -51,6 +52,9 @@ var NavBar = React.createClass({
   handleDiscoverClick: function(){
     this.props.discoverCallback();
   },
+  handlePlaylistsClick: function(){
+    this.props.playlistsCallback();
+  },
   render: function(){
     var Upload = this.uploadAndProfileText()[0];
     var Profile = this.uploadAndProfileText()[1];
@@ -59,7 +63,8 @@ var NavBar = React.createClass({
           <ul className="group">
             <li onClick={this.handleDiscoverClick}
               className="left"><span>Discover</span></li>
-            <li className="left"><span>Playlists</span></li>
+            <li onClick={this.handlePlaylistsClick}
+              className="left"><span>Playlists</span></li>
             <li id="search-li">
                 <input type="text" id="search-box" placeholder="Search songs, playlists, users..."/>
             </li>
