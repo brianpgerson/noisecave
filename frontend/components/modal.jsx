@@ -2,8 +2,32 @@ var React = require('react');
 var LoginForm = require('../components/loginForm');
 var TrackUpload = require('../components/trackUpload');
 var EditForm = require('../components/editForm');
+var Modal = require('boron/OutlineModal');
+var ModalStore = require('../stores/modalStore');
+var PlaylistModal = require('../components/playlistModal');
 
 var MyModal = React.createClass({
+  getInitialState: function() {
+    return {
+      display: false,
+      type: null,
+      errors: []
+    };
+  },
+  componentWillMount: function() {
+    this.modalStoreListener = ModalStore.addListener(this._handleModalChanges);
+  },
+  _handleModalChanges: function() {
+    this.setState({
+      type: ModalStore.returnType(),
+      errors: ModalStore.returnErrors()
+    });
+    if (ModalStore.returnDisplay()) {
+      this.refs.modal.show();
+    } else {
+      this.refs.modal.hide();
+    }
+  },
   formProps: function(type){
     var formProps;
     switch(type){
@@ -25,18 +49,12 @@ var MyModal = React.createClass({
           passwordLabel: "Enter Password: ",
           buttonText: "Log In!",
           checkLength: false,
-          buttonType: "in"
+          buttonType: "in",
+          errors: this.state.errors
         };
         break;
       case "upload":
         formProps = {
-          title: "Upload a Track"
-        };
-        break;
-      case "profileEdit":
-        formProps = {
-          height: 450,
-          width: 450,
           title: "Upload a Track"
         };
         break;
@@ -44,62 +62,78 @@ var MyModal = React.createClass({
   return formProps;
   },
   whatToDisplay: function(){
-    var modalType = this.props.modalType;
-    switch(modalType) {
+    switch(ModalStore.returnType()) {
       case "signup":
-          var theModal =
-          <LoginForm
+        var theModal =
+          <div className="modal-wrapper"> <LoginForm
             formOptions={this.formProps("signup")}
-            closeModalCallback={this.props.modalCloseCallback}
-            loggedIn={this.props.loggedIn} />;
-          break;
+            loggedIn={this.props.loggedIn} />
+          </div>;
+        break;
       case "login":
-          theModal =
-          <LoginForm
+        theModal =
+          <div className="modal-wrapper"> <LoginForm
             formOptions={this.formProps("login")}
-            closeModalCallback={this.props.modalCloseCallback}
-            loggedIn={this.props.loggedIn} />;
-          break;
+            loggedIn={this.props.loggedIn} />
+          </div>;
+        break;
       case "upload":
-          theModal =
-          <TrackUpload
-            formOptions={this.formProps("upload")}
-            closeModalCallback={this.props.modalCloseCallback}/>;
-          break;
+        theModal =
+          <div className="modal-wrapper"> <TrackUpload/>
+          </div>;
+        break;
       case "profileEdit":
+        theModal =
+          <div className="modal-wrapper">
+            <EditForm loggedIn={this.props.loggedIn} />
+          </div>;
+        break;
+      case "playlist":
           theModal =
-          <EditForm
-            formOptions={this.formProps("profileEdit")}
-            closeModalCallback={this.props.modalCloseCallback}
-            loggedIn={this.props.loggedIn} />;
+            <div className="modal-wrapper">
+              <PlaylistModal track={ModalStore.returnTrack()} />
+            </div>;
           break;
       }
     return theModal;
   },
+  returnModalStyles: function(){
+    return {
+      backgroundColor: 'white',
+      width: '100%',
+      height: '100%',
+      borderRadius: '5px'
+    };
+  },
   render: function(){
-    var bool = this.props.display ? "shown" : "hidden";
+
+    var type = ModalStore.returnType();
     var theModal = this.whatToDisplay();
-    var modalSizing;
-    if (this.props.modalType === "upload") {
-      modalSizing =
-        {width: '650px',  height: '350px', transform: 'translateX(-345px)'};
-    } else if (this.props.modalType === "login"  || this.props.modalType === "signup") {
-      modalSizing = {width: '360px', height: '360px'};
+    var modalSizing = {};
+    if (type === "upload") {
+      modalSizing.width = '680px';
+      modalSizing.height = '350px';
+    } else if (type === "signup") {
+      modalSizing.width = '400px';
+      modalSizing.height = '360px';
+    } else if (type === "login" ) {
+      modalSizing.width = '380px';
+      modalSizing.height = '300px';
+    } else if (type === "playlist"){
+      modalSizing.width = '680px';
+      modalSizing.height = '300px';
     } else {
-      modalSizing =
-        {width: '650px', height: '450px', transform: 'translateX(-345px)'};
+      modalSizing.width = '680px';
+      modalSizing.height = '450px';
     }
 
+    var contentStyle = this.returnModalStyles();
+
      return (
-      <div className={bool}>
-        <div className="modal-box"
-          style={modalSizing}>
+      <div>
+        <Modal contentStyle={contentStyle} modalStyle={modalSizing} ref="modal">
           {theModal}
-        </div>
-        <div
-          className="modal-background"
-          onClick={this.props.modalCloseCallback}>
-        </div>
+        </Modal>
       </div>
     );
   }

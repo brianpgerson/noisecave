@@ -1,7 +1,9 @@
 var React = require('react');
 var ErrorHandler = require('./errorHandler');
 var ErrorActions = require('../actions/errorActions');
-var AuthActions = require('../actions/authActions')
+var AuthActions = require('../actions/authActions');
+var ModalActions = require('../actions/modalActions');
+
 var LoginForm = React.createClass({
 
   getInitialState: function(){
@@ -43,14 +45,13 @@ var LoginForm = React.createClass({
       AuthActions[request](sessionParams);
     }
   },
-
   isGoodEmail: function(email){
     return /(\@)(.+)(\.)/.test(email);
   },
 
   handleCancel: function(e){
     e.preventDefault();
-    this.props.closeModalCallback();
+    ModalActions.closeModal();
   },
 
   handleInputChanges: function(e){
@@ -73,6 +74,7 @@ var LoginForm = React.createClass({
     return [anyInvalid, lengthCheck];
   },
   render: function(){
+
     var options = this.props.formOptions;
 
     var checks = this.determineValidity();
@@ -81,10 +83,9 @@ var LoginForm = React.createClass({
 
     return (
       <div className="sign-up-in">
-        <ErrorHandler />
         <form>
-          <h5>{options.title}</h5>
-          <p>
+          <h5 ref="title">{options.title}</h5>
+          <div>
             <label>{options.usernameLabel}
             <input type="text"
                     className="login-text-input"
@@ -92,8 +93,8 @@ var LoginForm = React.createClass({
                     value={this.state.username}
                     onChange={this.handleInputChanges}/>
             </label>
-          </p>
-          <p className={options.emailShow ? "show" : "hidden"}>
+          </div>
+          <div className={options.emailShow ? "show" : "hidden"}>
             <label>Enter your Email:
             <input type="email"
                     className="login-text-input"
@@ -101,8 +102,8 @@ var LoginForm = React.createClass({
                     value={this.state.email}
                     onChange={this.handleInputChanges}/>
             </label>
-          </p>
-          <p>
+          </div>
+          <div>
             <label>{options.passwordLabel}{lengthCheck}
             <input type="password"
                     className="login-text-input"
@@ -110,7 +111,7 @@ var LoginForm = React.createClass({
                     value={this.state.password}
                     onChange={this.handleInputChanges}/>
             </label>
-          </p>
+          </div>
             <input type="submit"
                     value={options.buttonText}
                     name={options.buttonType}
@@ -122,7 +123,9 @@ var LoginForm = React.createClass({
                     onClick={this.handleCancel} />
 
         </form>
-
+        <div className="errorHandler">
+          <ErrorHandler prebakedErrors={this.props.formOptions.errors} />
+        </div>
       </div>
     );
   }

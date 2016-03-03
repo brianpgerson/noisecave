@@ -9,6 +9,9 @@ var ErrorHandler = React.createClass({
   },
   componentDidMount: function(){
     this.errorListener = ErrorStore.addListener(this._onChange);
+    this.setState({
+      errors: this.props.prebakedErrors ? this.props.prebakedErrors : []
+    });
   },
   _onChange: function(){
     var messages = ErrorStore.all();
@@ -22,7 +25,7 @@ var ErrorHandler = React.createClass({
       return (<li className="error" key={idx}>{err}</li>);
     });
     return (
-      <ul>
+      <ul style={{margin: "0"}}>
         {errors}
       </ul>
     );

@@ -3,7 +3,7 @@ var PlaylistStore = require('../stores/playlistStore');
 var SessionStore = require('../stores/sessionStore');
 var PlaylistActions = require('../actions/playlistActions');
 var NewPlaylist = require('./newPlaylist');
-var Playlist = require('./playlist');
+var PlaylistItem = require('./playlistItem');
 
 var Playlists = React.createClass({
   getInitialState: function() {
@@ -13,7 +13,7 @@ var Playlists = React.createClass({
   },
   componentDidMount: function() {
     this.PlaylistListener = PlaylistStore.addListener(this._handleStoreChanges);
-    PlaylistActions.requestPlaylists(this.props.params.id);
+    PlaylistActions.requestPlaylists(SessionStore.getUserId());
   },
   componentWillUnmount: function() {
     this.PlaylistListener.remove();
@@ -23,11 +23,10 @@ var Playlists = React.createClass({
   },
   render: function(){
     var playlists = this.state.playlists.map(function(playlist){
-      return <Playlist key={playlist.id} playlist={playlist} />;
+      return <PlaylistItem key={playlist.id} playlist={playlist} />;
     });
     return (
       <div className="playlists container">
-        <NewPlaylist currentUser={this.props.params.id} />
         <ul>
           {playlists}
         </ul>

@@ -1,14 +1,25 @@
 var React = require('react');
 var PlayActions = require('../actions/playActions');
 var PlayStore = require('../stores/playStore');
+var ModalActions = require('../actions/modalActions');
+var SessionStore = require('../stores/sessionStore');
+
 window.PlayStore = PlayStore;
 
 var TrackIndexItem = React.createClass({
-  playCallback: function(trackUrl){
-    PlayActions.addToPlayStore(trackUrl);
+  playCallback: function(track){
+    PlayActions.addToPlayStore(track);
   },
-  addToQueue: function(trackUrl){
-    PlayActions.addToPlayStoreQueue(trackUrl);
+  addToQueue: function(track) {
+    PlayActions.addToPlayStoreQueue(track);
+  },
+  addToPlaylist: function(track) {
+    if (SessionStore.isLoggedIn()) {
+      ModalActions.openModal("playlist", track);
+    } else {
+      ModalActions.openModalError("login",
+        ["Sorry, you have to be logged in for that feature to work!"]);
+    }
   },
   render: function(){
     if (this.props.track.imageUrl) {
@@ -30,10 +41,15 @@ var TrackIndexItem = React.createClass({
                 onClick={function(){
                   this.playCallback(this.props.track);}.bind(this)}>
               </div>
-              <button onClick={function(){
+              <button className="track-buttons" onClick={function(){
                         this.addToQueue(this.props.track);
-                      }.bind(this)} className="add-to-queue">
-                Add To Queue
+                      }.bind(this)}>
+                + Queue
+              </button>
+              <button className="track-buttons" onClick={function(){
+                        this.addToPlaylist(this.props.track);
+                      }.bind(this)}>
+                + Playlist
               </button>
             </div>
           </div>

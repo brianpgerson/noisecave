@@ -9,7 +9,6 @@ var NewPlaylists = React.createClass({
       title: "",
       description: "",
       creatorId: this.props.currentUser,
-      tracks: []
     };
   },
   handleSubmits: function(e){
@@ -19,22 +18,32 @@ var NewPlaylists = React.createClass({
         title: this.state.title,
         description: this.state.description,
         creator_id: this.state.creatorId,
-        tracks: this.state.tracks
       }
     });
+    this.props.switchBack();
+  },
+  handleCancel: function(e){
+    e.preventDefault();
+    this.props.switchBack();
   },
   render: function(){
+    var title = "Title: ";
+    var description = "Description: ";
     return (
-      <div className="new-playlists-container">
+      <div className="playlist-quadrant" style={{overflowY: "hidden"}}>
         <form id="new-playlists-form">
-          <p>
-            <label>Title: </label>
+          <p className="group">
+            <label>{title}</label>
             <input type="text" valueLink={this.linkState('title')} />
           </p>
-          <p>
-            <label>Description: </label>
+          <p className="group">
+            <label>{description}</label>
             <input type="text" valueLink={this.linkState('description')} />
           </p>
+            <input type="submit"
+                    value="Cancel"
+                    id="upload"
+                    onClick={this.handleCancel} />
           <input type="submit"
                   value="Save"
                   id="upload"

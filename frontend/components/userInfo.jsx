@@ -1,5 +1,6 @@
 var React = require('react');
 var AuthActions = require('../actions/authActions');
+var ModalActions = require('../actions/modalActions');
 
 var UserInfo = React.createClass({
   componentWillReceiveProps: function(nextProps) {
@@ -14,8 +15,7 @@ var UserInfo = React.createClass({
       });
       document.getElementById('profileEdit')
       .addEventListener('click', function(e){
-        this.props.closeMenuCallback();
-        this.props.handleProfileEdit("profileEdit");
+        ModalActions.openModal("profileEdit");
       }.bind(this));
       document.getElementById('logout').addEventListener('click', function(e){
         this.handleLogout();

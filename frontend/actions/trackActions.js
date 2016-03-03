@@ -1,7 +1,7 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var TrackConstants = require('../constants/trackConstants');
 var ServerTrackApi = require('../util/serverTrackApi');
-
+var ModalActions = require('./modalActions');
 
 var TrackActions = {
 
@@ -13,6 +13,7 @@ var TrackActions = {
     });
   },
   receiveTrack: function(trackParams){
+    ModalActions.closeModal();
     AppDispatcher.dispatch({
       actionType: TrackConstants.RECEIVE_TRACK,
       trackParams: trackParams
@@ -35,7 +36,7 @@ var TrackActions = {
   },
 
   getTrack: function(id){
-    ServerTrackApi.fetchTrack(id, TrackActions.receiveTrack)
+    ServerTrackApi.fetchTrack(id, TrackActions.receiveTrack);
   }
 };
 

@@ -1,19 +1,19 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
-var ServerPlaylistingApi = require('../util/serverPlaylistApi');
+var ServerPlaylistingApi = require('../util/serverPlaylistingApi');
 
 var PlaylistingActions = {
   //inbound
-  receivePlaylistings: function(playlistings){
+  receivePlaylisting: function(playlisting){
     AppDispatcher.dispatch({
-      actionType: "RECEIVE_PLAYLISTINGS",
-      playlistings: playlistings,
+      actionType: "RECEIVE_PLAYLISTING",
+      playlisting: playlisting
     });
   },
 
   // outbound
-  addTracksToPlaylist: function(playlistId, tracks){
-    ServerPlaylistingApi.addPlaylistings(
-      playlistId, tracks, PlaylistingActions.receivePlaylistings);
+  addTrackToPlaylist: function(track, playlistId){;
+    ServerPlaylistingApi.addPlaylisting(
+      playlistId, track, PlaylistingActions.receivePlaylisting);
   }
 };
 

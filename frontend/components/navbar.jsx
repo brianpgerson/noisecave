@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var LoginForm = require('./loginForm');
 var UserInfo = require('./userInfo');
-
+var ModalActions = require('../actions/modalActions');
 
 var NavBar = React.createClass({
   getInitialState: function(){
@@ -19,16 +19,13 @@ var NavBar = React.createClass({
   uploadAndProfileText: function(){
     if (this.props.loggedIn === true) {
       return [
-        <li onClick={function(){
-          this.props.modalCallback('upload');
-        }.bind(this)} className="right">
+        <li onClick={function(){ModalActions.openModal('upload');}} className="right">
           <span>Upload</span>
         </li>,
         <li onClick={this.openProfile} className="right">
           <span>Profile</span>
           <UserInfo
             userTracksCallback={this.props.userTracksCallback}
-            handleProfileEdit={this.props.modalCallback}
             currentUser={this.props.currentUser}
             closeMenuCallback={this.closeProfile}
             display={this.state.showUserInfo} />
@@ -36,14 +33,10 @@ var NavBar = React.createClass({
       ];
     } else {
       return [
-        <li onClick={function(){
-          this.props.modalCallback('login');
-        }.bind(this)} className="right">
+        <li onClick={function(){ModalActions.openModal('login');}} className="right">
           <span>Login</span>
         </li>,
-        <li onClick={function(){
-          this.props.modalCallback('signup');
-        }.bind(this)} className="right">
+        <li onClick={function(){ModalActions.openModal('signup');}} className="right">
           <span>Signup</span>
         </li>
       ];

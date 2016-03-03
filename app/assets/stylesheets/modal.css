@@ -8,6 +8,11 @@
   float: right;
 }
 
+.modal-wrapper {
+  padding: 15px;
+  height: 90%;
+}
+
 
 .login-text-input {
   margin-left: 10px;
@@ -15,52 +20,31 @@
 
 .sign-up-in .error {
   list-style: none;
-  position: absolute;
-  top: 10px;
+  float: right;
+  margin-bottom: 0;
+  margin-right: 10px;
+  color: red;
 }
 
 .helper-text {
   font-weight: lighter;
   font-size: smaller;
   position: absolute;
-  top: 250px;
-  right: 20px;
+  top: 240px;
+  right: 15px;
 }
 
 /* GENERAL MODAL STUFF */
-.modal-box {
-  transform: translateX(-200px);
-  z-index: 2;
-  position: fixed;
-  border-radius: 10px;
-  left: 50%;
-  top: 150px;
-  width: 360px;
-  height: 360px;
-  padding: 0 20px;
-  margin: 0 auto;
-  background-color: gray;
-  -webkit-box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 20px -4px rgba(0,0,0,0.75);
-}
 
 /*TODO had an idea about using refs to maybe solve the frosting problem*/
-.modal-background {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
 
-.modal-box h5 {
+
+h5 {
   text-align: center;
   padding-top: 10px
 }
 
-.modal-box input[type=submit]{
+input[type=submit]{
   background-color: #064473;
   margin: 20px 15px;
   border-radius: 10px;
@@ -77,14 +61,14 @@ input[type=submit]:disabled {
   border-color: #888;
 }
 
-.modal-box input[type=submit]:hover {
+input[type=submit]:hover {
   cursor: pointer;
   border-color: #888;
   color: #FF9D1B;
   background-color: #064473;
 }
 
-.modal-box input[type=submit]:hover:disabled {
+input[type=submit]:hover:disabled {
   border-color: #888;
   color: #eee;
   background-color: darkgrey;
@@ -105,7 +89,7 @@ input[type=submit]:disabled {
 .track-upload .upload-text {
   width: 280px;
   max-width: 300px;
-  max-height: 152px;
+  max-height: 135px;
 }
 
 .track-upload span {
@@ -114,8 +98,8 @@ input[type=submit]:disabled {
 
 .title-and-descrip {
   float: left;
-  width: 300px;
-  border-right: 1px solid whitesmoke;
+  width: 304px;
+  border-right: 1px solid #ccc;
 }
 
 .file-section {
@@ -129,13 +113,21 @@ input[type=submit]:disabled {
   float: right;
 }
 
-.modal-box .upload-buttons {
+.upload-buttons {
   background-color: whitesmoke;
   color: #222;
   margin: 10px 15px;
 }
 
-.modal-box .upload-buttons:hover {
+.errorHandler {
+  width: 330px;
+  float: right;
+  position: relative;
+  bottom: 15px;
+  font-size: 12px;
+}
+
+.upload-buttons:hover {
   color: #FF9D1B;
   cursor: pointer;
 }

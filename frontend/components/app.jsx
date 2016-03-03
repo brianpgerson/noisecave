@@ -3,6 +3,7 @@ var SessionStore = require('../stores/sessionStore');
 var PlayStore = require('../stores/playStore');
 var TrackStore = require('../stores/trackStore');
 var AuthActions = require('../actions/authActions');
+var ModalActions = require('../actions/modalActions');
 var ServerTrackApi = require('../util/serverTrackApi');
 var React = require('react');
 var Modal = require('./modal');
@@ -14,7 +15,6 @@ var App = React.createClass({
   getInitialState: function(){
     return ({
       loggedIn: null,
-      showModals: false,
       showStreamBar: false,
       modalType: null,
       currentUser: null
@@ -39,14 +39,8 @@ var App = React.createClass({
     var loggedInStatus = SessionStore.isLoggedIn();
     var currentUser = SessionStore.returnUser();
     this.setState({
-      loggedIn: loggedInStatus, currentUser: currentUser, showModals: false
+      loggedIn: loggedInStatus, currentUser: currentUser,
     });
-  },
-  modalOpenCallback: function(what){
-    this.setState({showModals: true, modalType: what});
-  },
-  modalCloseCallback: function(){
-    this.setState({showModals: false, modalType: null});
   },
   discoverClickCallback: function(){
     this.context.router.push('/discover');
@@ -55,7 +49,7 @@ var App = React.createClass({
     if (this.state.loggedIn) {
       this.context.router.push('/user/' + SessionStore.getUserId() + '/playlists');
     } else {
-      this.modalOpenCallback("login");
+      ModalActions.openModalError("login", ["Sorry, you have to be logged in to visit playlists!"]);
     }
   },
   userTracksClickCallback: function(){
@@ -71,7 +65,6 @@ var App = React.createClass({
       <div>
         <NavBar
           currentUser={this.state.currentUser}
-          modalCallback={this.modalOpenCallback}
           loggedIn={this.state.loggedIn}
           discoverCallback={this.discoverClickCallback}
           playlistsCallback={this.playlistsClickCallback}
@@ -79,9 +72,6 @@ var App = React.createClass({
         <StreamBar
           display={this.state.showStreamBar} />
         <Modal
-          modalCloseCallback={this.modalCloseCallback}
-          display={this.state.showModals}
-          modalType={this.state.modalType}
           loggedIn={this.state.loggedIn}/>
         {this.props.children}
 

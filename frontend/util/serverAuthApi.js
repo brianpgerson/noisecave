@@ -8,7 +8,6 @@ var ServerAuthApi = {
       data: {},
       success: function(data){
         callback(data);
-        ErrorActions.resetErrors();
       },
       error: function(response){
         var error = JSON.parse(response.responseText).errors;
@@ -23,7 +22,6 @@ var ServerAuthApi = {
       data: formData,
       success: function(data){
         callback(data);
-        ErrorActions.resetErrors();
       },
       error: function(response){
         var error = JSON.parse(response.responseText).errors;
@@ -38,7 +36,6 @@ var ServerAuthApi = {
       data: data,
       success: function(response){
         callback(response);
-        ErrorActions.resetErrors();
       },
       error: function(response){
         var error = JSON.parse(response.responseText).errors;
@@ -53,7 +50,6 @@ var ServerAuthApi = {
       data: userData,
       success: function(response){
         callback(sessionData);
-        ErrorActions.resetErrors();
       },
       error: function(response){
         var error = JSON.parse(response.responseText).errors;
@@ -68,7 +64,6 @@ var ServerAuthApi = {
       data: newUserData,
       success: function(response){
         callback(response);
-        ErrorActions.resetErrors();
       },
       error: function(response){
         var error = JSON.parse(response.responseText).errors;

@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::PlaylistingsController < ApplicationController
 
   def index
@@ -5,20 +7,12 @@ class Api::PlaylistingsController < ApplicationController
   end
 
   def create
-    @playlisting = {
-      playlistings: [],
-      errors: []
-    }
-
-    playlisting_params[:tracks].each do |track|
-      plisting = Playlisting.new({track_id: track.id, playlist_id: playlisting_params[:playlist_id]})
-      if plisting.save
-        @playlisting['playlistings'] << plisting
-      else
-        @playlisting['errors'] << plisting.errors.full_messages
-      end
+    @playlisting = Playlisting.new({track_id: playlisting_params[:track_id], playlist_id: playlisting_params[:playlist_id]})
+    if @playlisting.save
+      render json: @playlisting
+    else
+      render json: {errors: @playlisting.errors.full_messages}, status: :unprocessable_entity
     end
-    render json: @playlisting
   end
 
   def destroy
@@ -30,7 +24,7 @@ class Api::PlaylistingsController < ApplicationController
   private
 
   def playlisting_params
-    params.require(:playlisting).permit(:tracks, :playlist_id)
+    params.require(:playlisting).permit(:track_id, :playlist_id)
   end
 
 end

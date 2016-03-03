@@ -88,7 +88,7 @@ var StreamBar = React.createClass({
       );
       var track = this.state.currentTrack;
     } else {
-      audio = "nothin yet";
+      audio = <div></div>;
     }
     return (
       <div className={displayBool}>

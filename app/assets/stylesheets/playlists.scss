@@ -1,5 +1,109 @@
-.new-playlists-container {
+.playlists-container {
   width: 300px;
-  height: 400px;
-  border: solid 1px #eee;
+  height: 100%;
+  position: absolute;
+  overflow-y: scroll;
+  left: 0;
+  top: 0;
+  border-bottom-left-radius: 5px;
+  background-color: #B8DDF8;
+}
+
+.playlists-container li {
+  list-style: none;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.playlists-container ul {
+  margin: 0;
+}
+
+.separator {
+  margin: 0 auto;
+}
+
+.playlist-item {
+  width: 100%;
+  padding: 10px;
+  background-color: #7FF0C0;
+  border-bottom: 1px solid #B4F9DB;
+  transition: background-color, 1s, ease-in-out;
+}
+
+.playlist-item:hover {
+  cursor: pointer;
+  background-color: #B4F9DB;
+}
+
+#new-playlists-form p {
+  padding: 0;
+  font-size: inherit;
+  float: right;
+}
+
+#new-playlists-form input[type=text] {
+  float: left;
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+#new-playlists-form label {
+  float: left;
+  margin-bottom: 0;
+}
+
+.playlist-quadrant {
+  position: relative;
+  left: 280px;
+  top: -15px;
+  padding: 30px;
+  width: 320px;
+  height: 150px;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+}
+
+.playlist-quadrant #upload {
+  right: -20px;
+  bottom: 19px;
+}
+
+.playlist-track-picture {
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+.playlist-modal-container h6 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+.playlist-modal-container p {
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+.playlist-modal-container h5 {
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  left: 285px;
+  width: 380px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.blue {
+  background-color: #2B2BCB;
+  color: white;
+}
+
+.blue:hover {
+  background-color: #4B4BDB;
+  color: white;
 }

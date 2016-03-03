@@ -1,15 +1,12 @@
 var ErrorActions = require('../actions/errorActions');
 
-var ServerPlaylistApi = {
-  addPlaylistings: function(playlistId, tracks, callback){
+var ServerPlaylistingApi = {
+  addPlaylisting: function(playlistId, track, callback){
     $.ajax({
       url: "api/playlistings",
       type: "POST",
-      data: {playlisting: {tracks: tracks, playlist_id: playlistId}},
+      data: {playlisting: {track_id: track.id, playlist_id: playlistId}},
       success: function(response) {
-        if (response.errors.length > 0) {
-          ErrorActions.sendError(response.errors);
-        }
         callback(response);
       },
       error: function(response) {
@@ -20,4 +17,4 @@ var ServerPlaylistApi = {
   }
 };
 
-module.exports = ServerPlaylistApi;
+module.exports = ServerPlaylistingApi;
