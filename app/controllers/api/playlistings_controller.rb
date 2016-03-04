@@ -4,6 +4,7 @@ class Api::PlaylistingsController < ApplicationController
 
   def index
     @playlistings = Playlist.find(params[:id]).tracks
+    render json: @playlistings
   end
 
   def create

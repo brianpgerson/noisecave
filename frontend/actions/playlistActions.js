@@ -9,6 +9,12 @@ var PlaylistActions = {
       playlists: playlists,
     });
   },
+  receivePlaylistsWithTracks: function(playlists){
+    AppDispatcher.dispatch({
+      actionType: "RECEIVE_PLAYLISTS_WITH_TRACKS",
+      playlists: playlists,
+    });
+  },
   receivePlaylist: function(playlist){
     AppDispatcher.dispatch({
       actionType: "RECEIVE_PLAYLIST",
@@ -19,6 +25,9 @@ var PlaylistActions = {
   // outbound
   requestPlaylists: function(id){
     ServerPlaylistApi.fetchPlaylists(id, PlaylistActions.receivePlaylists);
+  },
+  requestPlaylistsWithTracks: function(id){
+    ServerPlaylistApi.fetchPlaylistsWithTracks(id, PlaylistActions.receivePlaylistsWithTracks);
   },
   addPlaylist: function(newPlaylist){
     ServerPlaylistApi.addPlaylist(newPlaylist, PlaylistActions.receivePlaylist);

@@ -62,7 +62,7 @@ var App = React.createClass({
     window.TrackStore = TrackStore;
 
     return (
-      <div>
+      <div id="big-wrapper">
         <NavBar
           currentUser={this.state.currentUser}
           loggedIn={this.state.loggedIn}

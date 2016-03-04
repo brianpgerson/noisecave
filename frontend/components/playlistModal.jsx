@@ -6,7 +6,7 @@ var PlaylistActions = require('../actions/playlistActions');
 var PlaylistingActions = require('../actions/playlistingActions');
 var NewPlaylist = require('./newPlaylist');
 var PlaylistTrackInfo = require('./playlistTrackInfo');
-var PlaylistItem = require('./playlistItem');
+var PlaylistListItem = require('./playlistListItem');
 
 var PlaylistModal = React.createClass({
   getInitialState: function() {
@@ -18,22 +18,13 @@ var PlaylistModal = React.createClass({
   },
   componentDidMount: function() {
     this.PlaylistListener = PlaylistStore.addListener(this._handleStoreChanges);
-    this.PlaylistingListener = PlaylistingStore.addListener(this._handleListingChanges);
-
     PlaylistActions.requestPlaylists(SessionStore.getUserId());
   },
   componentWillUnmount: function() {
     this.PlaylistListener.remove();
-    this.PlaylistingListener.remove();
   },
   _handleStoreChanges: function(){
     this.setState({playlists: PlaylistStore.returnPlaylists().reverse()});
-  },
-  _handleListingChanges: function(){
-    var lastAdded = PlaylistingStore.returnPlaylistings().pop();
-    var newlyAdded = this.state.hasNewPlaylisting;
-    newlyAdded.push(lastAdded.playlist_id);
-    this.setState({hasNewPlaylisting: newlyAdded});
   },
   createNewPlaylistForm: function(){
     if (!this.state.addingPlaylist) {
@@ -44,16 +35,13 @@ var PlaylistModal = React.createClass({
     this.setState({addingPlaylist: false});
   },
   addToPlaylist: function(id){
-    PlaylistingActions.addTrackToPlaylist(this.props.track, id);
+    PlaylistingActions.addTrackToPlaylist(id, this.props.track);
   },
   render: function(){
+
     var playlists = this.state.playlists.map(function(playlist){
-      return <PlaylistItem key={playlist.id}
+      return <PlaylistListItem key={playlist.id}
                             id={playlist.id}
-                            special={
-                              this.state.hasNewPlaylisting.indexOf(playlist.id) >= 0 ?
-                                true : false
-                            }
                             addToPlaylist={this.addToPlaylist}
                             playlist={playlist} />;
                         }.bind(this));
@@ -73,6 +61,9 @@ var PlaylistModal = React.createClass({
       quadrant = <PlaylistTrackInfo track={this.props.track}/>;
       header = "Add to Playlist";
     }
+
+    debugger;
+    
     return (
       <div className="playlist-modal-container">
         <div className="playlists-container">

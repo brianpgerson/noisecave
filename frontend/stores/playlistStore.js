@@ -9,11 +9,19 @@ function setPlaylist(playlist){
   _playlistStore[playlist.id] = playlist;
 }
 
+function resetPlaylistsWithTracks(playlists){
+  playlists.forEach(function(playlist){
+    playlist.playlist.tracks = playlist.tracks;
+    setPlaylist(playlist.playlist);
+  });
+}
+
 function resetPlaylists(playlists){
   playlists.forEach(function(playlist){
     setPlaylist(playlist);
   });
 }
+
 
 PlaylistStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -23,6 +31,10 @@ PlaylistStore.__onDispatch = function(payload) {
     break;
   case "RECEIVE_PLAYLISTS":
     resetPlaylists(payload.playlists);
+    this.__emitChange();
+    break;
+  case "RECEIVE_PLAYLISTS_WITH_TRACKS":
+    resetPlaylistsWithTracks(payload.playlists);
     this.__emitChange();
     break;
   }

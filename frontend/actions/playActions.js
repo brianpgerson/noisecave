@@ -13,6 +13,12 @@ var PlayActions = {
       url: trackUrl
     });
   },
+  addToQueueInBulk: function(trackUrls){
+    AppDispatcher.dispatch({
+      actionType: "RECEIVE_QUEUE_URLS",
+      urls: trackUrls
+    });
+  },
   addFromQueue: function(trackUrl){
     AppDispatcher.dispatch({
       actionType: "MOVE_FROM_QUEUE",

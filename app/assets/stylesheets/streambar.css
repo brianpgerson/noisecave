@@ -1,7 +1,13 @@
-.audio-container {
+.audio-wrapper {
   width: 100%;
   background-color: #064473;
   height: 50px;
+}
+
+.audio-container {
+  width: 800px;
+  height: 50px;
+  margin: 0 auto;
 }
 
 .stream-play {
@@ -9,7 +15,6 @@
   width: 105px;
   float: left;
   margin: 6px;
-  left: 100px;
   position: relative;
 }
 
@@ -20,7 +25,6 @@
   float: left;
   margin: 15px 25px;
   position: relative;
-  left: 100px;
   top: -6px
 }
 
@@ -29,21 +33,30 @@
 }
 
 .audio-container p {
-  color: ghostwhite;
   float: left;
   height: 30px;
   margin-top: 18px;
   margin-left: 47px;
-  font-size: 12px;
-  position: relative;
 }
 
 .info-container {
+  color: ghostwhite;
   height: 50px;
-  width: 300px;
+  max-width: 250px;
+  width: 25%;
   float: left;
+  font-size: 12px;
   position: relative;
-  left: 85px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.title-track {
+  display: inline-block;
+  margin-top: 18px;
+  margin-left: 47px;
+  max-width: 250px;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -62,10 +75,47 @@
   color: whitesmoke;
   float: left;
   position: relative;
-  left: 90px;
   top: 22px;
   font-size: 12px;
   border-right: ghostwhite 1px solid;
   padding-right: 23px;
   margin-top: -4px;
+}
+
+#littlearrow:hover {
+  cursor: pointer;
+}
+
+#littlearrow {
+  margin-left: 10px;
+  float: right;
+}
+
+#play-queue {
+  z-index: 1;
+  width: 300px;
+  position: absolute;
+  right: -128px;
+  top: 50px;
+  padding: 5px 0;
+  background: RGBA(0,0,0,.4);
+  color: aliceblue;
+  font-size: 12px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#little-number {
+  margin-right: 16px;
+}
+
+#play-queue li {
+  list-style: none;
+  margin-left: 22px;
+  margin-bottom: 0;
+  padding: 6px 0;
+}
+
+#play-queue li:hover {
+  cursor: pointer;
 }

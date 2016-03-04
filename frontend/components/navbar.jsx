@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var SearchBar = require('./searchBar');
 var LoginForm = require('./loginForm');
 var UserInfo = require('./userInfo');
 var ModalActions = require('../actions/modalActions');
@@ -59,7 +60,7 @@ var NavBar = React.createClass({
             <li onClick={this.handlePlaylistsClick}
               className="left"><span>Playlists</span></li>
             <li id="search-li">
-                <input type="text" id="search-box" placeholder="Search songs, playlists, users..."/>
+                <SearchBar />
             </li>
             {Upload}
             {Profile}

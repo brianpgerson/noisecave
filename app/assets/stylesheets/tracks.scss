@@ -94,8 +94,8 @@
 .album-container {
   min-width: 194px;
   max-width: 204px;
-  margin: 3px;
-  border: 1px solid darkgrey;
+  height: 250px;
+  margin: 4px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   background-color: #DDD;
@@ -108,3 +108,96 @@
   margin: 15px;
   float: left;
 }
+
+// LIST STYLE
+
+.track-list-index-item {
+  height: 100px;
+  width: 95%;
+  position: relative;
+  float: left;
+  margin: 10px 5px;
+  left: -55px;
+}
+
+.list-item-container {
+  margin: 4px;
+  width: 100%;
+  background-size: cover;
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/v1457065811/Screen_Shot_2016-03-03_at_8.29.22_PM_lremwc.png")
+}
+
+.album-pic {
+  height: 70px;
+  width: 70px;
+  background-color: lightgrey;
+  background-size: 100% 100%;
+  padding: 10px;
+  float: left;
+}
+
+.list-item-container .title{
+  position: relative;
+  color: black;
+  float: left;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 27px 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list-buttons:hover {
+  cursor: pointer;
+}
+
+.list-buttons {
+  height: 25px;
+  width: 25px;
+  position: relative;
+  background-size: contain;
+}
+
+#queue {
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/c_scale,w_35/v1457063904/queue_m8kpht.png");
+  left: -58px;
+  top: 35px;
+  float: right;
+}
+
+#playlist {
+  height: 23px;
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/c_scale,h_35,w_35/v1457063904/list_toz0dq.png");
+  left: -80px;
+  top: 36px;
+  float: right;
+}
+
+#play {
+  opacity: 0;
+  visibility: hidden;
+  height: 65px;
+  width: 65px;
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/v1456856909/play-button_ukbotp.png");
+  transition: opacity, 0.5s, ease-in-out;
+}
+
+.album-pic:hover #play {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// cool

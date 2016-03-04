@@ -1,13 +1,15 @@
 var React = require('react');
 var TrackStore = require('../stores/trackStore');
 var TrackIndexItem = require('./trackIndexItem');
+var TrackListIndexItem = require('./trackListIndexItem');
 var TrackActions = require('../actions/trackActions');
 var SessionStore = require('../stores/sessionStore');
 
 var TracksIndex = React.createClass({
   getInitialState: function(){
     return ({
-      tracks: []
+      tracks: [],
+      searched: false
     });
   },
   contextTypes: {
@@ -21,6 +23,24 @@ var TracksIndex = React.createClass({
   },
   componentWillUnmount: function() {
     this.changeListener.remove();
+  },
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.location) {
+      if (nextProps.location.search.length > 0) {
+        var searchterms = nextProps.location.search.split("=")[1].toLowerCase().split(("+"));
+        var searchedTracks = TrackStore.all().filter(function(track){
+          var splitTitle = track.title.toLowerCase().split(" ");
+          return searchterms.every(function(searchWord){
+            return splitTitle.indexOf(searchWord) >= 0;
+          });
+        });
+
+        this.setState({
+          tracks: searchedTracks,
+          searched: true
+        });
+      }
+    }
   },
   _onChange: function(){
     this.setState({
@@ -38,7 +58,7 @@ var TracksIndex = React.createClass({
           return track.creatorId === SessionStore.getUserId();
         }).map(function(track, idx){
           return (
-            <TrackIndexItem
+            <TrackListIndexItem
               key={idx}
               trackDetailClick={this.routeToDetail}
               track={track}/>
@@ -60,9 +80,11 @@ var TracksIndex = React.createClass({
     return tracks;
   },
   render: function(){
+    var header = this.state.searched ? "Results: " : "";
     var trackIndex = this.buildTracksOut();
     return (
       <div className="content-container">
+        <h1>{header}</h1>
         <div className="all-tracks group">
           {trackIndex}
         </div>

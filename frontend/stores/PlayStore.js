@@ -19,6 +19,11 @@ function setQueueUrl(url){
   _playStore.override = false;
 }
 
+function bulkSetQueue(urls){
+  _playStore.playQueue = urls;
+  _playStore.override = false;
+}
+
 function moveFromQueue(url){
   _playStore.playQueue.shift();
   _playStore.playingNow = url;
@@ -33,6 +38,10 @@ PlayStore.__onDispatch = function(payload) {
     break;
   case "RECEIVE_QUEUE_URL":
     setQueueUrl(payload.url);
+    this.__emitChange();
+    break;
+  case "RECEIVE_QUEUE_URLS":
+    bulkSetQueue(payload.urls);
     this.__emitChange();
     break;
   case "MOVE_FROM_QUEUE":

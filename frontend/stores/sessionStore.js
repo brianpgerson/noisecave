@@ -10,7 +10,8 @@ var _sessionState = {
   username: null,
   userId: null,
   userDescription: null,
-  userImage: null
+  userImage: null,
+  createdAt: null
 };
 
 var SessionStore = new Store(AppDispatcher);
@@ -22,6 +23,7 @@ function setSessionState(sessionParams){
   _sessionState['userDescription'] = sessionParams['description'];
   _sessionState['userImage'] = sessionParams['image'];
   _sessionState['userEmail'] = sessionParams['email'];
+  _sessionState['createdAt'] = sessionParams['created_at'];
 }
 
 SessionStore.__onDispatch = function(payload) {
@@ -51,7 +53,8 @@ SessionStore.returnUser = function() {
     userId: _sessionState.userId,
     userDescription: _sessionState.userDescription,
     userImage: _sessionState.userImage,
-    userEmail: _sessionState.userEmail
+    userEmail: _sessionState.userEmail,
+    createdAt: _sessionState.createdAt
   };
 };
 

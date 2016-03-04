@@ -32,6 +32,20 @@ var ServerPlaylistApi = {
         ErrorActions.sendError(error);
       }
     });
+  },
+  fetchPlaylistsWithTracks: function(id, callback){
+    $.ajax({
+      url: "api/playlists",
+      type: "GET",
+      data: {id: id, tracks: true},
+      success: function(data){
+        callback(data);
+      },
+      error: function(response){
+        var error = JSON.parse(response.responseText).errors;
+        ErrorActions.sendError(error);
+      }
+    });
   }
 };
 
