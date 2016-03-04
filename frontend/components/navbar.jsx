@@ -64,6 +64,7 @@ var NavBar = React.createClass({
             </li>
             {Upload}
             {Profile}
+            "A BIG DOG"
           </ul>
       </nav>
     );
