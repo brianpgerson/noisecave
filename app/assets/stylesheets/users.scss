@@ -4,15 +4,15 @@
 
 .user-info-container {
   width: 25%;
-  height: 100%;
   float: left;
   position: relative;
   padding: 68px 0px;
-  -webkit-box-shadow: 10px 10px 58px -18px rgba(0,0,0,0.35);
-  -moz-box-shadow: 10px 10px 58px -18px rgba(0,0,0,0.35);
-  box-shadow: 10px 10px 58px -18px rgba(0,0,0,0.35);
+  -webkit-box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.35);
+  box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.35);
   top: -50px;
-  background-color: #2181CA;
+  background-color: rgba(6,68,115, .7);
+  color: white;
 }
 
 .big-user-pic {
@@ -30,8 +30,16 @@
   margin: 10px auto;
 }
 
+.user-info-name {
+  font-variant: small-caps;
+  font-size: 2.2em;
+}
+
 .box-header {
   font-weight: bold;
+  color: #FF9D1B;
+  font-variant: small-caps;
+  font-size: 1.2em;
 }
 
 .playlist-info {
@@ -52,11 +60,8 @@
   position: relative;
   left: 40px;
   padding: 20px;
-}
-
-#tracks-and-playlists {
-  padding-top: 50px;
-  height: 100%
+  background-color: RGBA(0,0,0,.5);
+  color: white;
 }
 
 .large-playlist-photo {
@@ -80,6 +85,7 @@
   left: 0;
   padding-left: 32px;
   height: 45px;
+  color: black;
 }
 
 .user-playlist-tracks {
@@ -102,18 +108,19 @@
 
 .playlist-track:hover {
   background-color: #FFDCAC;
+  color: black;
   cursor: pointer;
 }
 
 .tab-switcher {
   background-color: transparent;
   border: none;
-  border-bottom: 39px solid #2181ca;
+  border-bottom: 39px solid aliceblue;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
   height: 0;
   position: relative;
-  color: ghostwhite;
+  color: black;
   transition: border-bottom-color, 1s, ease;
 }
 
@@ -124,6 +131,6 @@
 .tab-switcher-container {
   height: 38px;
   position: relative;
-  margin-left: 277px;
-  border-bottom: 1px solid #2181ca;
+  margin-left: 280px;
+  border-bottom: 1px solid aliceblue;
 }

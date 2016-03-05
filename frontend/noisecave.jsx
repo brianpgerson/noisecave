@@ -18,8 +18,8 @@ var routes = (
     <Route component={TracksIndex} path="discover"></Route>
     <Route component={TracksIndex} path="search"></Route>
     <Route component={TrackDetail} path="track/:id"></Route>
-    <Route component={UserTracks} path="user/:id/tracks"></Route>
-    <Route component={UserPlaylists} path="user/:id/playlists"></Route>
+    <Route component={UserPlaylists} path="user/:id/music"></Route>
+    <Route component={UserPlaylists} path="user/:id/music"></Route>
   </Route>
 );
 

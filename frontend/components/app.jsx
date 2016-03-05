@@ -45,16 +45,15 @@ var App = React.createClass({
   discoverClickCallback: function(){
     this.context.router.push('/discover');
   },
-  playlistsClickCallback: function(){
+  myMusicClickCallback: function(){
     if (this.state.loggedIn) {
-      this.context.router.push('/user/' + SessionStore.getUserId() + '/playlists');
+      var userId = SessionStore.getUserId();
+      this.context.router.push({
+        pathname: '/user/' + SessionStore.getUserId() + '/music',
+        query: {currentUserId: userId}
+      });
     } else {
       ModalActions.openModalError("login", ["Sorry, you have to be logged in to visit playlists!"]);
-    }
-  },
-  userTracksClickCallback: function(){
-    if (this.state.loggedIn) {
-      this.context.router.push('/user/' + SessionStore.getUserId() + '/tracks');
     }
   },
   render: function () {
@@ -67,8 +66,7 @@ var App = React.createClass({
           currentUser={this.state.currentUser}
           loggedIn={this.state.loggedIn}
           discoverCallback={this.discoverClickCallback}
-          playlistsCallback={this.playlistsClickCallback}
-          userTracksCallback={this.userTracksClickCallback}/>
+          myMusicCallback={this.myMusicClickCallback} />
         <StreamBar
           display={this.state.showStreamBar} />
         <Modal

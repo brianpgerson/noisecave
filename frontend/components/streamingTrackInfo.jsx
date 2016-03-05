@@ -28,6 +28,8 @@ var StreamingTrackInfo = React.createClass({
   },
   render: function(){
     var queue = this.returnQueueDown();
+    var queueStyle = this.props.queueFull ? {visibility: "visible"} :
+      {visibility: "hidden"};
     if (this.props.track !== null) {
       var track = this.props.track;
       var arrow = this.props.queueDown ? "▲" : "▼";
@@ -43,7 +45,7 @@ var StreamingTrackInfo = React.createClass({
           <span className="title-track">{track.title}<div onClick={
               this.props.queueDownCallBack
             } id="littlearrow">{arrow}</div></span>
-            <div id="play-queue-wrapper">{queue}</div>
+          <div id="play-queue-wrapper" style={queueStyle}>{queue}</div>
         </div>
       );
     } else {

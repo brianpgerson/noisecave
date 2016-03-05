@@ -6,24 +6,57 @@ var PlaylistActions = require('../actions/playlistActions');
 var NewPlaylist = require('./newPlaylist');
 var UserInfoBox = require('./userInfoBox');
 var PlaylistItem = require('./playlistItem');
+var PlayStore = require('../stores/playStore');
 
 var Playlists = React.createClass({
   getInitialState: function() {
     return {
       playlists: [],
-      whichTab: "playlists"
+      whichTab: "playlists",
+      isPlaying: (PlayStore.returnPlayingNow() !== null)
     };
   },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   componentDidMount: function() {
-    this.PlaylistListener = PlaylistStore.addListener(this._handleStoreChanges);
-    PlaylistActions.requestPlaylists(this.props.params.id);
+    this.playlistListener = PlaylistStore.addListener(this._handleStoreChanges);
+    this.playStoreListener = PlayStore.addListener(this._handlePlayChanges);
+
+    if (this.comingFromNavBar() || this.notFromNavButSameUser()) {
+      PlaylistActions.requestPlaylists(this.props.params.id);
+    } else {
+      this.context.router.push({
+        pathname: "discover"
+      });
+    }
   },
+
   componentWillUnmount: function() {
-    this.PlaylistListener.remove();
+    this.playlistListener.remove();
+    this.playStoreListener.remove();
   },
+
+  _handlePlayChanges: function(){
+    var playingNow = (PlayStore.returnPlayingNow() !== null);
+    this.setState({
+      isPlaying: playingNow
+    });
+  },
+
   _handleStoreChanges: function(){
     this.setState({playlists: PlaylistStore.returnPlaylists()});
   },
+
+  comingFromNavBar: function(){
+    return (this.props.location &&
+      this.props.location.search.split("=")[1][0] === this.props.params.id);
+  },
+
+  notFromNavButSameUser: function(){
+    return (SessionStore.getUserId().toString() === this.props.params.id);
+  },
+
   switchTabs: function(e){
     e.preventDefault();
     this.setState({
@@ -48,9 +81,17 @@ var Playlists = React.createClass({
     this.returnPlaylistsTab() :
     this.returnTracksTab();
 
+  var containerStyle = (this.state.isPlaying) ?
+    {marginTop: '150px', height: 'calc(100% - 85px)'} :
+    {marginTop: '100px', height: 'calc(100% - 50px)'};
+
+  var userInfoStyle = (this.state.isPlaying) ?
+    {height: 'calc(100%)'} :
+    {height: 'calc(100% + 15px)'};
+
   return (
-    <div id="tracks-and-playlists" className="container">
-      <UserInfoBox currentUser={SessionStore.returnUser()}/>
+    <div id="tracks-and-playlists" className="container" style={containerStyle}>
+      <UserInfoBox userInfoStyle={userInfoStyle} currentUser={SessionStore.returnUser()}/>
       <div className="tab-switcher-container">
         <button name="tracks" onClick={this.switchTabs}
           className="tab-switcher">Tracks</button>

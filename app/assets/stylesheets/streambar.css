@@ -1,11 +1,14 @@
 .audio-wrapper {
+  position: fixed;
+  top: 50px;
   width: 100%;
   background-color: #064473;
   height: 50px;
+  z-index: 1;
 }
 
 .audio-container {
-  width: 800px;
+  width: 845px;
   height: 50px;
   margin: 0 auto;
 }
@@ -42,8 +45,7 @@
 .info-container {
   color: ghostwhite;
   height: 50px;
-  max-width: 250px;
-  width: 25%;
+  width: 39%;
   float: left;
   font-size: 12px;
   position: relative;
@@ -58,6 +60,14 @@
   max-width: 250px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.title-track span {
+  max-width: 200px;
+  display: inline-block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .imageThumb {
@@ -95,12 +105,13 @@
   z-index: 1;
   width: 300px;
   position: absolute;
-  right: -128px;
+  left: 28px;
   top: 50px;
   padding: 5px 0;
-  background: RGBA(0,0,0,.4);
+  background-color: RGBA(6,68,115,.7);
   color: aliceblue;
   font-size: 12px;
+  transition: background-color, 0.3s, ease;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -118,4 +129,7 @@
 
 #play-queue li:hover {
   cursor: pointer;
+  color: white;
+  background-color: RGBA(6,68,115,.9);
+
 }

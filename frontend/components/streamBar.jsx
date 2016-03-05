@@ -129,6 +129,7 @@ var StreamBar = React.createClass({
                           changeAudioTime={this._updateAudioBar}/>
             <StreamingTrackInfo queueDownCallBack={this.handleQueueDown}
                                 queueDown={this.state.queueDown}
+                                queueFull={this.state.playlist.length > 0}
                                 handleQueueClick={this.handleQueueClick}
                                 playlist={this.state.playlist}
                                 track={this.state.currentTrack} />

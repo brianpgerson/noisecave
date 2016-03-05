@@ -117,9 +117,9 @@ var PlaylistItem = React.createClass({
               <div style={photoStyle}></div>
             </div>
             <p>
-              <span className="box-header">Tracks:</span><br />
+              <span className="box-header">tracks:</span><br />
                 {this.state.playlistings.length}<br />
-              <span className="box-header">Created: </span><br />
+              <span className="box-header">created: </span><br />
                 {formattedDate}
             </p>
           </div>

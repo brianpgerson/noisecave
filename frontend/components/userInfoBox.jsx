@@ -40,22 +40,20 @@ var UserInfoBox = React.createClass({
     }
 
     return (
-      <div className="user-info-container">
+      <div style={this.props.userInfoStyle} className="user-info-container">
+        <h5 className="user-info-name">
+          {this.props.currentUser.username}
+        </h5>
         <div className="user-pic-container">
           <div className="big-user-pic"
             style={{backgroundImage: 'url('+ image + ')'}}></div>
         </div>
         <div className="user-info-box">
-          <p>
-            <span className="box-header">
-            {this.props.currentUser.username}
-            </span>
-          </p>
-          <p><span className="box-header">About Me: </span>
+          <p><span className="box-header">about me: </span>
             <br />{this.props.currentUser.userDescription}</p>
-          <p><span className="box-header">Member Since: </span>
+          <p><span className="box-header">member since: </span>
             <br />{formattedDate}</p>
-          <p><span className="box-header">Tracks Uploaded: </span>
+          <p><span className="box-header">tracks uploaded: </span>
             <br />{this.state.tracks}</p>
         </div>
       </div>

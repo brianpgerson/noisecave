@@ -62,8 +62,6 @@ var PlaylistModal = React.createClass({
       header = "Add to Playlist";
     }
 
-    debugger;
-    
     return (
       <div className="playlist-modal-container">
         <div className="playlists-container">

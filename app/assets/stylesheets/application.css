@@ -12,10 +12,15 @@
 body {
   background-color: #ABD5F5;
   height: 100%;
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457133222/cutupdj_llnhxc.png');
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  background-attachment: fixed;
 }
 
 html {
-  height: calc(100% - 135px);
+  height: calc(100% - 150px);
 }
 
 #root {
@@ -24,4 +29,34 @@ html {
 
 #big-wrapper {
   height: 100%;
+}
+
+#left-wave {
+  position: absolute;
+height: 200px;
+width: 200px;
+left: 200px;
+background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457136987/leftwave_jg10ac.png');
+top: 300px;
+}
+
+#right-wave {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  right: 200px;
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457136996/rightwave_i8ht2k.png');
+  top: 300px;
+}
+
+#headerHero h3, h1{
+  text-align: center;
+  top: 300px;
+  position: relative;
+  color: aliceblue;
+}
+
+#headerHero h1 {
+  margin-bottom: 0;
+  font-size: 7em;
 }

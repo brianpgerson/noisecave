@@ -61,10 +61,10 @@ var LoginForm = React.createClass({
   determineValidity: function(){
     if (this.state.username.length > 0 &&
         (this.state.email.length > 0 || !this.props.formOptions.emailShow) &&
-        (this.state.password.length > 6 && this.state.password.length > 0)) {
+        (this.state.password.length >= 6 && this.state.password.length > 0)) {
         var lengthCheck = "";
         var anyInvalid = false;
-      } else if (this.state.password.length > 0 && 6 > this.state.password.length){
+      } else if (this.state.password.length > 0 && 6 >= this.state.password.length){
         lengthCheck = <span className="helper-text"> Please select a password > 6 characters.</span>;
         anyInvalid = true;
       } else {

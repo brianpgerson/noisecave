@@ -26,7 +26,7 @@ var NavBar = React.createClass({
         <li onClick={this.openProfile} className="right">
           <span>Profile</span>
           <UserInfo
-            userTracksCallback={this.props.userTracksCallback}
+            userProfileCallback={this.handleMyMusicClick}
             currentUser={this.props.currentUser}
             closeMenuCallback={this.closeProfile}
             display={this.state.showUserInfo} />
@@ -46,8 +46,8 @@ var NavBar = React.createClass({
   handleDiscoverClick: function(){
     this.props.discoverCallback();
   },
-  handlePlaylistsClick: function(){
-    this.props.playlistsCallback();
+  handleMyMusicClick: function(){
+    this.props.myMusicCallback();
   },
   render: function(){
     var Upload = this.uploadAndProfileText()[0];
@@ -57,14 +57,13 @@ var NavBar = React.createClass({
           <ul className="group">
             <li onClick={this.handleDiscoverClick}
               className="left"><span>Discover</span></li>
-            <li onClick={this.handlePlaylistsClick}
-              className="left"><span>Playlists</span></li>
+            <li onClick={this.handleMyMusicClick}
+              className="left"><span>My Music</span></li>
             <li id="search-li">
                 <SearchBar />
             </li>
             {Upload}
             {Profile}
-            "A BIG DOG"
           </ul>
       </nav>
     );

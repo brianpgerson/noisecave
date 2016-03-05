@@ -29,6 +29,7 @@ var TrackIndexItem = React.createClass({
       "https://s3-us-west-1.amazonaws.com/briansdopealbumcovers/Screen+Shot+2016-02-24+at+2.27.54+PM.png";
     }
     var albumBackground = {
+      backgroundSize: 'cover',
       backgroundImage: 'url(' + source + ')'
     };
 

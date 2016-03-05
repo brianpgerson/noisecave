@@ -80,15 +80,28 @@ var TracksIndex = React.createClass({
     return tracks;
   },
   render: function(){
+    var userStyle = this.props.userOnly ? {marginTop: '0'} : {marginTop: '100px'};
+    var backgroundStyle = this.props.userOnly ? {backgroundColor: 'transparent'} : {};
     var header = this.state.searched ? "Results: " : "";
+    var hero = this.props.userOnly ? <div></div> :
+      <div id="discoverHero"></div>;
     var trackIndex = this.buildTracksOut();
     return (
-      <div className="content-container">
-        <h1>{header}</h1>
-        <div className="all-tracks group">
-          {trackIndex}
+      <div className="track-index-wrapper">
+        <div id="headerHero">
+          <div id="left-wave"></div>
+          <h1>noisecave</h1>
+          <div id="right-wave"></div>
+          <h3>lose yourself in the music</h3>
         </div>
+        <div style={backgroundStyle} className="content-container">
+          <h1>{header}</h1>
+          {hero}
+          <div className="all-tracks group" style={userStyle}>
+            {trackIndex}
+          </div>
       </div>
+  </div>
     );
   }
 });

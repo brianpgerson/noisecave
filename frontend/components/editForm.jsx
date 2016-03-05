@@ -3,6 +3,8 @@ var SessionStore = require('../stores/sessionStore');
 var AuthActions = require('../actions/authActions');
 var ErrorHandler = require('./errorHandler');
 var ErrorActions = require('../actions/errorActions');
+var ModalActions = require('../actions/modalActions');
+
 
 var EditForm = React.createClass({
   getInitialState: function(){
@@ -54,7 +56,7 @@ var EditForm = React.createClass({
 
   handleCancel: function(e){
     e.preventDefault();
-    this.props.closeModalCallback();
+    ModalActions.closeModal();
   },
 
   determineValidity: function(){
