@@ -8,6 +8,16 @@
   z-index: 100;
 }
 
+#logo {
+  height: 40px;
+  width: 66px;
+  position: absolute;
+  left: 23px;
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457251118/noisefun_slxtke.png');
+  background-size: cover;
+  top: 3px;
+}
+
 .navbar li {
   list-style: none;
   margin: 0;

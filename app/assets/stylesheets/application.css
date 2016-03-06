@@ -31,32 +31,15 @@ html {
   height: 100%;
 }
 
-#left-wave {
-  position: absolute;
-height: 200px;
-width: 200px;
-left: 200px;
-background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457136987/leftwave_jg10ac.png');
-top: 300px;
-}
-
-#right-wave {
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  right: 200px;
-  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457136996/rightwave_i8ht2k.png');
-  top: 300px;
-}
-
-#headerHero h3, h1{
-  text-align: center;
-  top: 300px;
-  position: relative;
-  color: aliceblue;
-}
-
-#headerHero h1 {
-  margin-bottom: 0;
-  font-size: 7em;
+#headerHero {
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457232223/noise-cave-logo-with-text_uaj929.png');
+  height: 75%;
+  max-width: 800px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-position: center;
+  max-height: 800px;
+  min-height: 500px;
+  margin-top: 4%;
 }

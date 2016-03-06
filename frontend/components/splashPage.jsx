@@ -5,7 +5,7 @@ var TrackListIndexItem = require('./trackListIndexItem');
 var TrackActions = require('../actions/trackActions');
 var SessionStore = require('../stores/sessionStore');
 
-var TracksIndex = React.createClass({
+var SplashPage = React.createClass({
   getInitialState: function(){
     return ({
       tracks: [],
@@ -100,6 +100,12 @@ var TracksIndex = React.createClass({
     var trackIndex = this.buildTracksOut();
     return (
       <div className="track-index-wrapper">
+        <div id="headerHero">
+          <video controls autoPlay width="100%">
+            <source src="http://s3-us-west-1.amazonaws.com/briansdopetracks/bigstock-de-focused-footage-of-young-pe-71111249.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
         <div style={backgroundStyle} className="content-container">
           <h1>{header}</h1>
           {hero}
@@ -112,4 +118,4 @@ var TracksIndex = React.createClass({
   }
 });
 
-module.exports = TracksIndex;
+module.exports = SplashPage;

@@ -11,7 +11,8 @@
 }
 
 .track-index-wrapper {
-  height: 82%;
+  height: 100%;
+  min-height: 500px;
 }
 
 .detail-album-cover {
@@ -87,10 +88,9 @@
 
 .content-container {
   width: 100%;
-  background-color: #ABD5F5;
-  padding-top: 6%;
-  top: 95%;
-  position: relative;
+ background-color: #ABD5F5;
+ padding-top: 6%;
+ position: relative;
 }
 
 .all-tracks, .track-detail {

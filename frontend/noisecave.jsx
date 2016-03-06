@@ -12,9 +12,11 @@ var TrackUpload = require('./components/trackUpload');
 var TrackDetail = require('./components/trackDetail');
 var UserTracks = require('./components/userTracks');
 var UserPlaylists = require('./components/userPlaylists');
+var SplashPage = require('./components/splashPage');
 
 var routes = (
   <Route component={App} path="/">
+    <IndexRoute component={SplashPage}/>
     <Route component={TracksIndex} path="discover"></Route>
     <Route component={TracksIndex} path="search"></Route>
     <Route component={TrackDetail} path="track/:id"></Route>
