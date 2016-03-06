@@ -13,9 +13,14 @@
   width: 66px;
   position: absolute;
   left: 23px;
-  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457251118/noisefun_slxtke.png');
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457293000/aaacave1_kegllf.png');
   background-size: cover;
   top: 3px;
+}
+
+#logo:hover {
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457293003/aaacavepink_vrr6wd.png');
+  cursor: pointer;
 }
 
 .navbar li {

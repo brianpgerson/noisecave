@@ -101,8 +101,8 @@ var SplashPage = React.createClass({
     return (
       <div className="track-index-wrapper">
         <div id="headerHero">
-          <video controls autoPlay width="100%">
-            <source src="http://cloudfront.net/concert-defocused.mp4" type="video/mp4" />
+          <video controls preload="auto" autoPlay width="100%">
+            <source src="http://d868icu8jzuwb.cloudfront.net/concert-defocused.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
         </div>
