@@ -11,6 +11,9 @@ var NavBar = React.createClass({
       showUserInfo: false
     });
   },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   openProfile: function(){
     this.setState({showUserInfo: true});
   },
@@ -49,12 +52,15 @@ var NavBar = React.createClass({
   handleMyMusicClick: function(){
     this.props.myMusicCallback();
   },
+  handleHomeClick: function(){
+    this.context.router.push('/');
+  },
   render: function(){
     var Upload = this.uploadAndProfileText()[0];
     var Profile = this.uploadAndProfileText()[1];
     return (
       <nav className="navbar">
-        <div id="logo"><span></span></div>
+        <div id="logo" onClick={this.handleHomeClick}><span></span></div>
           <ul className="group">
             <li onClick={this.handleDiscoverClick}
               className="left"><span>Discover</span></li>

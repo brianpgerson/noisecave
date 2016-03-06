@@ -102,7 +102,7 @@ var SplashPage = React.createClass({
       <div className="track-index-wrapper">
         <div id="headerHero">
           <video controls autoPlay width="100%">
-            <source src="http://s3-us-west-1.amazonaws.com/briansdopetracks/bigstock-de-focused-footage-of-young-pe-71111249.mp4" type="video/mp4" />
+            <source src="http://cloudfront.net/concert-defocused.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
         </div>
