@@ -13,6 +13,9 @@ var TrackDetail = React.createClass({
       trackOwner: null
     });
   },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   componentWillMount: function(){
     TrackActions.getTracks();
     this.trackChangeListener = TrackStore.addListener(this.handleTrackChanges);
@@ -84,6 +87,13 @@ var TrackDetail = React.createClass({
         ["Sorry, you have to be logged in for that feature to work!"]);
     }
   },
+  handleUserVisit: function(e){
+    e.preventDefault();
+    this.context.router.push({
+      pathname: '/user/' + this.state.trackOwner.id + '/music',
+      query: {currentUserId: this.state.trackOwner.id}
+    });
+  },
   returnUserStuff: function(){
     if (this.state.trackOwner) {
       var owner = this.state.trackOwner;
@@ -96,7 +106,7 @@ var TrackDetail = React.createClass({
         <div className="track-owner-container group">
           <div style={ownerImage} className="track-owner-image">
           </div>
-          <h5>{owner.username}</h5>
+          <h5 onClick={this.handleUserVisit}>{owner.username}</h5>
           <article className="track-description">
             Track Description: <br />
             { track ? track.description : "" }

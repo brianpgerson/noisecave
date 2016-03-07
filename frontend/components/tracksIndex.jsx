@@ -55,8 +55,8 @@ var TracksIndex = React.createClass({
     if (this.state.tracks.length > 0) {
       if (this.props.userOnly) {
         tracks = this.state.tracks.filter(function(track) {
-          return track.creatorId === SessionStore.getUserId();
-        }).map(function(track, idx){
+          return track.creatorId === this.props.currentUser.id;
+        }.bind(this)).map(function(track, idx){
           return (
             <TrackListIndexItem
               key={idx}

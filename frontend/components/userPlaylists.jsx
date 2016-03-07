@@ -2,6 +2,7 @@ var React = require('react');
 var PlaylistStore = require('../stores/playlistStore');
 var TracksIndex = require('./tracksIndex');
 var SessionStore = require('../stores/sessionStore');
+var AuthActions = require ('../actions/authActions');
 var PlaylistActions = require('../actions/playlistActions');
 var NewPlaylist = require('./newPlaylist');
 var UserInfoBox = require('./userInfoBox');
@@ -12,6 +13,7 @@ var Playlists = React.createClass({
   getInitialState: function() {
     return {
       playlists: [],
+      playlistUser: null,
       whichTab: "playlists",
       isPlaying: (PlayStore.returnPlayingNow() !== null)
     };
@@ -24,9 +26,11 @@ var Playlists = React.createClass({
 
     this.playlistListener = PlaylistStore.addListener(this._handleStoreChanges);
     this.playStoreListener = PlayStore.addListener(this._handlePlayChanges);
+    this.userListener = SessionStore.addListener(this._handleUserChanges);
 
     if (this.comingFromNavBar() || this.notFromNavButSameUser()) {
       PlaylistActions.requestPlaylists(this.props.params.id);
+      AuthActions.getUserInfo(this.props.params.id);
     } else {
       this.context.router.push({
         pathname: "discover"
@@ -37,6 +41,7 @@ var Playlists = React.createClass({
   componentWillUnmount: function() {
     this.playlistListener.remove();
     this.playStoreListener.remove();
+    this.userListener.remove();
   },
 
   _handlePlayChanges: function(){
@@ -46,13 +51,22 @@ var Playlists = React.createClass({
     });
   },
 
+  _handleUserChanges: function(){
+    var userToDisplay = SessionStore.returnTrackOwner();
+    if (userToDisplay) {
+      this.setState({
+        playlistUser: userToDisplay
+      });
+    }
+  },
+
   _handleStoreChanges: function(){
     this.setState({playlists: PlaylistStore.returnPlaylists()});
   },
 
   comingFromNavBar: function(){
     return (this.props.location &&
-      this.props.location.search.split("=")[1][0] === this.props.params.id);
+      this.props.location.search.split("=")[1].match(/\d+/)[0] === this.props.params.id);
   },
 
   notFromNavButSameUser: function(){
@@ -71,12 +85,30 @@ var Playlists = React.createClass({
         return <PlaylistItem key={playlist.id} playlist={playlist} />;
       });
     } else {
-      playlists = <div></div>;
+      playlists = <div>This user has no playlists yet!</div>;
     }
     return playlists;
   },
   returnTracksTab: function(){
-    return <TracksIndex currentUser={SessionStore.returnUser()} userOnly={true} />;
+    if (this.state.playlistUser) {
+      return <TracksIndex currentUser={this.state.playlistUser} userOnly={true} />;
+    } else {
+      return <div></div>;
+    }
+  },
+
+  returnUserInfoBox: function(){
+    if (this.state.playlistUser){
+      var userInfoStyle = (this.state.isPlaying) ?
+        {height: 'calc(100%)'} :
+        {height: 'calc(100% + 15px)'};
+
+      var userInfoBox = <UserInfoBox userInfoStyle={userInfoStyle}
+        currentUser={this.state.playlistUser}/>;
+    } else {
+      userInfoBox = <div></div>;
+    }
+    return userInfoBox;
   },
   render: function(){
   var musicTab = this.state.whichTab === "playlists" ?
@@ -87,13 +119,11 @@ var Playlists = React.createClass({
     {marginTop: '150px', height: 'calc(100% - 85px)'} :
     {marginTop: '100px', height: 'calc(100% - 50px)'};
 
-  var userInfoStyle = (this.state.isPlaying) ?
-    {height: 'calc(100%)'} :
-    {height: 'calc(100% + 15px)'};
+  var userInfoBox = this.returnUserInfoBox();
 
   return (
     <div id="tracks-and-playlists" className="container" style={containerStyle}>
-      <UserInfoBox userInfoStyle={userInfoStyle} currentUser={SessionStore.returnUser()}/>
+      {userInfoBox}
       <div className="tab-switcher-container">
         <button name="tracks" onClick={this.switchTabs}
           className="tab-switcher">Tracks</button>

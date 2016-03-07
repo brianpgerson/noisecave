@@ -22,7 +22,15 @@ var PlaylistActions = {
     });
   },
 
+  resetPlaylists: function(){
+    AppDispatcher.dispatch({
+      actionType: "RESET_PLAYLISTS"
+    });
+  },
+
   // outbound
+
+
   requestPlaylists: function(id){
     ServerPlaylistApi.fetchPlaylists(id, PlaylistActions.receivePlaylists);
   },

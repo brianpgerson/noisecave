@@ -16,7 +16,13 @@
   font-variant: small-caps;
   font-weight: bold;
   margin-top: 10px;
-  margin-bottom: .3em;
+  width: 60%;
+  text-align: left;
+  margin-bottom: .3em
+}
+
+.track-owner-container h5:hover {
+  cursor: pointer;
 }
 
 .track-detail-topper {
@@ -24,6 +30,7 @@
   margin: 100px auto;
   margin-bottom: 0;
   height: 205px;
+  min-width: 735px;
   padding: 20px;
   color: black;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457065811/Screen_Shot_2016-03-03_at_8.29.22_PM_lremwc.png');
@@ -32,6 +39,7 @@
 
 .track-owner-container {
   width: 70%;
+  min-width: 735px;
   padding: 20px;
   height: 205px;
   margin: 0 auto;
@@ -41,7 +49,7 @@
 .track-owner-container article {
   display: block;
   float: left;
-  width: 70%;
+  width: 75%;
 }
 
 .detail-album-cover {

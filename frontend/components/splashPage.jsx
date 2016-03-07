@@ -36,7 +36,10 @@ var SplashPage = React.createClass({
   buildTracksOut: function(){
     var tracks;
     if (this.state.tracks.length > 0) {
-      tracks = this.state.tracks.slice(0, 8).map(function(track, idx){
+      tracks = this.state.tracks
+      .sort(function(a, b){return b.plays - a.plays;})
+      .slice(0, 8)
+      .map(function(track, idx){
         return (
           <TrackIndexItem
             key={idx}

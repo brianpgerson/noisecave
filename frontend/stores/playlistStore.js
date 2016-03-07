@@ -22,6 +22,9 @@ function resetPlaylists(playlists){
   });
 }
 
+function setPlaylistsToNull(){
+  _playlistStore = {};
+}
 
 PlaylistStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -37,6 +40,9 @@ PlaylistStore.__onDispatch = function(payload) {
     resetPlaylistsWithTracks(payload.playlists);
     this.__emitChange();
     break;
+  case "RESET_PLAYLISTS":
+    setPlaylistsToNull();
+    this.__emitChange();
   }
 };
 

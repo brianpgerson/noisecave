@@ -32,7 +32,7 @@
 
 .user-info-name {
   font-variant: small-caps;
-  font-size: 2.2em;
+  font-size: 2em;
 }
 
 .box-header {
@@ -133,4 +133,11 @@
   position: relative;
   margin-left: 280px;
   border-bottom: 1px solid aliceblue;
+}
+
+@media (max-height: 700px) {
+  .user-info-container {
+    height: 120% !important;
+    padding: 7% 0px;
+  }
 }

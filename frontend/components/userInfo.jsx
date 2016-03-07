@@ -17,14 +17,16 @@ var UserInfo = React.createClass({
           e.stopPropagation();
       });
       document.getElementById('profileEdit')
-      .addEventListener('click', function(e){
-        ModalActions.openModal("profileEdit");
+        .addEventListener('click', function(e){
+          ModalActions.openModal("profileEdit");
       }.bind(this));
       document.getElementById('logout').addEventListener('click', function(e){
         this.handleLogout();
       }.bind(this));
       document.getElementById('profilePage').addEventListener('click', function(e){
+        e.preventDefault();
         this.props.userProfileCallback();
+        e.stopPropagation();
       }.bind(this));
     }
   },

@@ -17,21 +17,21 @@ var UserInfoBox = React.createClass({
   },
   _getTrackNumber: function() {
     var myTracks = TrackStore.all().filter(function(track) {
-      return track.creatorId === this.props.currentUser.userId;
+      return track.creatorId === this.props.currentUser.id;
     }.bind(this));
     this.setState({
       tracks: myTracks.length
     });
   },
   render: function(){
-    if (this.props.currentUser.userImage){
-      var image = this.props.currentUser.userImage;
+    if (this.props.currentUser.image){
+      var image = this.props.currentUser.image;
     } else {
       image = "http://res.cloudinary.com/thadowg/image/upload/v1456774819/default_album_300_g4_ufur3z.png";
     }
 
-    if (this.props.currentUser.createdAt){
-      var date = new Date(this.props.currentUser.createdAt)
+    if (this.props.currentUser.created_at){
+      var date = new Date(this.props.currentUser.created_at)
         .toString().split(" ").slice(0,4);
       var formattedDate =
         date[0] + ", " + date[1] + " " + date[2] + ", " + date[3];
@@ -50,7 +50,7 @@ var UserInfoBox = React.createClass({
         </div>
         <div className="user-info-box">
           <p><span className="box-header">about me: </span>
-            <br />{this.props.currentUser.userDescription}</p>
+            <br />{this.props.currentUser.description}</p>
           <p><span className="box-header">member since: </span>
             <br />{formattedDate}</p>
           <p><span className="box-header">tracks uploaded: </span>

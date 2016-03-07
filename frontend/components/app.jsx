@@ -52,7 +52,7 @@ var App = React.createClass({
     if (this.state.loggedIn) {
       var userId = SessionStore.getUserId();
       this.context.router.push({
-        pathname: '/user/' + SessionStore.getUserId() + '/music',
+        pathname: '/user/' + userId + '/music',
         query: {currentUserId: userId}
       });
     } else {

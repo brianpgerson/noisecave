@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var AuthConstants = require('../constants/authConstants');
 var ServerAuthApi = require('../util/serverAuthApi');
+var PlaylistActions = require('../actions/playlistActions');
 var ModalActions = require('./modalActions');
 
 var AuthActions = {
@@ -21,6 +22,7 @@ var AuthActions = {
   },
   logout: function(sessionParams){
     ModalActions.closeModal();
+    PlaylistActions.resetPlaylists();
     AppDispatcher.dispatch({
       actionType: AuthConstants.LOGOUT_REQUEST,
       sessionParams: sessionParams
