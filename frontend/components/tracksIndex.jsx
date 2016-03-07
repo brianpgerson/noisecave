@@ -94,7 +94,7 @@ var TracksIndex = React.createClass({
       this.props.userOnly ? {backgroundColor: 'transparent'} : {};
     var header = this.state.searched ? <h4>Search Result for {this.props.location.search.split("=")[1].split("+").join(" ")}: </h4> : <div></div>;
     var hero = this.props.userOnly ? <div></div> :
-      <div id="discover-hero"><h1>Browse the top tracks on noisecave</h1>
+      <div id="discover-hero"><h1>browse the top tracks on noisecave</h1>
       <hr />
         <p>You can always find the top played tracks within the past two weeks on the Discover page. Explore and discover the music our community is into right now.</p>
       </div>;

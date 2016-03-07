@@ -18,7 +18,18 @@
   color: aliceblue;
 }
 
-#discover-hero p{
+#discover-hero h1 {
+  font-variant: small-caps;
+  font-weight: bold;
+  background-color: #064473;
+  color: white;
+  padding-bottom: 6px;
+  -webkit-box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+}
+
+#discover-hero p {
   width: 60%;
   margin: 0 auto;
   font-weight: lighter;

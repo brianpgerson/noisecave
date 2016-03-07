@@ -23,7 +23,7 @@ var Playlists = React.createClass({
   },
 
   componentDidMount: function() {
-
+    
     this.playlistListener = PlaylistStore.addListener(this._handleStoreChanges);
     this.playStoreListener = PlayStore.addListener(this._handlePlayChanges);
     this.userListener = SessionStore.addListener(this._handleUserChanges);
