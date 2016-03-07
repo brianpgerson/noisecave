@@ -13,6 +13,17 @@
   height: 90%;
 }
 
+#demo {
+  position: absolute;
+  right: 32px;
+  bottom: 92px;
+  font-size: 12px;
+  color: #064473;
+}
+
+#demo:hover {
+  cursor: pointer;
+}
 
 .login-text-input {
   margin-left: 10px;

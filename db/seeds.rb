@@ -9,339 +9,46 @@
 # drake's tracks:
 
 
-Track.create!({:title=>"Drake - Come Thru",
-   :description=>"Track 14 off Nothing Was The Same. Here, Drake reminisces about a past girl who lived in the town he’s in, and what they used to do together. Uncredited background vocals provided by PARTYNEXTDOOR",
-    :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859855/i2ajgpcmtznalkdi8ci0.jpg",
-     :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/4e08c200-90bf-4709-94e1-7efacd51cf09.mp3",
-      :creator_id=>ADD,
-       :plays => 7})
-Track.create!({:title=>"Drake - 6 God",
-   :description=>"On October 25th 2014, the day following his 28th birthday, Drizzy released the full version of “6 God,” along with “How Bout Now” and “Heat of the Moment,” dropping the songs early due to a hack-attack. The track was later included on If You’re Reading This It’s Too Late.",
-    :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859889/rfon5hgel73kkzj1tcxt.jpg",
-     :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/c5aebfc8-9059-4745-9000-efca7f63015a.mp3",
-      :creator_id=>ADD,
-       :plays => 2})
-Track.create!({:title=>"Drake - Energy",
-   :description=>"This song addresses Drake’s haters along with the controversy surrounding Birdman, Lil Wayne, and Cash Money Records. The music video for this song went viral, with Drake impersonating numerous celebrities, including President Obama, LeBron James, Oprah, Miley Cryus, Justin Bieber, and Kanye West. When asked to describe the video, Drake said: It’s shocking, It’s beautiful, It’s a lot of things.",
-    :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859932/f8fmk1riqymgumpfaolc.jpg",
-     :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/f1cbdfb7-c9c6-4b42-ad8b-ef27acf92bb9.mp3",
-      :creator_id=>ADD,
-       :plays => 3})
-Track.create!({:title=>"Drake - Legend",
-   :description=>"Legend is the hard-hitting opener to Drake’s surprise mixtape If You’re Reading This It’s Too Late. On the track, Drake’s braggadocio goes 0 to 100, real quick as he flaunts his success.",
-    :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860026/zvwpgbkghy6ysfffaxly.jpg",
-     :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/0048fd02-3051-4dae-a979-68f542c8e601.mp3",
-      :creator_id=>ADD,
-       :plays => 14})
-Track.create!({:title=>"Drake - Forever",
-   :description=>"This song was featured on the More Than a Game soundtrack. Four of hip hop’s current heavyweights take turns going in over a hard beat by Boi-1da.",
-    :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860100/xzaww5mu0l3vwyqowk1q.jpg",
-     :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/ff380ef4-9b69-4963-b700-f30a21b151e7.mp3",
-      :creator_id=>ADD,
-       :plays => 1})
-Track.create!({:title=>"Dramatic Chipmunk - The Drama",
-   :description=>"Woah - what a cute little chipmunk! I think it looks more like a Gerbil, but whatever. A little on the dramatic side, though...",
-      :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860127/mfum1eghacby4xbxxsrx.png",
-       :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/3b4924fe-cae3-49ec-9b14-efb7e3ebf40b.mp3",
-        :creator_id=>ADD,
-         :plays => 0})
-Track.create!({
-  :title=>"Drake - Tuscan Leather",
-  :description=>"How much time is this **** spending on the intro!? The six-minute, six-second introductory (and highly-anticipated) song off Drake’s third outing, Nothing Was The Same. The song’s title borrows from Tom Ford’s designer cologne, Tuscan Leather.",
-  :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859826/gi1ydwmwtzhtdh7uwua5.jpg",
-  :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/31003046-4d69-4b8b-894b-34ca26706682.mp3",
-  :creator_id=>ADD,
-  :plays => 8})
 
-  Track.create!({
-    :title=>"Chromeo - Bonafied Lovin'",
-    :description=>"Single of the Week... Every night in London, too-serious indie dorks forget the ability to dance at their generic club of choice. What these kids need is Chromeo, stat...",
-    :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338426/28817_polbwu.jpg",
-    :audio_url=>"https://s3-us-west-1.amazonaws.com/briansdopetracks/tracks/audio/%27Bonafied+Lovin%27+Chromeo+%5BOFFICIAL+VIDEO%5D.mp3",
-    :creator_id=>11,
-    :plays => rand(50)})
+Track.create!({:title=>"Taylor Swift - I Knew You Were Trouble", :description=>"\"I Knew You Were Trouble\" received generally positive reviews from music critics, who commended its mainstream appeal yet noted Swift's experimentation with dubstep as relatively limited. Due to strong digital sales, the song debuted at number three on the Billboard Hot 100, selling more than 416,000 copies within its first week, making it Swift's 14th entry in the top ten.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457342025/e8pkfpon8l4i1yb4ygdo.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/39a1ea04-1a97-4a01-a4e3-2dfe3eec92e4.mp3", :creator_id=>7, :plays=>rand(50)})
+Track.create!({:title=>"Taylor Swift - You Belong With Me", :description=>"Swift was inspired to write \"You Belong with Me\" after overhearing a male friend of hers arguing with his girlfriend through a phone call; she continued to develop a story line afterward. The song contains many pop music elements and its lyrics have Swift desiring an out-of-reach love interest.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457342486/lfcpspjtz2i0suoghim5.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/9bf95f95-46ef-4b13-8b94-12ac0a50a812.mp3", :creator_id=>7, :plays=>rand(50)})
+Track.create!({:title=>"Tame Impala - Let It Happen", :description=>"\"Let It Happen\" is a song by Australian psychedelic rock act Tame Impala. It was released on 11 March 2015 as the lead single from the group's third studio album Currents. The song centers on accepting personal transition, and was worked on in various locations around the world. The song runs nearly eight minutes long, and its second half contains a manipulated, skipping glitch and wordless melodies. ", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457341812/zdxgov0hgdegkrxd4zfa.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/dceb350d-cec8-491c-9931-423716015121.mp3", :creator_id=>9, :plays=>rand(50)})
+Track.create!({:title=>"Tame Impala - Eventually", :description=>"Tame Impala's forthcoming album Currents is coming soon via Interscope. Today, a new song called \"Eventually\" popped up on iTunes—you can listen to it below. Previously, we heard \"Let It Happen\", \"'Cause I'm a Man\" and \"Disciples\". ", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457341383/mt9xg60psbr5mcwh3wet.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/87afff31-7a33-4d81-93e9-fb378eafe079.mp3", :creator_id=>9, :plays=>rand(50)})
+Track.create!({:title=>"Drake - Back to Back", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457337225/or9lv1c5zucilcu89qsu.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/8bfd5c17-5a71-421c-b3a1-cb3939896b4d.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Tame Impala - The Less I Know the Better", :description=>"“The Less I Know The Better” compounds a tale of unrequited love with a grooving, bass-driven track. Tame Impala lead-singer Kevin Parker said that the song doesn’t belong on the album “because it has this dorky, white disco funk.” The lyrics describe the painful moment of finding out that the person you love is in a relationship with someone else.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457341542/bjnv2zx3kyxfvfheqnot.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/f1a148a6-2494-4912-93cc-1a69eb44f346.mp3", :creator_id=>9, :plays=>rand(50)})
+Track.create!({:title=>"Taylor Swift - Out Of The Woods", :description=>"\"Out of the Woods\" is a synthpop song.[10] The track was written by Swift and Antonoff and is the first song that Swift has written to an existing track. Antonoff sent an early version of the song without the vocals or lyrics to Swift, which she then added in just 30 minutes. Speculation as to whom the song is about is rampant.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457342212/enm9hjpiktalz6nkkzx4.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/a3b1c36a-8855-4874-b2c9-b52b0b30a0c8.mp3", :creator_id=>7, :plays=>rand(50)})
+Track.create!({:title=>"Drake - 5am in Toronto", :description=>"Drake released this new freestyle \"5 Am In Toronto\", with production coming from Boi-1da and Vinylz.  This will not appear on his upcoming LP.\n'5AM In Toronto' was released on Thursday, March 7th, 2013. Drake continues to impress with each new leak, and 5AM In Toronto (Prod. by Boi-1da & Vinylz) is no exception. It's strengthens Drake's already impressive body of work, which has seen positive change over the years. ", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457337359/cfvaoqhkl6jyi8vfmqid.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/ba779d20-9f0c-4a88-9b8a-959ea950d8cb.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Washed Out - Weightless", :description=>"By the time the slo-mo synth-pop of 'Weightless' blurrily drifts into earshot, the sinking feeling is that perhaps it's going to be business as usual…but the perky 'All I Know' is the first hint that Greene might be on to something special – a new way of doing things.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339692/kzmay1atafn3mi57gkkd.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/d2b176ed-fb6c-49eb-a708-d41f88e3ca92.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Drake - Come Thru", :description=>"Track 14 off Nothing Was The Same. Here, Drake reminisces about a past girl who lived in the town he’s in, and what they used to do together. Uncredited background vocals provided by PARTYNEXTDOOR", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338618/gybyupv0bpjevznbdjd7.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/9e29e51f-fec2-4996-9bb4-87b98ef32c00.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Chromeo - Bonafied Lovin'", :description=>"Single of the Week... Every night in London, too-serious indie dorks forget the ability to dance at their generic club of choice. What these kids need is Chromeo, stat...", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339131/hpldjcwrscilwcfutwpj.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/11527b76-46d3-4bae-a5cc-ae242dfa3d88.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Washed Out - Feel It All Around", :description=>"The few (self-) released contributions from this South Carolinian have a homespun synthesizer arrangements and multi-tracked, faraway vocals that sound something like, say, the theme music to an instructional video from 1987. \"Feel It All Around\" serves as the natural progression from \"You'll See It\", the ravey little slab of diffident lo-fi pop reviewed by Pitchfork earlier this year, by bringing the curtain down on the little party suggested by \"You'll See It\".", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339567/ndmfhkrsdtbdpyutoagn.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/ef993fdc-c5d6-49e0-bf8c-3b5ac528a0ed.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Drake - Forever", :description=>"This song was featured on the More Than a Game soundtrack. Four of hip hop’s current heavyweights take turns going in over a hard beat by Boi-1da.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338923/prcse0idwc2efh5w2sny.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/e349c2e4-9257-441e-9e7f-a50521cc22c5.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Washed Out - You and I", :description=>" No longer a stand-alone Adult Swim-released single, \"You And I\", featuring Chairlift's Caroline Polachek, is the soundtrack to a tender, Sunday morning make-out session, and well, just listen to that throbbing bassline. \"Sade but a bit more shy,\" or \"Trip-hop intended for making love rather than, you know\" kinda describes what's going on here.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339405/y9x6shtg3vsehtexs74t.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/3f5d0a8f-7b8b-4d60-8975-bf473e1dd4b4.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"The Devil Makes Three - Old Number 7", :description=>"If there’s such a thing as love at first listen, this album falls squarely in that category.  Offering immensely catchy ear-worms like their best known song, Old Number 7, this is a band that’ll have you grooving from dusk till dawn, regardless of whether or not you’re necessarily into any of the aforementioned genres.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339186/fqjrybtbvoisehikl9kx.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/722b839c-6fce-46b5-b59d-f5a13f8c1ec3.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Drake - 6 God", :description=>"On October 25th 2014, the day following his 28th birthday, Drizzy released the full version of “6 God,” along with “How Bout Now” and “Heat of the Moment,” dropping the songs early due to a hack-attack. The track was later included on If You’re Reading This It’s Too Late.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338667/rtny3sd3ggg1j1r2iuqy.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/cae303b5-f553-4f2b-bc37-aad9a2969dff.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Drake - Energy", :description=>"On October 25th 2014, the day following his 28th birthday, Drizzy released the full version of “6 God,” along with “How Bout Now” and “Heat of the Moment,” dropping the songs early due to a hack-attack. The track was later included on If You’re Reading This It’s Too Late.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338713/vyviuzgughd2fy7uz7mh.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/ad1da8f9-e186-4b7c-bdbf-f3264ac1d39e.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Drake - Tuscan Leather", :description=>"How much time is this **** spending on the intro!? The six-minute, six-second introductory (and highly-anticipated) song off Drake’s third outing, Nothing Was The Same. The song’s title borrows from Tom Ford’s designer cologne, Tuscan Leather.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338989/el2b1jdyzyecxgsbf33o.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/33b5079f-5ae3-48cf-947b-0dd3fb5d78d8.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Drake - Legend", :description=>"Legend is the hard-hitting opener to Drake’s surprise mixtape If You’re Reading This It’s Too Late. On the track, Drake’s braggadocio goes 0 to 100, real quick as he flaunts his success.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457338811/rtdb4dr2ki9ljlahgqvl.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/2939b49b-4afc-42e8-93bf-bebc9a082c7d.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Chromeo - Jealous", :description=>"Jealous (I Ain't With It) is a song by Canadian electrofunk duo Chromeo. It was released in March 2014 as the fourth single from their album, White Women. The song has reached number 12 in their native country, Canada.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340154/pfj06fnc2arm8zclsovt.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/fe55ea43-2cc4-48df-9523-7e96892dca05.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"The Kooks - Sweet Emotion", :description=>"You know that moment when a song comes along and just stops you in your tracks? Yeah, this one did just that. Sure, I've used a similar introduction on a number of my reviews, but believe me: this really is *that* good. Today, The Kooks released their new album Listen, and I'm pretty sure the title will ring true: you're going to want to sit through this entire catalog.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457341056/svsfff9l6tduqoeuwzkd.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/22356f46-a734-4ecb-8c98-4e2f31f01da9.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Glass Animals - Gooey", :description=>"The second single off of Glass Animals' debut album, ZABA, and the first to US alternative radio. As described in an interview, it’s about “youth and naïvety and childishness”, and a love encounter gone wrong. All set to sexy, chill instrumentals.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340438/ccmtymn8tbeb8gizrh9y.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/b938b12b-aad5-45ce-9afc-b589ae682282.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Glass Animals - Exxus", :description=>"The soulful dark pop of Glass Animals continues to fascinate Team B3. New track, “Exxus” (Double-A w/ the also phenomenal “Black Mambo”) is one of the finest executions of the current trend twoard minimalist beat-driven R&B-informed gloom pop we’ve heard. The potential and promise of Glass Animals seems exponential.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340662/gjb3jjdbkyjabzbvztip.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/dcf9843e-fd1b-423f-9f9d-79a0bea3953e.mp3", :creator_id=>6, :plays=>rand(50)})
+Track.create!({:title=>"Living Legends - Speed of Life", :description=>" Slug donates a speedy couple verses to Aesop's \"Moving at the Speed of Life\", a jam that sets a misleading pace. Things relax quickly for Lucky's \"Another Day\" featuring Marty James - a string-flute combo with a medieval tone - and Bicasso's \"She's The One\", a soul-guided groove that dwells on the assets of a particular lady.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339805/gb9qr7hgplakc08bs7wg.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/b7ddf8fb-02a8-4357-b3e9-b3245ef69bb6.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Glass Animals - Hazey", :description=>"This week the UK band will start the US leg of the tour and to celebrate, the band has shared the video for “Hazey.” The clip features London based dance collective the Solitary Crew, who perform a style of street dancing called “bone breaking.” And once you watch through the video, you’ll see where they get that name. Glass Animals’ Dave Bayley explained further about their style and how it relates to the song’s message.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340760/atvvkmtjhkn6s43ghyub.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/a85a5196-c37e-4080-9294-5bb9165948dc.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Glass Animals - Toes", :description=>"So apparently the song is based off of the book The Island of Dr. Moreau by H.G. Wells. I haven’t read it, or even heard of it but it has since been added to my TBR list. Without reading the book I can only guess at the meaning of the lyrics but I imagine I am probably not far off in my interpretation.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340528/poz932vvgtliyebhrgz8.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/24ebfbb6-2c5f-4c0b-9a37-3bfa91bb4005.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"St Paul and the Broken Bones - River Song", :description=>"If you haven't heard this band, you will be pleasantly surprised. Or amazed. Discover why Roseanne Cash tweeted, \"I have seen the future of music & the name of the band is St. Paul & the Broken Bones.\"", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340302/dcslkmwwcaxfgqf8cgq6.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/e2adb6ed-ff11-4c77-b7b0-ad0d9bed07b1.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"St Paul and the Broken Bones - Call Me", :description=>"‘Call Me’ all started with that first guitar riff you hear at the beginning. There were six of us in a tiny room and the moment we heard the riff we knew we had a danceable song. I was in love with the idea of putting a phone number in a song just like the Wilson Pickett ‘634-5789(Soulsville U.S.A)’ song.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340358/vjns7ttnbmhq5a538wqc.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/4fbaaff2-2bee-4605-8ebd-384477272605.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Joey Bada$$ - From Da Tomb$", :description=>"The third track off of 1999 features a verse from Chuck Strangers. Joey Bada$$ covers a lot of topics, particularly his dislike for school, as verse 3 is entirely dedicated to it.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339939/pvuhhjooxbl8azz2ycy7.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/f24441a9-a599-4cbe-9a04-86169055a788.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Living Legends - Never Fallin'", :description=>"“Never Fallin’” is an exercise in balance: sped-up vocals are buttressed by flat drums; keys drip drip slowly from above as a busy bass bubbles up. Guest producers are in abundance, notably spearheaded by the Madlib-tuned lead single, “Blast Your Radio”, featuring his signature stuttering slump against a rasta growl. ", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457340023/pvjfazaj1ltxmai2nl4i.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/ead2207b-46dc-450b-8441-1148ae5c5c30.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Joey Bada$$ - Paper Trail$", :description=>"Produced by the legendary DJ Premier, “Paper Trail$” revolves around how money has changed Joey in a negative way. He refers to Wu-Tang’s “C.R.E.A.M.” throughout the track to illustrate the point. Joey described this song as the proper intro to B4.DA.$$. in an interview with Power 106 Los Angeles:", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457339756/ts4uu1zqasshbhzjaqvu.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/823d96a3-306e-4550-b3e2-c23575a18ee9.mp3", :creator_id=>8, :plays=>rand(50)})
+Track.create!({:title=>"Taylor Swift - Blank Space", :description=>"\"Blank Space\" is a electropop song that many critics compared to the works of fellow artist Lorde.[3] It makes fun of Swift's recent exposure in the media about her dating life, portraying herself as \"an overly attached man-eater who dates for songwriting material\".", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457342959/fuhfp3uebrtm0rtt66qh.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/3f997c26-1fd4-4d7c-940c-404fbea49a1d.mp3", :creator_id=>7, :plays=>rand(50)})
+Track.create!({:title=>"Taylor Swift - Shake It Off", :description=>"Lyrically, the song is dedicated to Swift's detractors. She has discussed this, saying, \"I’ve learned a pretty tough lesson that people can say whatever they want about us at any time, and we cannot control that. The only thing we can control is our reaction to that.\"[17] In an interview for Rolling Stone, Swift elaborated.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457342867/w4rnup5labosjksczybm.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/cc845870-47d2-4345-a9a2-1408d3afb323.mp3", :creator_id=>7, :plays=>rand(50)})
+Track.create!({:title=>"Hall & Oates - Rich Girl", :description=>"“Daryl wrote it,” John confessed, talking about his other musical half. “It was about a guy who was the heir to a fast food fortune.” We can’t help but feel like everything we know in life is a lie now. “He realized ‘Rich Girl’ sounded a lot better than ‘Rich Guy.’” Can't argue that.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457341175/pkwtsgurj7bjwpbcnybh.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/9be35b15-86fd-454c-be7a-f18220fd2953.mp3", :creator_id=>9, :plays=>rand(50)})
 
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
 
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-  Track.create!({
-    :title=>"TITLE",
-    :description=>"DESCRIPT",
-    :image_url=>"IMG",
-    :audio_url=>"AUD",
-    :creator_id=>ADD,
-    :plays => rand(50)})
-
-User.create!({username: "Drizzy", email: "6god@town.com", password: "testing", description: "I'm just a rapper from the 6 hoping to make it big.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/drizzy.png"})
-User.create!({username: "TayTaySweeSwee", email: "soitsgonnabeforever@town.com", password: "testing", description: "I mostly wear t-shirts and sit in the bleachers.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/taytay.png"})
-User.create!({username: "Brian", email: "dog@town.com", password: "testing", description: "You know, I'm not sure what I'm doin here, besides making some dope-ass playlists.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/bribri.png"})
-User.create!({username: "DomesticImpala", email: "causeim@man.com", password: "testing", description: "Just a couple Aussies recording some cool psychadelic rock.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/domesticimpala.png"})
+Playlist.create!({:title=>"Drake's Workout Mix", :description=>"Gets the blood pumpin", :creator_id=>6})
+Playlist.create!({:title=>"Very Good Drake Songs", :description=>"These are some very good Drake songs", :creator_id=>8})
+Playlist.create!({:title=>"My Favorite Tay Tay Swift Songs", :description=>"Why not?", :creator_id=>8})
+Playlist.create!({:title=>"Songs for Driving at Night", :description=>"", :creator_id=>8})
+Playlist.create!({:title=>"Songs for Coding", :description=>"I think this is good", :creator_id=>8})
+Playlist.create!({:title=>"Brian's Workout Tracks", :description=>"Get pumped!", :creator_id=>8})

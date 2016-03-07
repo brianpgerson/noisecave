@@ -1,21 +1,18 @@
 
+Playlist.create!({:title=>"Drake's Workout Mix", :description=>"Gets the blood pumpin", :creator_id=>9})
+Playlist.create!({:title=>"Very Good Drake Songs", :description=>"These are some very good Drake songs", :creator_id=>11})
+Playlist.create!({:title=>"My Favorite Tay Tay Swift Songs", :description=>"Why not?", :creator_id=>11})
+Playlist.create!({:title=>"Songs for Driving at Night", :description=>"", :creator_id=>11})
+Playlist.create!({:title=>"Songs for Coding", :description=>"I think this is good", :creator_id=>11})
+Playlist.create!({:title=>"Brian's Workout Tracks", :description=>"Get pumped!", :creator_id=>11})
 
-Track.create!({:title=>"Drake - Back to Back", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859721/qhdd2pt0zzvuioohe6ly.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/b21f61fc-1515-4c06-8507-dde74bd6194a.mp3", :creator_id=>7})
+User.create!({username: "Drizzy", email: "6god@town.com", password: "testing", description: "I'm just a rapper from the 6 hoping to make it big.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/drizzy.png"})
+User.create!({username: "TayTaySweeSwee", email: "soitsgonnabeforever@town.com", password: "testing", description: "I mostly wear t-shirts and sit in the bleachers.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/taytay.png"})
+User.create!({username: "Brian", email: "dog@town.com", password: "testing", description: "You know, I'm not sure what I'm doin here, besides making some dope-ass playlists.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/bribri.png"})
+User.create!({username: "DomesticImpala", email: "causeim@man.com", password: "testing", description: "Just a couple Aussies recording some cool psychadelic rock.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/domesticimpala.png"})
 
-Track.create!({:title=>"Drake - 5am in Toronto", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859791/alwzhhpazyjeho1q8nlp.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/31bc74d4-c9b1-4d7b-a571-69c1fa907461.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - Come Thru", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859855/i2ajgpcmtznalkdi8ci0.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/4e08c200-90bf-4709-94e1-7efacd51cf09.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - 6 God", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859889/rfon5hgel73kkzj1tcxt.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/c5aebfc8-9059-4745-9000-efca7f63015a.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - Energy", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859932/f8fmk1riqymgumpfaolc.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/f1cbdfb7-c9c6-4b42-ad8b-ef27acf92bb9.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - Legend", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860026/zvwpgbkghy6ysfffaxly.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/0048fd02-3051-4dae-a979-68f542c8e601.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - Dumbman", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860055/zqq2k0fgjpnlevscgnbd.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/67375386-56d1-4ab3-ac24-8dc6c01c37e3.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - Forever", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860100/xzaww5mu0l3vwyqowk1q.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/ff380ef4-9b69-4963-b700-f30a21b151e7.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Dramatic Chipmunk - Hi There, BerrDowg", :description=>"Woah, what a cute little chipmunk! I think it looks more like a Gerbil, but whatever.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456860127/mfum1eghacby4xbxxsrx.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/3b4924fe-cae3-49ec-9b14-efb7e3ebf40b.mp3", :creator_id=>7})
-
-Track.create!({:title=>"Drake - Tuscan Leather", :description=>"It's a legit-ass rap about how Drake is the greatest rapper in the game right now - and showing what happens when you get in his grill. Meek Mill gets pretty demolished here...is anyone surprised?", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1456859826/gi1ydwmwtzhtdh7uwua5.jpg", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/31003046-4d69-4b8b-894b-34ca26706682.mp3", :creator_id=>7})
+f = File.open('text.txt', 'w')
+x = Track.all
+trax = x.map { |track| {seedTrack: {title: track['title'], description: track['description'], image_url: track['image_url'], audio_url: track['audio_url'], creator_id: track['creator_id']}}}
+trax.each {|track| f.write(track)}
+f.close

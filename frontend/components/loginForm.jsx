@@ -30,6 +30,7 @@ var LoginForm = React.createClass({
         break;
     }
 
+
     var sessionParams =
       {user: {
               username: this.state.username,
@@ -48,6 +49,17 @@ var LoginForm = React.createClass({
   isGoodEmail: function(email){
     return /(\@)(.+)(\.)/.test(email);
   },
+
+  handleDemoLogin: function() {
+    var sessionParams =
+      {user: {
+              username: "Brian (demo user)",
+              password: "testing"
+            }
+      };
+    AuthActions.loginRequest(sessionParams)
+  },
+
 
   handleCancel: function(e){
     e.preventDefault();
@@ -80,6 +92,10 @@ var LoginForm = React.createClass({
     var checks = this.determineValidity();
     var anyInvalid = checks[0];
     var lengthCheck = (options.checkLength && checks[1]) ? checks[1] : "";
+    var demoLogin = (options.showDemo) ?
+      <span onClick={this.handleDemoLogin}
+            id="demo">Demo Login!</span> : <div></div>;
+
 
     return (
       <div className="sign-up-in">
@@ -112,6 +128,7 @@ var LoginForm = React.createClass({
                     onChange={this.handleInputChanges}/>
             </label>
           </div>
+          {demoLogin}
             <input type="submit"
                     value={options.buttonText}
                     name={options.buttonType}

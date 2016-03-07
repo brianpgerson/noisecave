@@ -50,7 +50,8 @@ var MyModal = React.createClass({
           buttonText: "Log In!",
           checkLength: false,
           buttonType: "in",
-          errors: this.state.errors
+          errors: this.state.errors,
+          showDemo: true
         };
         break;
       case "upload":
