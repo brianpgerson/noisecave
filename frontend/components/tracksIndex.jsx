@@ -92,17 +92,20 @@ var TracksIndex = React.createClass({
       };
     var backgroundStyle =
       this.props.userOnly ? {backgroundColor: 'transparent'} : {};
-    var header = this.state.searched ? "Results: " : "";
+    var header = this.state.searched ? <h4>Search Result for {this.props.location.search.split("=")[1].split("+").join(" ")}: </h4> : <div></div>;
     var hero = this.props.userOnly ? <div></div> :
-      <div id="discoverHero"></div>;
+      <div id="discover-hero"><h1>Browse the top tracks on noisecave</h1>
+      <hr />
+        <p>You can always find the top played tracks within the past two weeks on the Discover page. Explore and discover the music our community is into right now.</p>
+      </div>;
     var trackWrapperClassname = this.props.userOnly ? "all-tracks group" :
       "all-tracks";
     var trackIndex = this.buildTracksOut();
     return (
       <div className="track-index-wrapper">
+        {hero}
         <div style={backgroundStyle} className="content-container">
-          <h1>{header}</h1>
-          {hero}
+          {header}
           <div className={trackWrapperClassname} style={userStyle}>
             {trackIndex}
           </div>

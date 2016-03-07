@@ -25,7 +25,8 @@ class Api::TracksController < ApplicationController
 
   def update
     @track = Track.find(params[:id])
-    if @track.update(track_params)
+    updated_plays = @track.plays + 1
+    if @track.update(plays: updated_plays)
       render json: @track
     else
       render json: {errors: @track.errors.full_messages}, status: :unprocessable_entity

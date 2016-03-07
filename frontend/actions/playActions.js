@@ -1,28 +1,32 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
+var TrackActions = require('../actions/trackActions');
 
 var PlayActions = {
-  addToPlayStore: function(trackUrl){
+
+  addToPlayStore: function(track){
+    TrackActions.updateTrackPlays(track.id);
     AppDispatcher.dispatch({
       actionType: "RECEIVE_PLAY_URL",
-      url: trackUrl
+      url: track
     });
   },
-  addToPlayStoreQueue: function(trackUrl){
+  addToPlayStoreQueue: function(track){
     AppDispatcher.dispatch({
       actionType: "RECEIVE_QUEUE_URL",
-      url: trackUrl
+      url: track
     });
   },
-  addToQueueInBulk: function(trackUrls){
+  addToQueueInBulk: function(tracks){
     AppDispatcher.dispatch({
       actionType: "RECEIVE_QUEUE_URLS",
-      urls: trackUrls
+      urls: tracks
     });
   },
-  addFromQueue: function(trackUrl){
+  addFromQueue: function(track){
+    TrackActions.updateTrackPlays(track.id);
     AppDispatcher.dispatch({
       actionType: "MOVE_FROM_QUEUE",
-      url: trackUrl
+      url: track
     });
   }
 };

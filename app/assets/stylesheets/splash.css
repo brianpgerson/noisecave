@@ -1,0 +1,69 @@
+#header-hero {
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457232223/noise-cave-logo-with-text_uaj929.png');
+  height: 66%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-position: center;
+  max-height: 800px;
+  margin-top: 3%;
+  background-color: RGBA(0,0,0,.8);
+}
+
+#video-wrapper {
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  background-color: black;
+  background-attachment: fixed;
+}
+
+#splash-sign {
+  top: 62%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  transition: background-color, 0.5s, ease-in-out;
+}
+
+#splash-sign:hover {
+  background-color: aliceblue;
+}
+
+.content-container h1, h4 {
+  text-align: center;
+}
+
+.splash-header {
+  font-variant: small-caps;
+  font-weight: bold;
+  background-color: #064473;
+  color: white;
+  padding-bottom: 6px;
+  -webkit-box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+}
+
+.copy-section p {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 3%;
+  font-weight: lighter;
+}
+
+.copy-section h4 {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
+
+.copy-section {
+  width: 100%;
+  padding: 2% 0;
+  background-color: rgba(0,0,0,.4);
+  color: aliceblue;
+}

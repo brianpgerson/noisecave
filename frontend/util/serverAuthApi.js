@@ -70,6 +70,20 @@ var ServerAuthApi = {
         ErrorActions.sendError(error);
       }
     });
+  },
+  getUserInfo: function(id, callback){
+    $.ajax({
+      url: "/api/users/" + id,
+      type: "GET",
+      data: {id: id},
+      success: function(response){
+        callback(response);
+      },
+      error: function(response){
+        var error = JSON.parse(response.responseText).errors;
+        ErrorActions.sendError(error);
+      }
+    });
   }
 };
 

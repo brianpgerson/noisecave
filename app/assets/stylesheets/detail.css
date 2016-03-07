@@ -1,0 +1,46 @@
+.detail-container {
+  color: white;
+}
+
+.track-owner-image {
+  height: 100px;
+  width: 100px;
+}
+
+.track-detail-topper {
+  width: 75%;
+  margin: 100px auto;
+  margin-bottom: 0;
+  height: 205px;
+  padding: 20px;
+  color: black;
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457065811/Screen_Shot_2016-03-03_at_8.29.22_PM_lremwc.png');
+  background-position: right;
+}
+
+.detail-album-cover {
+  background-image: url(http://res.cloudinary.com/thadowg/image/upload/v1456859721/qhdd2pt0zzvuioohe6ly.jpg);
+  background-size: 100% 100%;
+  float: left;
+  margin-right: 35px;
+}
+
+.detail-container h3 {
+  font-weight: bold;
+}
+
+#big-play-button {
+  border-radius: 35px;
+  height: 70px;
+  width: 70px;
+  font-size: 2.2em;
+  padding: 15px;
+  padding-left: 20px;
+  background-color: #064473;
+  color: white;
+  transition: color, 0.3s, ease-in-out;
+}
+
+#big-play-button:hover {
+  color: #E20074;
+}

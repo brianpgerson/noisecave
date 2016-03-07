@@ -4,23 +4,31 @@
   background-color: #333;
   color: #DDD;
   position: fixed;
+  display: flex;
   top: 0;
   z-index: 100;
+  justify-content: space-around;
 }
 
 #logo {
-  height: 40px;
-  width: 66px;
-  position: absolute;
-  left: 23px;
+  width: 65px;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457293000/aaacave1_kegllf.png');
   background-size: cover;
   top: 3px;
+  margin-right: 30px;
+}
+
+#logo span {
+  float: left;
+  margin-left: 68px;
+  margin-top: 12px;
+  color: aliceblue;
 }
 
 #logo:hover {
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457293003/aaacavepink_vrr6wd.png');
   cursor: pointer;
+  color: white;
 }
 
 .navbar li {

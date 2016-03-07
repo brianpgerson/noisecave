@@ -24,6 +24,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    if @user
+      render json: @user
+    else
+      render json: {errors: ["No user with that id."]}, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def user_params

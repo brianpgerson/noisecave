@@ -46,6 +46,19 @@ var ServerTrackApi = {
       }
     });
   },
+  updateTrackPlays: function(trackId, callback){
+    $.ajax({
+      url: "api/tracks/" + trackId,
+      type: "PATCH",
+      success: function(data){
+        callback(data);
+      },
+      error: function(response){
+        var error = JSON.parse(response.responseText).errors;
+        ErrorActions.sendError(error);
+      }
+    });
+  },
   deleteTrack: function(track, callback){
     $.ajax({
       url: "api/tracks/" + track.id,

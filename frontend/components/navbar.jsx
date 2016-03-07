@@ -60,7 +60,7 @@ var NavBar = React.createClass({
     var Profile = this.uploadAndProfileText()[1];
     return (
       <nav className="navbar">
-        <div id="logo" onClick={this.handleHomeClick}><span></span></div>
+        <div id="logo" onClick={this.handleHomeClick}><span>noisecave</span></div>
           <ul className="group">
             <li onClick={this.handleDiscoverClick}
               className="left"><span>Discover</span></li>

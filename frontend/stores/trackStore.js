@@ -22,6 +22,7 @@ function resetTrack(track){
     id: track.id,
     slug: track.slug,
     title: track.title,
+    plays: track.plays,
     createdAt: track.created_at
   };
   _tracks[track.id] = newTrack;

@@ -9,6 +9,7 @@ var React = require('react');
 var Modal = require('./modal');
 var StreamBar = require('../components/streamBar');
 
+
 window.AuthActions = AuthActions;
 
 var App = React.createClass({
@@ -53,7 +54,7 @@ var App = React.createClass({
         query: {currentUserId: userId}
       });
     } else {
-      ModalActions.openModalError("login", ["Sorry, you have to be logged in to visit playlists!"]);
+      ModalActions.openModalError("login", ["Sorry, you have log in to visit your music page!"]);
     }
   },
   render: function () {
@@ -72,7 +73,6 @@ var App = React.createClass({
         <Modal
           loggedIn={this.state.loggedIn}/>
         {this.props.children}
-
       </div>
     );
   }

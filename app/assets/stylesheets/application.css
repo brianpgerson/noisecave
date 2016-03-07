@@ -11,6 +11,7 @@
 
 body {
   background-color: #ABD5F5;
+  font-family: 'Lato', sans-serif;
   height: 100%;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457133222/cutupdj_llnhxc.png');
   background-size: cover;
@@ -31,15 +32,17 @@ html {
   height: 100%;
 }
 
-#headerHero {
-  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457232223/noise-cave-logo-with-text_uaj929.png');
-  height: 75%;
-  max-width: 800px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-  background-position: center;
-  max-height: 800px;
-  min-height: 500px;
-  margin-top: 4%;
+a {
+  text-decoration: none;
+  color: white;
+  transition: color, 0.5s, ease-in-out;
+}
+
+a:hover {
+  color: #FF9D1B;
+}
+
+hr {
+  width: 60%;
+  opacity: 0.5;
 }

@@ -33,11 +33,21 @@ var AuthActions = {
       sessionParams: sessionParams
     });
   },
+  receiveUserInfo: function(userParams){
+    AppDispatcher.dispatch({
+      actionType: AuthConstants.RECEIVE_USER_INFO,
+      userParams: userParams
+    });
+  },
+
 
   // outbound
 
   updateUserInfoRequest: function(newUserParams, id){
     ServerAuthApi.updateUserInfoRequest(newUserParams, AuthActions.updateUser, id);
+  },
+  getUserInfo: function(id){
+    ServerAuthApi.getUserInfo(id, AuthActions.receiveUserInfo);
   },
   loginCheckRequest: function(){
     ServerAuthApi.loginCheckRequest(AuthActions.checkLogin);

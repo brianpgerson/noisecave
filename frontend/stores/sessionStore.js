@@ -14,6 +14,8 @@ var _sessionState = {
   createdAt: null
 };
 
+var _userInfo = {};
+
 var SessionStore = new Store(AppDispatcher);
 
 function setSessionState(sessionParams){
@@ -24,6 +26,10 @@ function setSessionState(sessionParams){
   _sessionState['userImage'] = sessionParams['image'];
   _sessionState['userEmail'] = sessionParams['email'];
   _sessionState['createdAt'] = sessionParams['created_at'];
+}
+
+function setUserInfo(userParams){
+  _userInfo = userParams;
 }
 
 SessionStore.__onDispatch = function(payload) {
@@ -42,6 +48,10 @@ SessionStore.__onDispatch = function(payload) {
     break;
   case authConstants.UPDATE_SESSION:
     setSessionState(payload.sessionParams);
+    this.__emitChange();
+    break;
+  case authConstants.RECEIVE_USER_INFO:
+    setUserInfo(payload.userParams);
     this.__emitChange();
     break;
   }
@@ -68,6 +78,10 @@ SessionStore.getUserId = function() {
 
 SessionStore.isLoggedIn = function() {
   return (_sessionState.sessionToken !== null);
+};
+
+SessionStore.returnTrackOwner = function(){
+  return _userInfo;
 };
 
 

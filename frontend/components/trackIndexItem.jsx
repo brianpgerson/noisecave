@@ -2,6 +2,7 @@ var React = require('react');
 var PlayActions = require('../actions/playActions');
 var PlayStore = require('../stores/playStore');
 var ModalActions = require('../actions/modalActions');
+
 var SessionStore = require('../stores/sessionStore');
 
 window.PlayStore = PlayStore;
@@ -37,11 +38,12 @@ var TrackIndexItem = React.createClass({
           <div className="album-cover"
                 style={divStyle}>
             <div className="index-item-controls">
-              <div className="play-button-icon"
+              <button className="track-buttons"
                 onClick={function(){
                   this.playCallback(this.props.track);}.bind(this)}>
-              </div>
-              <button className="track-buttons" onClick={function(){
+                  ▶ Play
+              </button>
+              <button className="track-buttons play-button" onClick={function(){
                         this.addToQueue(this.props.track);
                       }.bind(this)}>
                 + Queue

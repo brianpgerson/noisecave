@@ -25,10 +25,20 @@ var TrackActions = {
       trackParams: trackParams
     });
   },
+  receiveUpdatedTrack: function(trackParams){
+    AppDispatcher.dispatch({
+      actionType: TrackConstants.RECEIVE_UPDATED_TRACK,
+      trackParams: trackParams
+    });
+  },
 
   // OUTBOUND
   addTrack: function(trackParams) {
     ServerTrackApi.createTrack(trackParams, TrackActions.receiveTrack);
+  },
+
+  updateTrackPlays: function(trackId){
+    ServerTrackApi.updateTrackPlays(trackId, TrackActions.receiveUpdatedTrack);
   },
 
   getTracks: function(){

@@ -30,7 +30,7 @@ var UserInfo = React.createClass({
   },
   handleLogout: function(){
     AuthActions.logoutRequest();
-    this.context.router.push('/discover');
+    this.context.router.push('/');
   },
   render: function(){
     var classname = this.props.display ? "shown" : "hidden";
