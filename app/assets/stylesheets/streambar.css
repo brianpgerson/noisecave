@@ -108,7 +108,7 @@
   left: 28px;
   top: 50px;
   padding: 5px 0;
-  background-color: RGBA(6,68,115,.7);
+  background-color: rgba(6,68,115,.7);
   color: aliceblue;
   font-size: 12px;
   transition: background-color, 0.3s, ease;

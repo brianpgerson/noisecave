@@ -42,6 +42,10 @@ TrackStore.__onDispatch = function(payload) {
     resetTrack(payload.trackParams);
     this.__emitChange();
     break;
+  case trackConstants.RECEIVE_UPDATED_TRACK:
+    resetTrack(payload.trackParams);
+    this.__emitChange();
+    break;
   case trackConstants.REMOVE_TRACK:
     removeTrack(payload.trackParams);
     this.__emitChange();

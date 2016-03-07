@@ -2,6 +2,8 @@ var React = require('react');
 var TrackStore = require('../stores/trackStore');
 var TrackActions = require('../actions/trackActions');
 var AuthActions = require('../actions/authActions');
+var PlayActions = require('../actions/playActions');
+var ModalActions = require('../actions/modalActions');
 var SessionStore = require('../stores/sessionStore');
 
 var TrackDetail = React.createClass({
@@ -51,7 +53,16 @@ var TrackDetail = React.createClass({
             <span style={{fontWeight: "bold"}}>Uploaded:</span> {formattedDate} <br />
             <span style={{fontWeight: "bold"}}>Plays:</span> {track.plays}
             </p>
-            <button id="big-play-button"> ▶ </button>
+            <button className="big-buttons"
+                    id="big-play-button"
+                    onClick={this.handlePlayClick}>
+                     ▶
+            </button>
+            <button className="big-buttons"
+                    id="big-plus-button"
+                    onClick={this.handlePlaylistClick}>
+                     +
+            </button>
           </div>
 
       );
@@ -59,6 +70,19 @@ var TrackDetail = React.createClass({
       trackDetailTopper = <div></div>;
     }
     return trackDetailTopper;
+  },
+  handlePlayClick: function(e){
+    e.preventDefault();
+    PlayActions.addToPlayStore(this.state.thisTrack);
+  },
+  handlePlaylistClick: function(e){
+    e.preventDefault();
+    if (SessionStore.isLoggedIn()) {
+      ModalActions.openModal("playlist", this.state.thisTrack);
+    } else {
+      ModalActions.openModalError("login",
+        ["Sorry, you have to be logged in for that feature to work!"]);
+    }
   },
   returnUserStuff: function(){
     if (this.state.trackOwner) {
@@ -69,17 +93,14 @@ var TrackDetail = React.createClass({
         backgroundSize: 'contain'
       };
       var userStuff = (
-        <div className="track-owner-container">
+        <div className="track-owner-container group">
+          <div style={ownerImage} className="track-owner-image">
+          </div>
           <h5>{owner.username}</h5>
-          <div style={ownerImage}
-                className="track-owner-image"></div>
-              <article className="track-description">
-                {
-                  track ?
-                  track.description :
-                  ""
-                }
-              </article>
+          <article className="track-description">
+            Track Description: <br />
+            { track ? track.description : "" }
+          </article>
         </div>
       );
     } else {

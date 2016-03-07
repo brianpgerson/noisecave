@@ -19,7 +19,9 @@ var Playlists = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+
   componentDidMount: function() {
+
     this.playlistListener = PlaylistStore.addListener(this._handleStoreChanges);
     this.playStoreListener = PlayStore.addListener(this._handlePlayChanges);
 

@@ -8,7 +8,7 @@ var ServerTrackApi = require('../util/serverTrackApi');
 var React = require('react');
 var Modal = require('./modal');
 var StreamBar = require('../components/streamBar');
-
+var Backgrounds = require('../constants/backgroundConstants');
 
 window.AuthActions = AuthActions;
 
@@ -25,6 +25,8 @@ var App = React.createClass({
     router: React.PropTypes.object.isRequired
   },
   componentWillMount: function(){
+    document.body.style.backgroundImage
+      = 'url(' + Backgrounds[Math.floor(Math.random() * 3)] + ')';
     this.sessionListenerToken = SessionStore.addListener(this._onSessionChange);
     this.playListenerToken = PlayStore.addListener(this._onPlayChange);
     AuthActions.loginCheckRequest();

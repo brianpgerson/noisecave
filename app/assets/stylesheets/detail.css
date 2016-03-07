@@ -3,25 +3,51 @@
 }
 
 .track-owner-image {
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
+  float: left;
+  margin: 4%;
+  margin-left: 0;
+}
+
+.track-owner-container h5 {
+  float: left;
+  color: #FF9D1B;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: .3em;
 }
 
 .track-detail-topper {
-  width: 75%;
+  width: 70%;
   margin: 100px auto;
   margin-bottom: 0;
   height: 205px;
   padding: 20px;
   color: black;
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457065811/Screen_Shot_2016-03-03_at_8.29.22_PM_lremwc.png');
-  background-position: right;
+  background-position: left;
+}
+
+.track-owner-container {
+  width: 70%;
+  padding: 20px;
+  height: 205px;
+  margin: 0 auto;
+  background-color: rgba(6,68,115,.7);
+}
+
+.track-owner-container article {
+  display: block;
+  float: left;
+  width: 70%;
 }
 
 .detail-album-cover {
   background-image: url(http://res.cloudinary.com/thadowg/image/upload/v1456859721/qhdd2pt0zzvuioohe6ly.jpg);
   background-size: 100% 100%;
-  float: left;
+  float: right;
   margin-right: 35px;
 }
 
@@ -30,17 +56,25 @@
 }
 
 #big-play-button {
+  padding-top: 1px;
+  padding-left: 23px;
+}
+
+#big-plus-button {
+  padding-left: 25px;
+}
+
+.big-buttons {
   border-radius: 35px;
   height: 70px;
   width: 70px;
   font-size: 2.2em;
-  padding: 15px;
-  padding-left: 20px;
+  margin-right: 15px;
   background-color: #064473;
   color: white;
   transition: color, 0.3s, ease-in-out;
 }
 
-#big-play-button:hover {
+.big-buttons:hover {
   color: #E20074;
 }

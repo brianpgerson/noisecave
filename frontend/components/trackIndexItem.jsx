@@ -60,7 +60,8 @@ var TrackIndexItem = React.createClass({
               onClick={function(){
                 this.props.trackDetailClick(this.props.track.id);
                       }.bind(this)}>
-              {this.props.track.title}
+              {this.props.track.title} <br />
+              Plays: {this.props.track.plays}
             </p>
 
           </div>

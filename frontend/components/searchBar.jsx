@@ -28,7 +28,7 @@ var SearchBar = React.createClass({
           valueLink={this.linkState('currentSearch')}
           id="search-box"
           onKeyPress={this.handleSubmit}
-          placeholder="Search songs, playlists, users..."/>
+          placeholder="Search for tracks and artists..."/>
       </div>
     );
   }
