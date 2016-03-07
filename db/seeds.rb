@@ -8,6 +8,10 @@
 
 # drake's tracks:
 
+User.create!({username: "Drizzy", email: "6god@town.com", password: "testing", description: "I'm just a rapper from the 6 hoping to make it big.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/drizzy.png"})
+User.create!({username: "TayTaySweeSwee", email: "soitsgonnabeforever@town.com", password: "testing", description: "I mostly wear t-shirts and sit in the bleachers.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/taytay.png"})
+User.create!({username: "Brian", email: "dog@town.com", password: "testing", description: "You know, I'm not sure what I'm doin here, besides making some dope-ass playlists.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/bribri.png"})
+User.create!({username: "DomesticImpala", email: "causeim@man.com", password: "testing", description: "Just a couple Aussies recording some cool psychadelic rock.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/domesticimpala.png"})
 
 
 Track.create!({:title=>"Taylor Swift - I Knew You Were Trouble", :description=>"\"I Knew You Were Trouble\" received generally positive reviews from music critics, who commended its mainstream appeal yet noted Swift's experimentation with dubstep as relatively limited. Due to strong digital sales, the song debuted at number three on the Billboard Hot 100, selling more than 416,000 copies within its first week, making it Swift's 14th entry in the top ten.", :image_url=>"http://res.cloudinary.com/thadowg/image/upload/v1457342025/e8pkfpon8l4i1yb4ygdo.png", :audio_url=>"https://briansdopetracks.s3-us-west-1.amazonaws.com/tracks/audio/39a1ea04-1a97-4a01-a4e3-2dfe3eec92e4.mp3", :creator_id=>2, :plays=>rand(50)})
