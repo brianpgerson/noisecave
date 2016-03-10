@@ -55,7 +55,6 @@ var TrackUpload = React.createClass({
         archived: false
       }
     });
-    alert("thanks bitch!");
   },
   uploadImage: function(e){
     e.preventDefault();
