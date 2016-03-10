@@ -90,8 +90,14 @@ var TracksIndex = React.createClass({
         flexFlow: 'wrap',
         justifyContent: 'center'
       };
-    var backgroundStyle =
-      this.props.userOnly ? {backgroundColor: 'transparent'} : {};
+    var backgroundStyle;
+    if (this.props.userOnly) {
+      backgroundStyle = {backgroundColor: 'transparent'};
+    }  else if (this.props.searched) {
+      backgroundStyle = {height: '100%'};
+    } else {
+      backgroundStyle = {};
+    }
     var header = this.state.searched ? <h4>Search Result for {this.props.location.search.split("=")[1].split("+").join(" ")}: </h4> : <div></div>;
     var hero = this.props.userOnly ? <div></div> :
       <div id="discover-hero"><h1>browse the top tracks on noisecave</h1>
