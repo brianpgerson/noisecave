@@ -13,7 +13,8 @@ var PlaylistModal = React.createClass({
     return {
       playlists: [],
       addingPlaylist: false,
-      hasNewPlaylisting: []
+      hasNewPlaylisting: [],
+      currentUser: SessionStore.getUserId()
     };
   },
   componentDidMount: function() {
@@ -24,7 +25,9 @@ var PlaylistModal = React.createClass({
     this.PlaylistListener.remove();
   },
   _handleStoreChanges: function(){
-    this.setState({playlists: PlaylistStore.returnPlaylists().reverse()});
+    this.setState({
+      playlists: PlaylistStore.returnPlaylists(this.state.currentUser).reverse()
+    });
   },
   createNewPlaylistForm: function(){
     if (!this.state.addingPlaylist) {

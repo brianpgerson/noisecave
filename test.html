@@ -1,37 +1,19 @@
-<html>
-  <head>
+Playlist.create!({:title=>"Drake's Workout Mix", :description=>"Gets the blood pumpin", :creator_id=>9})
+Playlist.create!({:title=>"Very Good Drake Songs", :description=>"These are some very good Drake songs", :creator_id=>11})
+Playlist.create!({:title=>"My Favorite Tay Tay Swift Songs", :description=>"Why not?", :creator_id=>11})
+Playlist.create!({:title=>"Songs for Driving at Night", :description=>"", :creator_id=>11})
+Playlist.create!({:title=>"Songs for Coding", :description=>"I think this is good", :creator_id=>11})
+Playlist.create!({:title=>"Brian's Workout Tracks", :description=>"Get pumped!", :creator_id=>11})
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript">
-    function runFunction (evt) {
-      evt.preventDefault();
-      debugger;
-    }
-    </script>
-  </head>
-  <body>
+User.create!({username: "Drizzy", email: "6god@town.com", password: "testing", description: "I'm just a rapper from the 6 hoping to make it big.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/drizzy.png"})
+User.create!({username: "TayTaySweeSwee", email: "soitsgonnabeforever@town.com", password: "testing", description: "I mostly wear t-shirts and sit in the bleachers.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/taytay.png"})
+User.create!({username: "Brian", email: "dog@town.com", password: "testing", description: "You know, I'm not sure what I'm doin here, besides making some dope-ass playlists.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/bribri.png"})
+User.create!({username: "DomesticImpala", email: "causeim@man.com", password: "testing", description: "Just a couple Aussies recording some cool psychadelic rock.", image: "http://res.cloudinary.com/thadowg/image/upload/v1457334245/domesticimpala.png"})
 
-  <form action="http://sigv4examplebucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
-    Key to upload:
-    <input type="input"  name="key" value="user/user1/${filename}" /><br />
-    <input type="hidden" name="acl" value="public-read" />
-    <input type="hidden" name="success_action_redirect" value="http://sigv4examplebucket.s3.amazonaws.com/successful_upload.html" />
-    Content-Type:
-    <input type="input"  name="Content-Type" value="image/jpeg" /><br />
-    <input type="hidden" name="x-amz-meta-uuid" value="14365123651274" />
-    <input type="hidden" name="x-amz-server-side-encryption" value="AES256" />
-    <input type="text"   name="X-Amz-Credential" value="AKIAIOSFODNN7EXAMPLE/20151229/us-east-1/s3/aws4_request" />
-    <input type="text"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
-    <input type="text"   name="X-Amz-Date" value="20151229T000000Z" />
+f = File.open('text.txt', 'w')
+x = Track.all
+trax = x.map { |track| {seedTrack: {title: track['title'], description: track['description'], image_url: track['image_url'], audio_url: track['audio_url'], creator_id: track['creator_id']}}}
+trax.each {|track| f.write(track)}
+f.close
 
-    Tags for File:
-    <input type="input"  name="x-amz-meta-tag" value="" /><br />
-    <input type="hidden" name="Policy" value='<Base64-encoded policy string>' />
-    <input type="hidden" name="X-Amz-Signature" value="<signature-value>" />
-    File:
-    <input type="file"   name="file" /> <br />
-    <!-- The elements after this will be ignored -->
-    <input type="submit" name="submit" onclick="runFunction(event) value="Upload to Amazon S3" />
-  </form>
-
-</html>
+pac = p.map { |pl| {playlisting: {track_id: pl['track_id'], playlist_id: pl['playlist_id']}} }

@@ -4,6 +4,9 @@ var TrackIndexItem = require('./trackIndexItem');
 var TrackListIndexItem = require('./trackListIndexItem');
 var TrackActions = require('../actions/trackActions');
 var SessionStore = require('../stores/sessionStore');
+var Footer = require('./footer');
+
+
 
 var TracksIndex = React.createClass({
   getInitialState: function(){
@@ -25,27 +28,37 @@ var TracksIndex = React.createClass({
     this.changeListener.remove();
   },
   componentWillReceiveProps: function(nextProps) {
-    if (nextProps.location) {
-      if (nextProps.location.search.length > 0) {
-        var searchterms = nextProps.location.search.split("=")[1].toLowerCase().split(("+"));
-        var searchedTracks = TrackStore.all().filter(function(track){
-          var splitTitle = track.title.toLowerCase().split(" ");
-          return searchterms.every(function(searchWord){
-            return splitTitle.indexOf(searchWord) >= 0;
-          });
-        });
-
-        this.setState({
-          tracks: searchedTracks,
-          searched: true
-        });
-      }
+    if (nextProps.location && nextProps.location.search.length > 0) {
+      this._handleSearch(nextProps);
+    } else {
+      this.setState({
+        tracks: TrackStore.all(),
+        searched: false
+      });
     }
   },
-  _onChange: function(){
-    this.setState({
-      tracks: TrackStore.all()
+  _handleSearch: function(props){
+    var searchterms = props.location.search.split("=")[1].toLowerCase().split(("+"));
+    var searchedTracks = TrackStore.all().filter(function(track){
+      var splitTitle = track.title.toLowerCase().split(" ");
+      return searchterms.every(function(searchWord){
+        return splitTitle.indexOf(searchWord) >= 0;
+      });
     });
+    this.setState({
+      tracks: searchedTracks,
+      searched: true
+    });
+  },
+  _onChange: function(){
+    if (this.props.location && this.props.location.search.length > 0) {
+      this._handleSearch(this.props);
+    } else {
+      this.setState({
+        tracks: TrackStore.all(),
+        searched: false
+      });
+    }
   },
   routeToDetail: function(id){
     this.context.router.push('track/' + id );
@@ -93,8 +106,8 @@ var TracksIndex = React.createClass({
     var backgroundStyle;
     if (this.props.userOnly) {
       backgroundStyle = {backgroundColor: 'transparent'};
-    }  else if (this.props.searched) {
-      backgroundStyle = {height: '100%'};
+    }  else if (this.state.searched) {
+      backgroundStyle = {minHeight: '58%'};
     } else {
       backgroundStyle = {};
     }
@@ -116,6 +129,7 @@ var TracksIndex = React.createClass({
             {trackIndex}
           </div>
       </div>
+      <Footer />
   </div>
     );
   }

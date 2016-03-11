@@ -23,19 +23,14 @@ var Playlists = React.createClass({
   },
 
   componentDidMount: function() {
-    
+
     this.playlistListener = PlaylistStore.addListener(this._handleStoreChanges);
     this.playStoreListener = PlayStore.addListener(this._handlePlayChanges);
     this.userListener = SessionStore.addListener(this._handleUserChanges);
 
-    if (this.comingFromNavBar() || this.notFromNavButSameUser()) {
-      PlaylistActions.requestPlaylists(this.props.params.id);
-      AuthActions.getUserInfo(this.props.params.id);
-    } else {
-      this.context.router.push({
-        pathname: "discover"
-      });
-    }
+    PlaylistActions.requestPlaylists(this.props.params.id);
+    AuthActions.getUserInfo(this.props.params.id);
+
   },
 
   componentWillUnmount: function() {
@@ -61,16 +56,9 @@ var Playlists = React.createClass({
   },
 
   _handleStoreChanges: function(){
-    this.setState({playlists: PlaylistStore.returnPlaylists()});
-  },
-
-  comingFromNavBar: function(){
-    return (this.props.location &&
-      this.props.location.search.split("=")[1].match(/\d+/)[0] === this.props.params.id);
-  },
-
-  notFromNavButSameUser: function(){
-    return (SessionStore.getUserId().toString() === this.props.params.id);
+    this.setState({
+      playlists: PlaylistStore.returnPlaylists(this.props.params.id)
+    });
   },
 
   switchTabs: function(e){

@@ -120,9 +120,10 @@
 
 .content-container {
   width: 100%;
- background-color: #ABD5F5;
- padding-top: 6%;
- position: relative;
+  background-color: #ABD5F5;
+  padding: 6% 0;
+  position: relative;
+  margin-bottom: -2%;
 }
 
 .all-tracks, .track-detail {

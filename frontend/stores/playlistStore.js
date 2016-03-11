@@ -46,10 +46,14 @@ PlaylistStore.__onDispatch = function(payload) {
   }
 };
 
-PlaylistStore.returnPlaylists = function(){
-  var playlists = Object.keys(_playlistStore).map(function(id){
-    return _playlistStore[id];
-  });
+PlaylistStore.returnPlaylists = function(requestingId){
+  var playlists = Object.keys(_playlistStore)
+    .map(function(id){
+      return _playlistStore[id];
+    })
+    .filter(function(playlist){
+      return playlist.creator_id === parseInt(requestingId);
+    });
   return playlists;
 };
 
