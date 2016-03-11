@@ -1,0 +1,2684 @@
+.detail-container {
+  color: white;
+}
+
+.track-owner-image {
+  height: 125px;
+  width: 125px;
+  float: left;
+  margin: 4%;
+  margin-left: 0;
+}
+
+.track-owner-container h5 {
+  float: left;
+  color: #FF9D1B;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 60%;
+  text-align: left;
+  margin-bottom: .3em
+}
+
+.track-owner-container h5:hover {
+  cursor: pointer;
+}
+
+.track-detail-topper {
+  width: 70%;
+  margin: 100px auto;
+  margin-bottom: 0;
+  height: 205px;
+  min-width: 735px;
+  padding: 20px;
+  color: black;
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457065811/Screen_Shot_2016-03-03_at_8.29.22_PM_lremwc.png');
+  background-position: left;
+}
+
+.track-owner-container {
+  width: 70%;
+  min-width: 735px;
+  padding: 20px;
+  height: 205px;
+  margin: 0 auto;
+  background-color: rgba(6,68,115,.7);
+}
+
+.track-owner-container article {
+  display: block;
+  float: left;
+  width: 75%;
+}
+
+.detail-album-cover {
+  background-image: url(http://res.cloudinary.com/thadowg/image/upload/v1456859721/qhdd2pt0zzvuioohe6ly.jpg);
+  background-size: 100% 100%;
+  float: right;
+  margin-right: 35px;
+}
+
+.detail-container h3 {
+  font-weight: bold;
+}
+
+#big-play-button {
+  padding-top: 1px;
+  padding-left: 23px;
+}
+
+#big-plus-button {
+  padding-left: 25px;
+}
+
+.big-buttons {
+  border-radius: 35px;
+  height: 70px;
+  width: 70px;
+  font-size: 2.2em;
+  margin-right: 15px;
+  background-color: #064473;
+  color: white;
+  transition: color, 0.3s, ease-in-out;
+}
+
+.big-buttons:hover {
+  color: #E20074;
+}
+/* line 1, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+#bars {
+  height: 30px;
+  top: -12px;
+  position: absolute;
+  width: 0px;
+  opacity: 1;
+  transition: opacity, 1s, ease;
+  overflow: hidden;
+}
+
+/* line 11, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar {
+  background: #E20074;
+  bottom: 1px;
+  height: 3px;
+  position: absolute;
+  width: 3px;
+  animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+  0% {
+    opacity: .35;
+    height: 2px;
+  }
+  100% {
+    opacity: 1;
+    height: 12px;
+  }
+}
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+1) {
+  left: 1px;
+  animation-duration: 465ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+2) {
+  left: 5px;
+  animation-duration: 402ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+3) {
+  left: 9px;
+  animation-duration: 436ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+4) {
+  left: 13px;
+  animation-duration: 425ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+5) {
+  left: 17px;
+  animation-duration: 469ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+6) {
+  left: 21px;
+  animation-duration: 407ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+7) {
+  left: 25px;
+  animation-duration: 413ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+8) {
+  left: 29px;
+  animation-duration: 484ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+9) {
+  left: 33px;
+  animation-duration: 499ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+10) {
+  left: 37px;
+  animation-duration: 453ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+11) {
+  left: 41px;
+  animation-duration: 406ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+12) {
+  left: 45px;
+  animation-duration: 462ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+13) {
+  left: 49px;
+  animation-duration: 409ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+14) {
+  left: 53px;
+  animation-duration: 404ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+15) {
+  left: 57px;
+  animation-duration: 469ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+16) {
+  left: 61px;
+  animation-duration: 437ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+17) {
+  left: 65px;
+  animation-duration: 401ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+18) {
+  left: 69px;
+  animation-duration: 487ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+19) {
+  left: 73px;
+  animation-duration: 419ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+20) {
+  left: 77px;
+  animation-duration: 400ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+21) {
+  left: 81px;
+  animation-duration: 469ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+22) {
+  left: 85px;
+  animation-duration: 488ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+23) {
+  left: 89px;
+  animation-duration: 497ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+24) {
+  left: 93px;
+  animation-duration: 441ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+25) {
+  left: 97px;
+  animation-duration: 429ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+26) {
+  left: 101px;
+  animation-duration: 403ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+27) {
+  left: 105px;
+  animation-duration: 461ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+28) {
+  left: 109px;
+  animation-duration: 472ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+29) {
+  left: 113px;
+  animation-duration: 419ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+30) {
+  left: 117px;
+  animation-duration: 433ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+31) {
+  left: 121px;
+  animation-duration: 462ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+32) {
+  left: 125px;
+  animation-duration: 461ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+33) {
+  left: 129px;
+  animation-duration: 490ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+34) {
+  left: 133px;
+  animation-duration: 487ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+35) {
+  left: 137px;
+  animation-duration: 473ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+36) {
+  left: 141px;
+  animation-duration: 495ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+37) {
+  left: 145px;
+  animation-duration: 441ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+38) {
+  left: 149px;
+  animation-duration: 418ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+39) {
+  left: 153px;
+  animation-duration: 462ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+40) {
+  left: 157px;
+  animation-duration: 422ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+41) {
+  left: 161px;
+  animation-duration: 482ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+42) {
+  left: 165px;
+  animation-duration: 417ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+43) {
+  left: 169px;
+  animation-duration: 431ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+44) {
+  left: 173px;
+  animation-duration: 482ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+45) {
+  left: 177px;
+  animation-duration: 471ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+46) {
+  left: 181px;
+  animation-duration: 450ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+47) {
+  left: 185px;
+  animation-duration: 464ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+48) {
+  left: 189px;
+  animation-duration: 429ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+49) {
+  left: 193px;
+  animation-duration: 487ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+50) {
+  left: 197px;
+  animation-duration: 443ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+51) {
+  left: 201px;
+  animation-duration: 446ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+52) {
+  left: 205px;
+  animation-duration: 403ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+53) {
+  left: 209px;
+  animation-duration: 499ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+54) {
+  left: 213px;
+  animation-duration: 430ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+55) {
+  left: 217px;
+  animation-duration: 433ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+56) {
+  left: 221px;
+  animation-duration: 440ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+57) {
+  left: 225px;
+  animation-duration: 427ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+58) {
+  left: 229px;
+  animation-duration: 450ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+59) {
+  left: 233px;
+  animation-duration: 437ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+60) {
+  left: 237px;
+  animation-duration: 444ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+61) {
+  left: 241px;
+  animation-duration: 424ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+62) {
+  left: 245px;
+  animation-duration: 426ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+63) {
+  left: 249px;
+  animation-duration: 421ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+64) {
+  left: 253px;
+  animation-duration: 402ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+65) {
+  left: 257px;
+  animation-duration: 447ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+66) {
+  left: 261px;
+  animation-duration: 495ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+67) {
+  left: 265px;
+  animation-duration: 491ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+68) {
+  left: 269px;
+  animation-duration: 496ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+69) {
+  left: 273px;
+  animation-duration: 443ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+70) {
+  left: 277px;
+  animation-duration: 490ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+71) {
+  left: 281px;
+  animation-duration: 471ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+72) {
+  left: 285px;
+  animation-duration: 459ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+73) {
+  left: 289px;
+  animation-duration: 412ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+74) {
+  left: 293px;
+  animation-duration: 451ms;
+}
+
+/* line 48, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/equalizer.scss */
+.bar:nth-child(10n+75) {
+  left: 297px;
+  animation-duration: 429ms;
+}
+footer {
+  width: 100%;
+  bottom: 0;
+  position: relative;
+  background: #111;
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  padding: 20px
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer li {
+  padding: 20px;
+  margin-bottom: 0;
+  transition: color, 0.5s, ease-in-out;
+}
+
+footer li:hover {
+  cursor: pointer;
+  color: #FF9D1B;
+}
+/* SIGN IN STUFF */
+
+.sign-up-in input[type=text] {
+  margin-left: 10px;
+}
+
+.sign-up-in label {
+  display: inline-block;
+  float: right;
+}
+
+.modal-wrapper {
+  padding: 15px;
+  height: 90%;
+}
+
+#demo {
+  position: absolute;
+  right: 32px;
+  bottom: 92px;
+  font-size: 12px;
+  color: #064473;
+}
+
+#demo:hover {
+  cursor: pointer;
+}
+
+.login-text-input {
+  margin-left: 10px;
+}
+
+.sign-up-in .error {
+  list-style: none;
+  float: right;
+  margin-bottom: 0;
+  margin-right: 10px;
+  color: red;
+}
+
+.helper-text {
+  font-weight: lighter;
+  font-size: smaller;
+  position: absolute;
+  top: 240px;
+  right: 15px;
+}
+
+/* GENERAL MODAL STUFF */
+
+/*TODO had an idea about using refs to maybe solve the frosting problem*/
+
+
+h5 {
+  text-align: center;
+  padding-top: 10px
+}
+
+input[type=submit]{
+  background-color: #064473;
+  margin: 20px 15px;
+  border-radius: 10px;
+  color: lightgrey;
+  border-color: #888;
+  outline: 0;
+  float: right;
+  transition: color, 1s, ease;
+}
+
+input[type=submit]:disabled {
+  color: #eee;
+  background-color: darkgrey;
+  border-color: #888;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  border-color: #888;
+  color: #FF9D1B;
+  background-color: #064473;
+}
+
+input[type=submit]:hover:disabled {
+  border-color: #888;
+  color: #eee;
+  background-color: darkgrey;
+}
+
+
+
+/* UPLOAD STUFF */
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.track-upload .upload-text {
+  width: 280px;
+  max-width: 300px;
+  max-height: 135px;
+}
+
+.track-upload span {
+  margin-right: 10px;
+}
+
+.title-and-descrip {
+  float: left;
+  width: 304px;
+  border-right: 1px solid #ccc;
+}
+
+.file-section {
+  padding-left: 15px;
+  width: 330px;
+  float: right;
+}
+
+#upload {
+  position: relative;
+  float: right;
+}
+
+.upload-buttons {
+  background-color: whitesmoke;
+  color: #222;
+  margin: 10px 15px;
+}
+
+.errorHandler {
+  width: 330px;
+  float: right;
+  position: relative;
+  bottom: 15px;
+  font-size: 12px;
+}
+
+.upload-buttons:hover {
+  color: #FF9D1B;
+  cursor: pointer;
+}
+
+.image-thumbnail {
+  width: 150px;
+  height: 150px;
+  float: right;
+  border-radius: 5px;
+  border: 1px solid #888;
+}
+
+.shown {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/*EDIT PROFILE STUFF*/
+
+.edit-profile .helper-text {
+  position: relative;
+  right: 0;
+  top: 0;
+  padding-bottom: 20px;
+}
+
+.edit-profile .upload-buttons {
+  margin: 31px 15px;
+}
+
+.edit-profile .image-thumbnail {
+  margin-top: 30px;
+}
+
+.edit-profile input[type=submit] {
+  margin: 45px 15px;
+}
+
+.edit-profile .login-text-input {
+  width: 280px;
+  max-width: 280px;
+  max-height: 145px;
+}
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: #DDD;
+  position: fixed;
+  display: flex;
+  top: 0;
+  z-index: 100;
+  justify-content: flex-start;
+}
+
+#logo {
+  width: 65px;
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457293000/aaacave1_kegllf.png');
+  background-size: cover;
+  top: 3px;
+  margin-right: 14%;
+  margin-left: 15px;
+}
+
+#logo span {
+  float: left;
+  margin-left: 68px;
+  margin-top: 12px;
+  color: aliceblue;
+}
+
+#logo:hover {
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457293003/aaacavepink_vrr6wd.png');
+  cursor: pointer;
+  color: white;
+}
+
+.navbar li {
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+  font-weight: normal;
+  transition: color, 0.2s, ease;
+}
+
+.navbar li:hover {
+  cursor: pointer;
+  color: #FF9D1B;
+}
+
+.navbar .left {
+  float: left;
+}
+
+.navbar .right {
+  float: right;
+}
+
+.navbar li:nth-child(2n+0) span {
+  border-right: 1px solid white;
+}
+
+.navbar li span {
+  line-height: 18px;
+  height: 18px;
+  display: block;
+  width: 80px;
+  padding: 0 5px;
+  text-align: center;
+  border-left: 1px solid white;
+}
+
+#search-li {
+  cursor: initial;
+  padding: 10px 20px;
+  width: 340px;
+  margin-left: 47px;
+  float: left;
+}
+
+#search-li:hover {
+  background-color: initial;
+}
+
+#search-box {
+  border-radius: 15px;
+  font-weight: normal;
+  height: 3rem;
+  width: 300px;
+}
+
+#profile-dropdown {
+  position: absolute;
+  width: 180px;
+  border: 1px solid aliceblue;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+  top: 50px;
+  background-color: #333;
+  z-index: 5;
+}
+
+#profile-dropdown:hover {
+  color: white;
+}
+
+.navbar li:hover #profile-dropdown {
+  color: white;
+}
+
+#tiny-pic {
+  height: 25px;
+  width: 25px;
+  float: left;
+  position: relative;
+  top: -5px;
+  border-radius: 3px;
+  background-size: contain !important;
+}
+
+#profile-dropdown span {
+  position: relative;
+  border: none;
+  margin-left: -10px;
+  width: 100%;
+}
+
+#profile-dropdown hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#profile-dropdown li {
+  padding: 5px 5px;
+
+}
+
+.navbar ul {
+  position: relative;
+  width: 800px;
+
+}
+
+@media (max-width: 1000px) {
+  #search-li {
+    display: none;
+  }
+
+  .navbar ul {
+    width: 0;
+  }
+}
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+/* line 1, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlists-container {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  overflow-y: scroll;
+  left: 0;
+  top: 0;
+  border-bottom-left-radius: 5px;
+  background-color: #B8DDF8;
+}
+
+/* line 12, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlists-container li {
+  list-style: none;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+/* line 18, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlists-container ul {
+  margin: 0;
+}
+
+/* line 22, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.separator {
+  margin: 0 auto;
+}
+
+/* line 26, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-item {
+  width: 100%;
+  padding: 10px;
+  background-color: #7FF0C0;
+  border-bottom: 1px solid #B4F9DB;
+  transition: background-color, 1s, ease-in-out;
+}
+
+/* line 34, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-item:hover {
+  cursor: pointer;
+  background-color: #B4F9DB;
+}
+
+/* line 39, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+#new-playlists-form p {
+  padding: 0;
+  font-size: inherit;
+  float: right;
+}
+
+/* line 45, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+#new-playlists-form input[type=text] {
+  float: left;
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+/* line 51, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+#new-playlists-form label {
+  float: left;
+  margin-bottom: 0;
+}
+
+/* line 56, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-quadrant {
+  position: relative;
+  left: 280px;
+  top: -15px;
+  padding: 30px;
+  width: 320px;
+  height: 150px;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+}
+
+/* line 67, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-quadrant #upload {
+  right: -20px;
+  bottom: 19px;
+}
+
+/* line 72, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-track-picture {
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 79, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-modal-container {
+  height: 100%;
+}
+
+/* line 83, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-modal-container h6 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+/* line 90, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-modal-container p {
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+/* line 95, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.playlist-modal-container h5 {
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  left: 285px;
+  width: 380px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgrey;
+}
+
+/* line 105, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.blue {
+  background-color: #2B2BCB;
+  color: white;
+}
+
+/* line 110, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/playlists.scss */
+.blue:hover {
+  background-color: #4B4BDB;
+  color: white;
+}
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+p {
+  margin-top: 0; }
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"], .input-file + label {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  border-color: #1EAEDB; }
+
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: circle inside; }
+ol {
+  list-style: decimal inside; }
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li {
+  margin-bottom: 1rem; }
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+input[type=range] {
+  /*removes default webkit styles*/
+  -webkit-appearance: none;
+
+  /*fix for FF unable to apply focus style bug */
+  border: 1px solid #064473;
+  top: -4px;
+  position: relative;
+  /*required for proper track sizing in FF*/
+  width: 300px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 2px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #ddd;
+  height: 14px;
+  width: 4px;
+  border-radius: 5px;
+  background: black;
+  margin-top: -6px;
+}
+
+input[type=range]:hover {
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+  width: 300px;
+  height: 2px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 8px;
+  border-radius: 5px;
+  background: black;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+  outline: 1px solid #064473;
+  outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+  width: 300px;
+  height: 2px;
+
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 6px 0;
+
+  /*remove default tick marks*/
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #777;
+  border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+  border: none;
+  height: 16px;
+  width: 8px;
+  border-radius: 5px;
+  background: black;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ccc;
+}
+#header-hero {
+  background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1457331612/header-image-final_qp7wfk.png');
+  height: 66%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-position: center;
+  max-height: 800px;
+  margin-top: 3%;
+  background-color: RGBA(0,0,0,.8);
+}
+
+#video-wrapper {
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  background-color: black;
+  background-attachment: fixed;
+}
+
+#splash-sign {
+  top: 62%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  transition: background-color, 0.5s, ease-in-out;
+}
+
+#splash-sign:hover {
+  background-color: aliceblue;
+}
+
+.content-container h1, h4 {
+  text-align: center;
+}
+
+.splash-header {
+  font-variant: small-caps;
+  font-weight: bold;
+  background-color: #064473;
+  color: white;
+  padding-bottom: 6px;
+  -webkit-box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 11px 31px -6px rgba(0,0,0,0.75);
+}
+
+.copy-section p {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 3%;
+  font-weight: lighter;
+}
+
+.copy-section h4 {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
+
+.copy-section {
+  width: 100%;
+  padding: 2% 0;
+  background-color: rgba(0,0,0,.4);
+  color: aliceblue;
+}
+/* line 5, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/static_pages.scss */
+.sign-up {
+  padding: 20px;
+}
+
+/* line 9, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/static_pages.scss */
+.sign-up p {
+  margin: 10px;
+}
+.audio-wrapper {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  background-color: #064473;
+  height: 50px;
+  z-index: 1;
+}
+
+.audio-container {
+  width: 845px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.stream-play {
+  background-color: whitesmoke;
+  width: 105px;
+  float: left;
+  margin: 6px;
+  position: relative;
+}
+
+.progress-bar-container {
+  width: 300px;
+  height: 2px;
+  padding: 8px 0;
+  float: left;
+  margin: 15px 25px;
+  position: relative;
+  top: -6px
+}
+
+#progress-slider {
+  width: 300px;
+}
+
+.audio-container p {
+  float: left;
+  height: 30px;
+  margin-top: 18px;
+  margin-left: 47px;
+}
+
+.info-container {
+  color: ghostwhite;
+  height: 50px;
+  width: 39%;
+  float: left;
+  font-size: 12px;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.title-track {
+  display: inline-block;
+  margin-top: 18px;
+  margin-left: 47px;
+  max-width: 250px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.title-track span {
+  max-width: 200px;
+  display: inline-block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.imageThumb {
+  height: 30px;
+  width: 30px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  position: relative;
+  float: left;
+  top: 10px;
+  left: 30px;
+}
+
+.time-left {
+  color: whitesmoke;
+  float: left;
+  position: relative;
+  top: 22px;
+  font-size: 12px;
+  border-right: ghostwhite 1px solid;
+  padding-right: 23px;
+  margin-top: -4px;
+}
+
+#littlearrow:hover {
+  cursor: pointer;
+}
+
+#littlearrow {
+  margin-left: 10px;
+  float: right;
+}
+
+#play-queue {
+  z-index: 1;
+  width: 300px;
+  position: absolute;
+  left: 28px;
+  top: 50px;
+  padding: 5px 0;
+  background-color: rgba(6,68,115,.7);
+  color: aliceblue;
+  font-size: 12px;
+  transition: background-color, 0.3s, ease;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#little-number {
+  margin-right: 16px;
+}
+
+#play-queue li {
+  list-style: none;
+  margin-left: 22px;
+  margin-bottom: 0;
+  padding: 6px 0;
+}
+
+#play-queue li:hover {
+  cursor: pointer;
+  color: white;
+  background-color: RGBA(6,68,115,.9);
+
+}
+/* line 5, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.album-cover {
+  height: 174px;
+  width: 174px;
+  background-color: lightgrey;
+  background-size: 100% 100%;
+  padding: 10px;
+}
+
+/* line 13, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+#discover-hero {
+  background-color: transparent;
+  height: 30%;
+  padding-top: 14%;
+  text-align: center;
+  color: aliceblue;
+}
+
+/* line 21, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+#discover-hero h1 {
+  font-variant: small-caps;
+  font-weight: bold;
+  background-color: #064473;
+  color: white;
+  padding-bottom: 6px;
+  -webkit-box-shadow: 3px 11px 31px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 11px 31px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 11px 31px -6px rgba(0, 0, 0, 0.75);
+}
+
+/* line 32, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+#discover-hero p {
+  width: 60%;
+  margin: 0 auto;
+  font-weight: lighter;
+}
+
+/* line 38, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.track-index-wrapper {
+  height: 100%;
+  min-height: 800px;
+}
+
+/* line 43, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.detail-album-cover {
+  width: 204px;
+  height: 204px;
+  border-radius: 3px;
+  -webkit-box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.75);
+}
+
+/* line 52, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.index-item-controls {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity, 0.2s, ease;
+}
+
+/* line 60, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.album-cover:hover .index-item-controls {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 65, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.play-button-icon:hover {
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/v1456856896/play_hover_wi5a2p.png");
+  cursor: pointer;
+}
+
+/* line 70, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.index-item-controls .track-buttons {
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 25px;
+  position: relative;
+  color: black;
+  padding: 0 5px;
+  display: block;
+  font-size: 9px;
+  line-height: 25px;
+  height: 25px;
+  margin: 10px auto;
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  transition: background-color 0.3s, ease-in-out, color 0.3s ease-in-out;
+}
+
+/* line 89, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.track-buttons:hover {
+  color: aliceblue;
+  background-color: #333;
+  cursor: pointer;
+}
+
+/* line 95, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.play-button-icon {
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/v1456856909/play-button_ukbotp.png");
+  height: 75px;
+  margin: -10px auto;
+  top: 20px;
+  width: 75px;
+  position: relative;
+}
+
+/* line 104, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.caption {
+  text-align: center;
+  font-size: 12px;
+  margin-top: -3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  top: 15px;
+  width: 194px;
+  position: relative;
+  color: black;
+}
+
+/* line 117, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.caption:hover {
+  cursor: pointer;
+}
+
+/* line 121, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.content-container {
+  width: 100%;
+  background-color: #ABD5F5;
+  padding: 6% 0;
+  position: relative;
+  margin-bottom: -2%;
+}
+
+/* line 129, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.all-tracks, .track-detail {
+  max-width: 930px;
+  width: 90%;
+  margin: 100px auto;
+  margin-bottom: 0;
+}
+
+/* line 136, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.album-container {
+  min-width: 194px;
+  max-width: 204px;
+  height: 250px;
+  margin: 4px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #DDD;
+  -webkit-box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* line 149, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.track-index-item {
+  margin: 15px;
+  float: left;
+}
+
+/* line 157, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.track-list-index-item {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  float: left;
+  margin: 10px 50px;
+  left: -58px;
+}
+
+/* line 166, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.list-item-container {
+  margin: 4px;
+  width: 100%;
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/v1457130730/cooldude_kxb928.png");
+}
+
+/* line 176, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.album-pic {
+  height: 70px;
+  width: 70px;
+  background-color: lightgrey;
+  background-size: 100% 100%;
+  padding: 10px;
+  float: left;
+}
+
+/* line 185, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.list-item-container .title {
+  position: relative;
+  color: black;
+  float: left;
+  font-size: 1.2em;
+  max-width: 56%;
+  margin: 0;
+  padding: 31px 0 31px 10px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+/* line 199, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.list-item-container .title:hover {
+  cursor: pointer;
+}
+
+/* line 203, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.list-buttons:hover {
+  cursor: pointer;
+}
+
+/* line 207, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.list-buttons {
+  height: 25px;
+  width: 25px;
+  position: relative;
+  background-size: contain;
+}
+
+/* line 214, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+#queue {
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/c_scale,w_35/v1457063904/queue_m8kpht.png");
+  left: -45px;
+  top: 35px;
+  float: right;
+}
+
+/* line 221, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+#playlist {
+  height: 23px;
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/c_scale,h_35,w_35/v1457063904/list_toz0dq.png");
+  left: -60px;
+  top: 36px;
+  float: right;
+}
+
+/* line 229, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+#play {
+  opacity: 0;
+  visibility: hidden;
+  height: 65px;
+  width: 70px;
+  background-image: url("http://res.cloudinary.com/thadowg/image/upload/v1456856909/play-button_ukbotp.png");
+  transition: opacity, 0.2s, ease-in-out;
+  margin-left: 2px;
+}
+
+/* line 239, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/tracks.scss */
+.album-pic:hover #play {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 5, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.user-info-container {
+  width: 25%;
+  float: left;
+  position: relative;
+  padding: 68px 0px;
+  -webkit-box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.35);
+  box-shadow: 10px 10px 58px -18px rgba(0, 0, 0, 0.35);
+  top: -50px;
+  background-color: rgba(6, 68, 115, 0.7);
+  color: white;
+}
+
+/* line 18, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.big-user-pic {
+  height: 230px;
+  width: 100%;
+  background-size: cover;
+  margin: auto;
+  position: relative;
+}
+
+/* line 27, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.user-info-box {
+  height: 200px;
+  width: 200px;
+  margin: 10px auto;
+}
+
+/* line 33, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.user-info-name {
+  font-variant: small-caps;
+  font-size: 2em;
+}
+
+/* line 38, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.box-header {
+  font-weight: bold;
+  color: #FF9D1B;
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+
+/* line 45, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.playlist-info {
+  width: 25%;
+  float: left;
+  padding: 10px;
+}
+
+/* line 51, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.playlist-info p {
+  margin-top: 90px;
+  font-size: 12px;
+}
+
+/* line 56, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.music-tab {
+  width: 67%;
+  max-height: 95%;
+  overflow-y: scroll;
+  position: relative;
+  left: 40px;
+  padding: 20px;
+  background-color: RGBA(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* line 67, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.large-playlist-photo {
+  position: relative;
+  top: 75px;
+  height: 100px;
+  width: 100px;
+}
+
+/* line 74, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.user-playlist {
+  list-style: none;
+  margin-bottom: 45px;
+  width: 100%;
+}
+
+/* line 80, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.user-playlist-title {
+  text-align: left;
+  position: absolute;
+  width: 800px;
+  background-color: aliceblue;
+  left: 0;
+  padding-left: 32px;
+  height: 45px;
+  color: black;
+}
+
+/* line 91, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.user-playlist-tracks {
+  list-style: none;
+  width: 66%;
+  float: left;
+  top: 65px;
+  position: relative;
+  margin-bottom: 30px;
+  border-left: 1px solid aliceblue;
+  margin-left: 0;
+  padding-left: 15px;
+}
+
+/* line 103, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.playlist-track {
+  margin-bottom: 0;
+  padding: 10px 0 10px 15px;
+  border-bottom: 1px solid aliceblue;
+}
+
+/* line 109, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.playlist-track:hover {
+  background-color: #FFDCAC;
+  color: black;
+  cursor: pointer;
+}
+
+/* line 115, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.tab-switcher {
+  background-color: transparent;
+  border: none;
+  border-bottom: 39px solid aliceblue;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  height: 0;
+  position: relative;
+  color: black;
+  transition: border-bottom-color, 1s, ease;
+}
+
+/* line 127, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.tab-switcher:hover {
+  border-bottom-color: #5DA9E3;
+}
+
+/* line 131, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+.tab-switcher-container {
+  height: 38px;
+  position: relative;
+  margin-left: 280px;
+  border-bottom: 1px solid aliceblue;
+}
+
+@media (max-height: 700px) {
+  /* line 139, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/users.scss */
+  .user-info-container {
+    height: 120% !important;
+    padding: 7% 0px;
+  }
+}
+/*
+
+
+ */
+/* line 8, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+.group {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 14, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  background-attachment: fixed;
+}
+
+/* line 23, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+html {
+  height: calc(100% - 150px);
+}
+
+/* line 27, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+#root {
+  height: 100%;
+}
+
+/* line 31, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+#big-wrapper {
+  height: 100%;
+}
+
+/* line 35, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+a {
+  text-decoration: none;
+  color: white;
+  transition: color, 0.5s, ease-in-out;
+}
+
+/* line 41, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+a:hover {
+  color: #FF9D1B;
+}
+
+/* line 45, /Users/briangerson/Desktop/program/noisecave/app/assets/stylesheets/application.scss */
+hr {
+  width: 60%;
+  opacity: 0.5;
+}
