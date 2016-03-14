@@ -32,7 +32,7 @@ noisecave is a single-page, fully featured web app where users can upload, organ
 
 Generates one-time pre-signed URLs with a expiry to allow fast and safe user upload to noisecave's AWS storage
 
-`   
+```   
     class UploadPresigner
 
     include Singleton
@@ -55,12 +55,12 @@ Generates one-time pre-signed URLs with a expiry to allow fast and safe user upl
     end
 
     end
-`
+```
 
 Generates a hand-rolled authorization signature for S3. Uploads never actually hit my server,
 but through the presigners API endpoint, get authorization to upload directly from the browser
 
-`  
+```  
     def hmac(key, string)
     digest = OpenSSL::Digest.new('sha256')
     cool_hmac = OpenSSL::HMAC.digest(digest, key, string)
@@ -75,11 +75,11 @@ but through the presigners API endpoint, get authorization to upload directly fr
   signing_key = hmac(date_region_service_key, 'aws4_request')
   OpenSSL::HMAC.hexdigest(digest, signing_key, policy_base64)
   end
-`
+```
 
 Created a single Modal component that, with the help of its own flux store and some baked in prop passing, can create any of the modals I need on the fly:
 
-`  
+```  
   whatToDisplay: function(){
     switch(ModalStore.returnType()) {
       case "signup":
@@ -115,11 +115,11 @@ Created a single Modal component that, with the help of its own flux store and s
           break;
       }
   return theModal;
-`
+```
 
 Buttons for uploading media change color from left to right to mirror the packets being sent to AWS S3:
 
-`   
+```   
   handlePercentage: function(){
     var percent = (this.state.percentComplete * 100);
     console.log(percent);
@@ -131,7 +131,7 @@ Buttons for uploading media change color from left to right to mirror the packet
         }
     return coolButtonStyle;
   },
-`
+```
 
 
 ## Screen Shots
