@@ -32,53 +32,55 @@ noisecave is a single-page, fully featured web app where users can upload, organ
 
 Generates one-time pre-signed URLs with a expiry to allow fast and safe user upload to noisecave's AWS storage
 
-`require "aws-sdk"
-require "singleton"
-class UploadPresigner
+`   
+    class UploadPresigner
 
-  include Singleton
+    include Singleton
 
-  def self.presign(prefix, filename, limit: limit)
-    extname = File.extname(filename).downcase
-    filename = "#{SecureRandom.uuid}#{extname}"
-    upload_key = Pathname.new(prefix).join(filename).to_s
+    def self.presign(prefix, filename, limit: limit)
+      extname = File.extname(filename).downcase
+      filename = "#{SecureRandom.uuid}#{extname}"
+      upload_key = Pathname.new(prefix).join(filename).to_s
 
-    creds = Aws::Credentials.new(ENV['AWS_access_key'], ENV['AWS_secret_key'])
-    s3 = Aws::S3::Resource.new(region: 'us-west-1', credentials: creds)
-    obj = s3.bucket('briansdopetracks').object(upload_key)
-    params = { acl: 'public-read' }
-    params[:content_length] = limit if limit
+      creds = Aws::Credentials.new(ENV['AWS_access_key'], ENV['AWS_secret_key'])
+      s3 = Aws::S3::Resource.new(region: 'us-west-1', credentials: creds)
+      obj = s3.bucket('briansdopetracks').object(upload_key)
+      params = { acl: 'public-read' }
+      params[:content_length] = limit if limit
 
-    {
-      presigned_url: obj.presigned_url(:put, params),
-      public_url: obj.public_url
-    }
-  end
+      {
+        presigned_url: obj.presigned_url(:put, params),
+        public_url: obj.public_url
+      }
+    end
 
-end`
+    end
+`
 
 Generates a hand-rolled authorization signature for S3. Uploads never actually hit my server,
 but through the presigners API endpoint, get authorization to upload directly from the browser
 
-`def hmac(key, string)
-  digest = OpenSSL::Digest.new('sha256')
-  cool_hmac = OpenSSL::HMAC.digest(digest, key, string)
-end
+`  
+    def hmac(key, string)
+    digest = OpenSSL::Digest.new('sha256')
+    cool_hmac = OpenSSL::HMAC.digest(digest, key, string)
+  end
 
-def s3_upload_signature(config, policy_base64, credential)
-  digest = OpenSSL::Digest.new('sha256')
+  def s3_upload_signature(config, policy_base64, credential)
+    digest = OpenSSL::Digest.new('sha256')
 
   date_key = hmac("AWS4#{config['secret_key']}", date_string)
   date_region_key = hmac(date_key, config['region'])
   date_region_service_key = hmac(date_region_key, "s3")
   signing_key = hmac(date_region_service_key, 'aws4_request')
   OpenSSL::HMAC.hexdigest(digest, signing_key, policy_base64)
-end
+  end
 `
 
 Created a single Modal component that, with the help of its own flux store and some baked in prop passing, can create any of the modals I need on the fly:
 
-`  whatToDisplay: function(){
+`  
+  whatToDisplay: function(){
     switch(ModalStore.returnType()) {
       case "signup":
         var theModal =
@@ -112,11 +114,13 @@ Created a single Modal component that, with the help of its own flux store and s
             </div>;
           break;
       }
-    return theModal;`
+  return theModal;
+`
 
     Buttons for uploading media change color from left to right to mirror the packets being sent to AWS S3:
 
-    `handlePercentage: function(){
+`   
+      handlePercentage: function(){
       var percent = (this.state.percentComplete * 100);
       console.log(percent);
       var coolButtonStyle = {
@@ -126,7 +130,8 @@ Created a single Modal component that, with the help of its own flux store and s
         filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#F5F5F5', endColorstr='#F5F5F5',GradientType=1)"
       }
       return coolButtonStyle;
-    },`
+    },
+`
 
 
 ## Screen Shots
