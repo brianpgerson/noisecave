@@ -2,35 +2,23 @@
 
 ### TrackStore
 
-Holds all persisted track data.
-
-##### Actions:
-- `receiveAllTracks`
-- `receiveSingleTrack`
-- `removeTrack`
-
-##### Listeners:
-- `TracksIndex` (passes to `TrackIndexItem` via props)
-- `TrackDetail`
-
 ### PlaylistStore
 
-Holds all persisted playlist data.
+###AudioUrlStore
+Holds public mp3 URLs after uploading so they can be stored in the database with the track model
 
-##### Actions:
-- `receiveAllPlaylist`
-- `receiveSinglePlaylist`
-- `removePlaylist`
+###ErrorStore
+Holds error messages for the error component
 
-##### Listeners:
-- `PlaylistIndex`
+###PlaylistingStore
 
-### SearchStore
+###PlayStore
+Holds now-playing and queue information
 
-Holds search parameters to send to the API.
+###ProgressStore
+Holds state re: the track being played
 
-##### Actions:
-- `receiveSearchParams`
+###SessionStore
 
-##### Listeners:
-- `SearchIndex`
+###ModalStore
+Allows modals to be opened from ANYWHERE!

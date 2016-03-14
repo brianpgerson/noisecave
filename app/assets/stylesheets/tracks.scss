@@ -92,6 +92,10 @@
   cursor: pointer;
 }
 
+.track-buttons:focus {
+  background-color: #16D080;
+}
+
 .play-button-icon {
   background-image: url('http://res.cloudinary.com/thadowg/image/upload/v1456856909/play-button_ukbotp.png');
   height: 75px;
