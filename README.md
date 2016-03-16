@@ -122,7 +122,6 @@ Buttons for uploading media change color from left to right to mirror the packet
 ```   
   handlePercentage: function(){
     var percent = (this.state.percentComplete * 100);
-    console.log(percent);
     var coolButtonStyle = {
           background: "#5DA9E3",
           background: '-moz-linear-gradient(left,  #5DA9E3 0%, #5DA9E3 ' + percent + '%, #F5F5F5 ' + percent + '%, #F5F5F5 ' + percent + '%)',

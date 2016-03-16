@@ -100,7 +100,7 @@ var ServerTrackApi = {
         var percentComplete = oEvent.loaded / oEvent.total;
         progressCallback(percentComplete);
       } else {
-        console.log('didnt work for some reason');
+        ErrorActions.sendError({error: ['Upload Failed']});
       }
     };
 
