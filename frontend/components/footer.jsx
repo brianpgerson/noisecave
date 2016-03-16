@@ -5,7 +5,7 @@ var Footer = React.createClass({
       return (
         <footer>
         <ul>
-          <li>about</li>
+          <li><a href="http://www.briangerson.me">about</a></li>
           <li><a href="mailto:brianpgerson@gmail.com">contact</a></li>
           <li><a href="http://www.github.com/brianpgerson" target="_blank">github</a></li>
           <li><a href="http://www.linkedin.com/in/brianpgerson" target="_blank">linked in</a></li>
