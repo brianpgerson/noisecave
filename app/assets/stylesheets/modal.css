@@ -152,11 +152,11 @@ input[type=submit]:hover:disabled {
 }
 
 .shown {
-  display: block;
+  display: block !important;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /*EDIT PROFILE STUFF*/

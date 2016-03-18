@@ -11,6 +11,7 @@ var SplashPage = React.createClass({
   getInitialState: function(){
     return ({
       tracks: [],
+      loggedIn: null
     });
   },
   contextTypes: {
@@ -18,6 +19,7 @@ var SplashPage = React.createClass({
   },
   componentWillMount: function(){
     this.changeListener = TrackStore.addListener(this._onChange);
+    this.logListener = SessionStore.addListener(this._onLogin);
   },
   componentDidMount: function(){
     TrackActions.getTracks();
@@ -28,6 +30,11 @@ var SplashPage = React.createClass({
   _onChange: function(){
     this.setState({
       tracks: TrackStore.all()
+    });
+  },
+  _onLogin: function(){
+    this.setState({
+      loggedIn: SessionStore.isLoggedIn()
     });
   },
   routeToDetail: function(id){
@@ -56,6 +63,7 @@ var SplashPage = React.createClass({
     ModalActions.openModal("signup");
   },
   render: function(){
+    var loggedInButton = this.state.loggedIn ? "hidden" : "shown";
     var userStyle = {
         marginTop: '100px',
         display: 'flex',
@@ -75,7 +83,7 @@ var SplashPage = React.createClass({
     ];
     return (
       <div className="track-index-wrapper" style={{marginTop: "-30px"}}>
-        <button onClick={this.handleSignUp} id="splash-sign">Sign Up</button>
+        <button className={loggedInButton} onClick={this.handleSignUp} id="splash-sign">Sign Up</button>
         <div id="header-hero">
           <video autoPlay loop id="video-wrapper">
             <source src={videos[Math.floor(Math.random() * 3)]} />
