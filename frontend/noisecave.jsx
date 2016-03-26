@@ -21,7 +21,6 @@ var routes = (
     <Route component={TracksIndex} path="search"></Route>
     <Route component={TrackDetail} path="track/:id"></Route>
     <Route component={UserPlaylists} path="user/:id/music"></Route>
-    <Route component={UserPlaylists} path="user/:id/music"></Route>
   </Route>
 );
 

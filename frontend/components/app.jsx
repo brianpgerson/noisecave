@@ -10,8 +10,6 @@ var Modal = require('./modal');
 var StreamBar = require('../components/streamBar');
 var Backgrounds = require('../constants/backgroundConstants');
 
-window.AuthActions = AuthActions;
-
 var App = React.createClass({
   getInitialState: function(){
     return ({
