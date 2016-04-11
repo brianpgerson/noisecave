@@ -44,7 +44,7 @@ var StreamBar = React.createClass({
     }
   },
 
-  checkForNext: function(){
+  _checkForNext: function(){
     if (this.state.playlist.length > 0) {
       var nextTrack = this.state.playlist.shift();
       PlayActions.addFromQueue(nextTrack);
@@ -53,17 +53,17 @@ var StreamBar = React.createClass({
     }
   },
 
-  stopPlay: function(){
+  _stopPlay: function(){
     document.getElementsByTagName('audio')[0].pause();
     this.setState({isPlaying: false});
   },
 
-  startPlay: function(){
+  _startPlay: function(){
     document.getElementsByTagName('audio')[0].play();
     this.setState({isPlaying: true});
   },
 
-  updateProgress: function(e){
+  _updateProgress: function(e){
     e.preventDefault();
     var player = document.getElementById('audio_player');
     var percentDone;
@@ -72,7 +72,7 @@ var StreamBar = React.createClass({
     } else {
       percentDone = 0;
     }
-    ProgressActions.updateProgress(percentDone, player.currentTime);
+    ProgressActions._updateProgress(percentDone, player.currentTime);
   },
 
   _updateAudioBar: function(percentDone){
@@ -80,7 +80,7 @@ var StreamBar = React.createClass({
     player.currentTime = percentDone * player.duration;
   },
 
-  handleQueueDown: function(){
+  _handleQueueDown: function(){
     if (this.state.queueDown) {
       this.setState({
         queueDown: false
@@ -92,7 +92,7 @@ var StreamBar = React.createClass({
     }
   },
 
-  handleQueueClick: function(track, index){
+  _handleQueueClick: function(track, index){
     var freshQueue = this.state.playlist;
     freshQueue.splice(index, 1);
     PlayActions.addToPlayStore(track);
@@ -107,8 +107,8 @@ var StreamBar = React.createClass({
           <div className={this.state.repeat}>
             <audio
               id="audio_player"
-              onTimeUpdate={this.updateProgress}
-              onEnded={this.checkForNext}
+              onTimeUpdate={this._updateProgress}
+              onEnded={this._checkForNext}
               src={this.state.currentUrl}
               autoPlay></audio>
           </div>
@@ -124,13 +124,13 @@ var StreamBar = React.createClass({
           <div className="audio-container group">
             {audio}
             <PlayButton isPlaying={this.state.isPlaying}
-              play={this.startPlay} pause={this.stopPlay} />
+              play={this._startPlay} pause={this._stopPlay} />
             <ProgressBar isPlaying={this.state.isPlaying}
                           changeAudioTime={this._updateAudioBar}/>
-            <StreamingTrackInfo queueDownCallBack={this.handleQueueDown}
+                        <StreamingTrackInfo queueDownCallBack={this._handleQueueDown}
                                 queueDown={this.state.queueDown}
                                 queueFull={this.state.playlist.length > 0}
-                                handleQueueClick={this.handleQueueClick}
+                                handleQueueClick={this._handleQueueClick}
                                 playlist={this.state.playlist}
                                 track={this.state.currentTrack} />
           </div>

@@ -1,8 +1,6 @@
 # noisecave
 
-http://www.noisecave.com
-
-noisecave is a single-page, fully featured web app where users can upload, organize, discover, and enjoy music from artists around the world.
+(noisecave)[www.noiseave.com] is a single-page, fully featured web app where users can upload, organize, discover, and enjoy music from artists around the world.
 
 ## Marquee Functionalities
 

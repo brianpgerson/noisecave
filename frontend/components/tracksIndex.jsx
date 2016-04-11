@@ -93,6 +93,7 @@ var TracksIndex = React.createClass({
     return tracks;
   },
   render: function(){
+    var footer = this.props.userOnly ? <div></div> : <div><Footer /></div>;
     var userStyle = this.props.userOnly ?
       {marginTop: '0'} :
       {
@@ -129,7 +130,7 @@ var TracksIndex = React.createClass({
             {trackIndex}
           </div>
       </div>
-      <Footer />
+      {footer}
   </div>
     );
   }

@@ -76,13 +76,13 @@ var TrackUpload = React.createClass({
   },
   handlePercentage: function(){
     var percent = (this.state.percentComplete * 100);
-    var coolButtonStyle = {
+    var gradientButtonStyle = {
       background: "#5DA9E3",
       background: '-moz-linear-gradient(left,  #5DA9E3 0%, #5DA9E3 ' + percent + '%, #F5F5F5 ' + percent + '%, #F5F5F5 ' + percent + '%)',
       background: 'linear-gradient(to right,  #5DA9E3 0%,#5DA9E3 ' + percent + '%,#F5F5F5 ' + percent + '%,#F5F5F5 ' + percent + '%)',
       filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#F5F5F5', endColorstr='#F5F5F5',GradientType=1)"
     }
-    return coolButtonStyle;
+    return gradientButtonStyle;
   },
   areAnyInvalid: function(){
     if (this.state.audioUrl !== undefined && this.state.percentComplete > 0.99 &&

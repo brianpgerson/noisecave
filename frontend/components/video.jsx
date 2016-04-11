@@ -28,7 +28,11 @@ var Video = React.createClass({
   },
   render: function(){
     return (
-      <video autoPlay preload="true" loop id="video-wrapper">
+      <video autoPlay
+              preload="true"
+              loop
+              id="video-wrapper"
+              onEnd={this.changeVideo}>
         <source src="http://res.cloudinary.com/thadowg/video/upload/v1457296142/defocus-concert.mp4" />
       </video>
     );
